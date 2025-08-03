@@ -13,9 +13,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: {
     default: "Aqlaan - Middle East Enterprise AI Intelligence",
-    template: "%s | Aqlaan - AI Intelligence"
+    template: "%s | Aqlaan - AI Intelligence",
   },
-  description: "Aqlaan engineers scalable AI solutions using advanced frameworks like LangGraph, PyTorch, and OpenCV to automate, optimize, and empower Middle East businesses with enterprise-grade artificial intelligence.",
+  description:
+    "Aqlaan engineers scalable AI solutions using advanced frameworks like LangGraph, PyTorch, and OpenCV to automate, optimize, and empower Middle East businesses with enterprise-grade artificial intelligence.",
   keywords: [
     "AI solutions",
     "artificial intelligence",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     "deep learning",
     "AI frameworks",
     "business intelligence",
-    "scalable AI"
+    "scalable AI",
   ],
   authors: [{ name: "Aqlaan" }],
   creator: "Aqlaan",
@@ -51,7 +52,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Aqlaan - Middle East Enterprise AI Intelligence",
-    description: "Engineering scalable AI solutions with advanced frameworks to automate, optimize, and empower modern businesses across the Middle East.",
+    description:
+      "Engineering scalable AI solutions with advanced frameworks to automate, optimize, and empower modern businesses across the Middle East.",
     url: "https://aqlaan.com",
     siteName: "Aqlaan",
     images: [
@@ -68,7 +70,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aqlaan - Middle East Enterprise AI Intelligence",
-    description: "Engineering scalable AI solutions with advanced frameworks to automate, optimize, and empower modern businesses.",
+    description:
+      "Engineering scalable AI solutions with advanced frameworks to automate, optimize, and empower modern businesses.",
     images: ["/aqlaan-logo.webp"],
     creator: "@aqlaan",
   },
@@ -110,17 +113,18 @@ export default function RootLayout({
       "@type": "ContactPoint",
       contactType: "customer service",
       areaServed: ["AE", "SA", "EG", "JO", "LB", "KW", "QA", "BH", "OM"],
-      availableLanguage: ["English", "Arabic"]
+      availableLanguage: ["English", "Arabic"],
     },
     service: {
       "@type": "Service",
       name: "AI Solutions",
-      description: "Enterprise-grade artificial intelligence solutions using advanced frameworks",
+      description:
+        "Enterprise-grade artificial intelligence solutions using advanced frameworks",
       provider: {
         "@type": "Organization",
-        name: "Aqlaan"
-      }
-    }
+        name: "Aqlaan",
+      },
+    },
   };
 
   return (
@@ -134,17 +138,21 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
