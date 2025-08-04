@@ -45,7 +45,7 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8000", "http://localhost:3000"],
+    allow_origins=["http://localhost:8000", "http://localhost:3000", "https://aqlaan.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -184,4 +184,4 @@ async def stream_chat_with_agent(request: ChatRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True, log_level="info")
+    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=False, log_level="info")
