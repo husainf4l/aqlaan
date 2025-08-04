@@ -64,7 +64,7 @@ export default function AqlanAI() {
     setMessages((prev) => [...prev, aiMessage]);
 
     try {
-      const response = await fetch("http://localhost:8001/chat/stream", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001/chat/stream", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -142,7 +142,7 @@ export default function AqlanAI() {
                   )
                 );
               }
-            } catch (e) {
+            } catch {
               // Skip invalid JSON
             }
           }

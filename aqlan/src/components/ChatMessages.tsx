@@ -174,7 +174,7 @@ const WelcomeScreen = () => {
             Ready to transform your business with AI?
             <span className="text-blue-400 font-medium">
               {" "}
-              Let's start the conversation.
+              Let&apos;s start the conversation.
             </span>
           </p>
         </div>

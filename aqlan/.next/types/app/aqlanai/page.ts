@@ -1,4 +1,4 @@
-// File: /Users/al-husseinabdullah/Desktop/aqlaan/aqlan/src/app/aqlanai/page.tsx
+// File: /home/husain/aqlaan/aqlan/src/app/aqlanai/page.tsx
 import * as entry from '../../../../src/app/aqlanai/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
