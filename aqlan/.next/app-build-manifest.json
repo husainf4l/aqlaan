@@ -1,0 +1,36 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-70ece886d6729f3d.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-02efbd2195ef91bd.js",
+      "static/chunks/main-app-454312bed9f5d872.js",
+      "static/chunks/app/_not-found/page-2af2d859c5137478.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-70ece886d6729f3d.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-02efbd2195ef91bd.js",
+      "static/chunks/main-app-454312bed9f5d872.js",
+      "static/css/9a8df8c6009df215.css",
+      "static/chunks/874-437a265a67d6cfee.js",
+      "static/chunks/43-ffc68bc797ea3fe8.js",
+      "static/chunks/app/layout-b382fd0ca052c274.js"
+    ],
+    "/aqlanai/page": [
+      "static/chunks/webpack-70ece886d6729f3d.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-02efbd2195ef91bd.js",
+      "static/chunks/main-app-454312bed9f5d872.js",
+      "static/chunks/app/aqlanai/page-6ad28ad49738cc13.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-70ece886d6729f3d.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-02efbd2195ef91bd.js",
+      "static/chunks/main-app-454312bed9f5d872.js",
+      "static/chunks/874-437a265a67d6cfee.js",
+      "static/chunks/app/page-7eaec773acf3ccef.js"
+    ]
+  }
+}
