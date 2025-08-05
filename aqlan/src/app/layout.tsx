@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ScrollReset from "@/components/ScrollReset";
 
 const poppins = Poppins({
@@ -170,6 +171,7 @@ export default function RootLayout({
         <ScrollReset />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

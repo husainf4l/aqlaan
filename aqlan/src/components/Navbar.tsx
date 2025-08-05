@@ -13,19 +13,30 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Image
-                src="/aqlaan-logo.webp"
-                alt="Aqlaan"
-                width={120}
-                height={40}
-                className="h-8 w-auto transition-all duration-300 hover:scale-105"
-                priority
-              />
+              <Link href="/">
+                <Image
+                  src="/aqlaan-logo.webp"
+                  alt="Aqlaan"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto transition-all duration-300 hover:scale-105 cursor-pointer"
+                  priority
+                />
+              </Link>
             </div>
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Navigation & CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link href="/enterprise" className="text-gray-300 hover:text-white transition-colors duration-200 font-medium">
+              Enterprise
+            </Link>
+            <Link href="/public-sector" className="text-gray-300 hover:text-white transition-colors duration-200 font-medium">
+              Government
+            </Link>
+            <Link href="/blog" className="text-gray-300 hover:text-white transition-colors duration-200 font-medium">
+              Blog
+            </Link>
             <Link href="/aqlanai">
               <button className="bg-white hover:bg-gray-100 text-black font-medium py-2.5 px-6 rounded-md transition-all duration-200 text-sm">
                 Ask Aqlaan
@@ -70,6 +81,27 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-black border-t border-gray-800">
+            <Link 
+              href="/enterprise"
+              onClick={() => setIsMenuOpen(false)}
+              className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+            >
+              Enterprise
+            </Link>
+            <Link 
+              href="/public-sector"
+              onClick={() => setIsMenuOpen(false)}
+              className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+            >
+              Government
+            </Link>
+            <Link 
+              href="/blog"
+              onClick={() => setIsMenuOpen(false)}
+              className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+            >
+              Blog
+            </Link>
             <div className="pt-4 pb-3 border-t border-gray-800/30">
               <Link href="/aqlanai">
                 <button
