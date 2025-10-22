@@ -1,3 +1,4 @@
+import HeroAICanvas from "@/components/HeroAICanvas";
 import Hero from "@/components/home/Hero";
 import Partners from "@/components/home/Partners";
 import Features from "@/components/home/Features";
@@ -9,6 +10,7 @@ import CTA from "@/components/home/CTA";
 export default function HomePage() {
   return (
     <>
+      <HeroAICanvas />
       <Hero />
       <Partners />
       <Features />

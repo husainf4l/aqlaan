@@ -46,6 +46,38 @@ export default function ChatRoomPage() {
   const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
   const [currentUserId] = useState('user-123'); // Mock user ID
 
+  const fetchSession = useCallback(async () => {
+    try {
+      // In production, fetch from your API
+      // const response = await fetch(`http://localhost:3001/sessions/${sessionId}`);
+      // const data = await response.json();
+      
+      // Mock session data for now
+      const mockSession: Session = {
+        id: sessionId,
+        startTime: new Date().toISOString(),
+        endTime: null,
+        status: 'active',
+        consultant: {
+          id: 'consultant-1',
+          name: 'Dr. Sarah Chen',
+          role: 'consultant',
+        },
+        client: {
+          id: currentUserId,
+          name: 'John Doe',
+          role: 'client',
+        },
+        messages: [],
+      };
+
+      setSession(mockSession);
+      setMessages(mockSession.messages);
+    } catch (error) {
+      console.error('Error fetching session:', error);
+    }
+  }, [sessionId, currentUserId]);
+
   useEffect(() => {
     // Initialize socket connection
     const newSocket = io('http://localhost:3001', {
@@ -103,38 +135,6 @@ export default function ChatRoomPage() {
       }
     };
   }, [sessionId, currentUserId, fetchSession]);
-
-  const fetchSession = useCallback(async () => {
-    try {
-      // In production, fetch from your API
-      // const response = await fetch(`http://localhost:3001/sessions/${sessionId}`);
-      // const data = await response.json();
-      
-      // Mock session data for now
-      const mockSession: Session = {
-        id: sessionId,
-        startTime: new Date().toISOString(),
-        endTime: null,
-        status: 'active',
-        consultant: {
-          id: 'consultant-1',
-          name: 'Dr. Sarah Chen',
-          role: 'consultant',
-        },
-        client: {
-          id: currentUserId,
-          name: 'John Doe',
-          role: 'client',
-        },
-        messages: [],
-      };
-
-      setSession(mockSession);
-      setMessages(mockSession.messages);
-    } catch (error) {
-      console.error('Error fetching session:', error);
-    }
-  }, [sessionId, currentUserId]);
 
   const handleSendMessage = (content: string) => {
     if (!socket || !session) return;
