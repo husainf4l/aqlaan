@@ -129,9 +129,9 @@ export default function ChatRoomPage() {
     fetchSession();
 
     return () => {
-      if (newSocket) {
-        newSocket.emit('leaveRoom', { sessionId, userId: currentUserId });
-        newSocket.disconnect();
+      if (socket) {
+        socket.emit('leaveRoom', { sessionId, userId: currentUserId });
+        socket.disconnect();
       }
     };
   }, [sessionId, currentUserId, fetchSession]);
