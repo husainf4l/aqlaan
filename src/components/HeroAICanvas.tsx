@@ -134,7 +134,7 @@ function HeroAICanvasInner() {
         <div className="container hero__content">
           {/* Headline */}
           <div className="hero__header">
-            <h1 className="hero__title">Breakthrough AI from<br />Data to Deployment</h1>
+            <h1 className="hero__title gradient-text">Breakthrough AI from<br />Data to Deployment</h1>
             <p className="hero__subtitle">
               Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
             </p>
