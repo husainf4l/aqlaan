@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -19,21 +20,21 @@ const caseStudies: CaseStudy[] = [
     client: "TechCorp Inc.",
     description: "Reduced operational costs by 40% through automated data processing.",
     metrics: { cost: 40, time: 60, accuracy: 95 },
-    image: "/case1.jpg",
+    image: "/case-studies/enterprise-ai.svg",
   },
   {
     title: "Healthcare Intelligence Platform",
     client: "MedTech Solutions",
     description: "Improved diagnostic accuracy and patient outcomes with AI insights.",
     metrics: { accuracy: 92, patients: 50000, efficiency: 75 },
-    image: "/case2.jpg",
+    image: "/case-studies/healthcare-ai.svg",
   },
   {
     title: "Smart Infrastructure Monitoring",
     client: "CityGrid Systems",
     description: "Enhanced city infrastructure monitoring with predictive analytics.",
     metrics: { uptime: 99, alerts: 85, savings: 30 },
-    image: "/case3.jpg",
+    image: "/case-studies/infrastructure-ai.svg",
   },
 ];
 
@@ -66,9 +67,29 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
 
   return (
     <FadeIn delay={index * 0.2}>
-      <Card className="group hover:scale-105 transition-transform duration-300">
-        <div className="aspect-video bg-gray-800 rounded-lg mb-6 overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+      <Card className="group hover:scale-105 transition-transform duration-300 overflow-hidden">
+        <div className="aspect-video bg-gray-800 rounded-lg mb-6 overflow-hidden relative">
+          <Image
+            src={study.image}
+            alt={study.title}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-300"
+            onError={(e) => {
+              // Fallback gradient if image fails to load
+              const target = e.currentTarget;
+              target.style.display = "none";
+              const parent = target.parentElement;
+              if (parent) {
+                parent.className = "w-full h-full bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center";
+                const span = document.createElement("span");
+                span.className = "text-white text-4xl font-bold";
+                span.textContent = study.client[0];
+                parent.appendChild(span);
+              }
+            }}
+          />
+          {/* Fallback gradient */}
+          <div className="absolute inset-0 bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <span className="text-white text-4xl font-bold">{study.client[0]}</span>
           </div>
         </div>
