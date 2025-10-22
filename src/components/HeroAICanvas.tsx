@@ -132,10 +132,27 @@ function HeroAICanvasInner() {
       {/* Content */}
       <div className="hero__contentWrap">
         <div className="container">
-          <h1 className="hero__title">Build AI on a Living Canvas</h1>
+          <h1 className="hero__title">Breakthrough AI from<br />Data to Deployment</h1>
           <p className="hero__subtitle">
-            Dark, cinematic hero with indigo–cyan energy. Lightweight, code-driven, and crisp on any screen.
+            Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
           </p>
+          
+          {/* Stats */}
+          <div className="hero__stats">
+            <div className="hero__stat">
+              <div className="hero__stat-value">12+</div>
+              <div className="hero__stat-label">Enterprise Clients</div>
+            </div>
+            <div className="hero__stat">
+              <div className="hero__stat-value">99%</div>
+              <div className="hero__stat-label">Accuracy Rate</div>
+            </div>
+            <div className="hero__stat">
+              <div className="hero__stat-value">24/7</div>
+              <div className="hero__stat-label">Support Available</div>
+            </div>
+          </div>
+          
           <div className="hero__cta">
             <a className="btn btn--primary" href="#start">Get Started</a>
             <a className="btn btn--ghost" href="#docs">Docs</a>
