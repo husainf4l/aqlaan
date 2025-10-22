@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
@@ -111,9 +112,13 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/logo/aqlaa-new-logo.png"
               alt="AQLAAN Logo"
+              width={120}
+              height={120}
+              quality={100}
+              priority
               className="h-8 w-auto hover:opacity-80 transition-opacity"
             />
           </Link>

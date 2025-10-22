@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -59,9 +60,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
-              <img
+              <Image
                 src="/logo/aqlaa-new-logo.png"
                 alt="AQLAAN Logo"
+                width={120}
+                height={120}
+                quality={100}
                 className="h-8 w-auto hover:opacity-80 transition-opacity"
               />
             </Link>

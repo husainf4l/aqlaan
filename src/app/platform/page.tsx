@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import FadeIn from "@/components/animations/FadeIn";
-import { Stat } from "@/components/ui/Stat";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Platform | AQLAAN",
@@ -56,24 +54,6 @@ export default function PlatformPage() {
               A comprehensive AI infrastructure that powers intelligent automation across industries.
               Built for scale, security, and seamless integration.
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
-              <Stat value={99.9} label="Uptime" suffix="%" />
-              <Stat value={500} label="Enterprise Clients" suffix="+" />
-              <Stat value={10} label="Petabytes Processed" suffix="PB" />
-              <Stat value={24} label="Global Regions" suffix="/" />
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.4}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
-                Start Free Trial
-              </Button>
-              <Button variant="outline">View Documentation</Button>
-            </div>
           </FadeIn>
         </div>
       </section>
@@ -138,23 +118,6 @@ export default function PlatformPage() {
                 </div>
               </div>
             </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6 text-white">
-              Ready to Experience the Platform?
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Join thousands of enterprises already using AQLAAN to transform their operations.
-            </p>
-            <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100 px-8 py-4">
-              Get Started Today
-            </Button>
           </FadeIn>
         </div>
       </section>

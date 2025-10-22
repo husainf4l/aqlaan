@@ -102,7 +102,7 @@ export default function ConsultationsPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Schedule Your Demo</h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Get a personalized demonstration of AQLAAN's AI and automation solutions. Our experts will show you how we can transform your business.
+                Get a personalized demonstration of AQLAAN&apos;s AI and automation solutions. Our experts will show you how we can transform your business.
               </p>
             </div>
           </FadeIn>

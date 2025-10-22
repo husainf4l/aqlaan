@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
@@ -86,9 +87,12 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
               <Link href="/" className="flex items-center" onClick={onClose}>
-                <img
+                <Image
                   src="/logo/aqlaa-new-logo.png"
                   alt="AQLAAN Logo"
+                  width={96}
+                  height={96}
+                  quality={100}
                   className="h-6 w-auto"
                 />
               </Link>

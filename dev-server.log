@@ -1,0 +1,155 @@
+
+> aqlaan@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.6 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.64:3000
+
+ ✓ Starting...
+ ✓ Ready in 26.8s
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 31.2s
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.2wbx53go99j'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.2wbx53go99j'
+}
+ ○ Compiling /_error ...
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.i01su4y15jm'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.i01su4y15jm'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.2wbx53go99j'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.2wbx53go99j'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.a8388tnu9bp'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.a8388tnu9bp'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.q7f30qp1wqi'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.q7f30qp1wqi'
+}
+ ✓ Compiled /_error in 18.5s
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.rkurcq37p3g'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.rkurcq37p3g'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.j32u3bs2o'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.j32u3bs2o'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.rkurcq37p3g'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.rkurcq37p3g'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.5h51gdyljnu'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.5h51gdyljnu'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.w0hy2wnbgr'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.w0hy2wnbgr'
+}
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 2.5s
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.mlc078ox7k'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.mlc078ox7k'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.f1iab926apt'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.f1iab926apt'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.f3yktnjweuh'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.f3yktnjweuh'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.f1iab926apt'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.f1iab926apt'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.202a2oapocw'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.202a2oapocw'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.wl3yfti54k'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.wl3yfti54k'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.g6nqzr9dcvh'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.g6nqzr9dcvh'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.l36j6qnwzy'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.l36j6qnwzy'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.mbx4j8wmbbf'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.mbx4j8wmbbf'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.l36j6qnwzy'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.l36j6qnwzy'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.637shkck0rv'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.637shkck0rv'
+}
+[Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.citjpxj2oc'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.citjpxj2oc'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.0hhm5vbum0p7'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/aqlaan/Desktop/aqlaan/aqlaan/.next/static/development/_buildManifest.js.tmp.0hhm5vbum0p7'
+}
+[?25h
