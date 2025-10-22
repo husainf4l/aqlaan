@@ -165,29 +165,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800 text-center">
-        <FadeIn>
-          <h2 className="text-4xl font-bold mb-6">Join Us in Shaping the Future</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Interested in becoming part of AQLAAN? Explore career opportunities and partnership options.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <a
-              href="/careers"
-              className="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              View Careers
-            </a>
-            <a
-              href="/partners"
-              className="border border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              Become a Partner
-            </a>
-          </div>
-        </FadeIn>
-      </section>
+
     </div>
   );
 }
