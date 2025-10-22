@@ -85,12 +85,6 @@ export default function BlogPage() {
     },
   ];
 
-  const newsletter = {
-    title: "Stay Ahead of AI Innovation",
-    description: "Get weekly insights on AI trends, research breakthroughs, and industry best practices delivered to your inbox.",
-    subscribers: "50,000+",
-  };
-
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -227,34 +221,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-3xl font-bold mb-4 text-white">
-              {newsletter.title}
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              {newsletter.description}
-            </p>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-md mx-auto">
-              <div className="flex flex-col gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100">
-                  Subscribe Now
-                </Button>
-              </div>
-              <p className="text-blue-200 text-sm mt-4">
-                Join {newsletter.subscribers} AI professionals
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+
     </div>
   );
 }
