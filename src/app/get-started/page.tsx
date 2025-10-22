@@ -307,27 +307,7 @@ export default function GetStartedPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6 text-white">
-              Ready to Start Building?
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Join thousands of developers and businesses already using AQLAAN to power their AI solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100 px-8 py-4">
-                Create Free Account
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
-                Schedule Demo
-              </Button>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+
     </div>
   );
 }
