@@ -96,6 +96,93 @@ export default function ConsultationsPage() {
       </section>
 
       {/* Available Consultants */}
+      <section className="py-20 px-6 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Schedule Your Demo</h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                Get a personalized demonstration of AQLAAN's AI and automation solutions. Our experts will show you how we can transform your business.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16">
+            {/* Demo Form */}
+            <FadeIn>
+              <Card className="p-8">
+                <h3 className="text-2xl font-bold mb-6">Request a Demo</h3>
+                <form className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                    <input type="text" className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500" placeholder="Your name" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500" placeholder="your@email.com" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Company</label>
+                    <input type="text" className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500" placeholder="Your company" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Industry</label>
+                    <select className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
+                      <option>Select industry</option>
+                      <option>Healthcare</option>
+                      <option>Manufacturing</option>
+                      <option>Finance</option>
+                      <option>Retail</option>
+                      <option>Technology</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Preferred Date & Time</label>
+                    <input type="datetime-local" className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500" />
+                  </div>
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5">Schedule Demo</Button>
+                </form>
+              </Card>
+            </FadeIn>
+
+            {/* Demo Details */}
+            <FadeIn delay={0.2}>
+              <div className="space-y-6">
+                <Card className="p-6">
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">📋 What to Expect</h3>
+                  <ul className="space-y-2 text-gray-400 text-sm">
+                    <li>• 30-minute personalized consultation</li>
+                    <li>• Live product walkthrough</li>
+                    <li>• Custom solutions discussion</li>
+                    <li>• Q&A with our experts</li>
+                    <li>• Implementation roadmap</li>
+                  </ul>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">🎯 Perfect For</h3>
+                  <ul className="space-y-2 text-gray-400 text-sm">
+                    <li>• Enterprise decision makers</li>
+                    <li>• Technical teams</li>
+                    <li>• Business leaders</li>
+                    <li>• Solution architects</li>
+                    <li>• Digital transformation teams</li>
+                  </ul>
+                </Card>
+
+                <Card className="p-6">
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">💬 Questions?</h3>
+                  <p className="text-gray-400 text-sm mb-4">Contact us anytime at support@aqlaan.com or call +1 (555) 123-4567</p>
+                  <p className="text-gray-500 text-xs">Available Monday-Friday, 9 AM - 6 PM EST</p>
+                </Card>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Available Consultants */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
