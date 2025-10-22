@@ -1,4 +1,4 @@
-import FadeIn from "@/components/animations/FadeIn";
+import FadeInStatic from "@/components/animations/FadeInStatic";
 import { CheckCircle, Award, Users, Zap } from "lucide-react";
 
 export default function AboutPage() {
@@ -38,7 +38,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        <FadeIn>
+        <FadeInStatic>
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in">
               Transforming Business with AI
@@ -47,14 +47,14 @@ export default function AboutPage() {
               AQLAAN is a leading provider of AI and automation solutions, empowering enterprises to unlock new possibilities and drive digital transformation.
             </p>
           </div>
-        </FadeIn>
+        </FadeInStatic>
       </section>
 
       {/* Mission & Vision */}
       <section className="py-20 px-6 bg-gray-900/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <FadeIn>
+            <FadeInStatic>
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-blue-400">Our Mission</h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-4">
@@ -64,8 +64,8 @@ export default function AboutPage() {
                   We believe that AI should be accessible, ethical, and designed to augment human expertise rather than replace it.
                 </p>
               </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
+            </FadeInStatic>
+            <FadeInStatic delay={0.2}>
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Vision</h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-4">
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   We envision a world where AI is not a competitive advantage—it&apos;s a standard utility that empowers every organization to achieve their full potential.
                 </p>
               </div>
-            </FadeIn>
+            </FadeInStatic>
           </div>
         </div>
       </section>
@@ -83,20 +83,20 @@ export default function AboutPage() {
       {/* Core Values */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <h2 className="text-4xl font-bold text-center mb-16">Our Core Values</h2>
-          </FadeIn>
+          </FadeInStatic>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <FadeIn key={value.title} delay={index * 0.1}>
+                <FadeInStatic key={value.title} delay={index * 0.1}>
                   <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 hover:border-blue-500 transition-colors">
                     <Icon className="w-12 h-12 text-blue-400 mb-4" />
                     <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                     <p className="text-gray-400">{value.description}</p>
                   </div>
-                </FadeIn>
+                </FadeInStatic>
               );
             })}
           </div>
@@ -106,12 +106,12 @@ export default function AboutPage() {
       {/* Timeline */}
       <section className="py-20 px-6 bg-gray-900/50">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <h2 className="text-4xl font-bold text-center mb-16">Our Journey</h2>
-          </FadeIn>
+          </FadeInStatic>
           <div className="space-y-8">
             {milestones.map((milestone, index) => (
-              <FadeIn key={milestone.year} delay={index * 0.1}>
+              <FadeInStatic key={milestone.year} delay={index * 0.1}>
                 <div className="flex gap-8 items-start">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold">
@@ -123,7 +123,7 @@ export default function AboutPage() {
                     <p className="text-gray-400">{milestone.desc}</p>
                   </div>
                 </div>
-              </FadeIn>
+              </FadeInStatic>
             ))}
           </div>
         </div>
@@ -132,9 +132,9 @@ export default function AboutPage() {
       {/* Team Stats */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <h2 className="text-4xl font-bold text-center mb-16">By The Numbers</h2>
-          </FadeIn>
+          </FadeInStatic>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { value: "500+", label: "Enterprise Clients" },
@@ -142,12 +142,12 @@ export default function AboutPage() {
               { value: "250+", label: "Team Members" },
               { value: "99.9%", label: "Uptime SLA" },
             ].map((stat, index) => (
-              <FadeIn key={stat.label} delay={index * 0.1}>
+              <FadeInStatic key={stat.label} delay={index * 0.1}>
                 <div className="text-center">
                   <div className="text-5xl font-bold text-blue-400 mb-2">{stat.value}</div>
                   <p className="text-gray-400">{stat.label}</p>
                 </div>
-              </FadeIn>
+              </FadeInStatic>
             ))}
           </div>
         </div>

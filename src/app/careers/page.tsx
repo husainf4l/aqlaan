@@ -1,4 +1,4 @@
-import FadeIn from "@/components/animations/FadeIn";
+import FadeInStatic from "@/components/animations/FadeInStatic";
 import { Button } from "@/components/ui/Button";
 import { MapPin, Briefcase, Users, TrendingUp } from "lucide-react";
 
@@ -92,7 +92,7 @@ export default function CareersPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        <FadeIn>
+        <FadeInStatic>
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in">
               Shape the Future with Us
@@ -101,20 +101,20 @@ export default function CareersPage() {
               Join AQLAAN and be part of a team revolutionizing AI and automation. We&apos;re looking for talented individuals who are passionate about solving complex problems.
             </p>
           </div>
-        </FadeIn>
+        </FadeInStatic>
       </section>
 
       {/* Departments */}
       <section className="py-20 px-6 bg-gray-900/50">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <h2 className="text-4xl font-bold text-center mb-16">Open Departments</h2>
-          </FadeIn>
+          </FadeInStatic>
           <div className="grid md:grid-cols-2 gap-8">
             {departments.map((dept, index) => {
               const Icon = dept.icon;
               return (
-                <FadeIn key={dept.name} delay={index * 0.1}>
+                <FadeInStatic key={dept.name} delay={index * 0.1}>
                   <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 hover:border-blue-500 transition-colors">
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -131,7 +131,7 @@ export default function CareersPage() {
                       <span>{dept.locations.join(", ")}</span>
                     </div>
                   </div>
-                </FadeIn>
+                </FadeInStatic>
               );
             })}
           </div>
@@ -141,17 +141,17 @@ export default function CareersPage() {
       {/* Benefits */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <h2 className="text-4xl font-bold text-center mb-16">Why Join AQLAAN</h2>
-          </FadeIn>
+          </FadeInStatic>
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <FadeIn key={benefit.title} delay={index * 0.1}>
+              <FadeInStatic key={benefit.title} delay={index * 0.1}>
                 <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 text-center">
                   <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
                   <p className="text-gray-400">{benefit.desc}</p>
                 </div>
-              </FadeIn>
+              </FadeInStatic>
             ))}
           </div>
         </div>
@@ -160,12 +160,12 @@ export default function CareersPage() {
       {/* Job Listings */}
       <section className="py-20 px-6 bg-gray-900/50">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <h2 className="text-4xl font-bold text-center mb-16">Open Positions</h2>
-          </FadeIn>
+          </FadeInStatic>
           <div className="space-y-4">
             {jobListings.map((job, index) => (
-              <FadeIn key={job.title} delay={index * 0.05}>
+              <FadeInStatic key={job.title} delay={index * 0.05}>
                 <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-500 transition-colors flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-bold mb-2">{job.title}</h3>
@@ -190,7 +190,7 @@ export default function CareersPage() {
                     Apply Now
                   </Button>
                 </div>
-              </FadeIn>
+              </FadeInStatic>
             ))}
           </div>
         </div>
@@ -199,7 +199,7 @@ export default function CareersPage() {
       {/* Culture Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
+          <FadeInStatic>
             <div className="bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-blue-600/50 rounded-lg p-12 text-center">
               <h2 className="text-3xl font-bold mb-6">Our Culture</h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
@@ -220,7 +220,7 @@ export default function CareersPage() {
                 </div>
               </div>
             </div>
-          </FadeIn>
+          </FadeInStatic>
         </div>
       </section>
 
