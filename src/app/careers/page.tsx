@@ -97,7 +97,7 @@ export default function CareersPage() {
         <FadeIn>
           <div className="text-center mb-16">
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
