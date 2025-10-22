@@ -236,21 +236,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800 text-center">
-        <FadeIn>
-          <h2 className="text-4xl font-bold mb-6">Don&apos;t See Your Role?</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            We&apos;re always looking for talented individuals. Send us your resume and let&apos;s talk about how you can contribute to our mission.
-          </p>
-          <a
-            href="mailto:careers@aqlaan.com"
-            className="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Send Your Resume
-          </a>
-        </FadeIn>
-      </section>
+
     </div>
   );
 }
