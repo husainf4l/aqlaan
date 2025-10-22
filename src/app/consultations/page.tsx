@@ -128,22 +128,23 @@ export default function ConsultationsPage() {
                   </h3>
                   <p className="text-gray-400 mb-3">{consultant.specialty}</p>
 
-                  <div className="flex items-center mb-4">
+                  <div className="bg-green-500/20 text-green-400 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                    FREE
+                  </div>
+
+                  <div className="flex items-center mb-6">
                     <div className="flex text-yellow-400 mr-2">
                       {'★'.repeat(consultant.rating)}
                     </div>
                     <span className="text-sm text-gray-500">({consultant.rating}.0)</span>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-blue-400">{consultant.price}</span>
-                    <Button
-                      className="bg-linear-to-r from-blue-600 to-purple-500 hover:from-blue-700 hover:to-purple-600"
-                      disabled={!consultant.available}
-                    >
-                      {consultant.available ? 'Book Session' : 'Unavailable'}
-                    </Button>
-                  </div>
+                  <Button
+                    className="w-full bg-linear-to-r from-blue-600 to-purple-500 hover:from-blue-700 hover:to-purple-600"
+                    disabled={!consultant.available}
+                  >
+                    {consultant.available ? 'Book Session' : 'Unavailable'}
+                  </Button>
                 </Card>
               </FadeIn>
             ))}
