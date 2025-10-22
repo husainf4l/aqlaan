@@ -52,6 +52,10 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
   letter-spacing: -0.04em;
   margin: 0;
   font-weight: 700;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero__subtitle {
   margin: 0;
