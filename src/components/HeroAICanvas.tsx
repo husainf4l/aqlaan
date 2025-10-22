@@ -131,13 +131,16 @@ function HeroAICanvasInner() {
 
       {/* Content */}
       <div className="hero__contentWrap">
-        <div className="container">
-          <h1 className="hero__title">Breakthrough AI from<br />Data to Deployment</h1>
-          <p className="hero__subtitle">
-            Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
-          </p>
+        <div className="container hero__content">
+          {/* Headline */}
+          <div className="hero__header">
+            <h1 className="hero__title">Breakthrough AI from<br />Data to Deployment</h1>
+            <p className="hero__subtitle">
+              Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
+            </p>
+          </div>
           
-          {/* Stats */}
+          {/* Stats Grid */}
           <div className="hero__stats">
             <div className="hero__stat">
               <div className="hero__stat-value">12+</div>
@@ -153,6 +156,7 @@ function HeroAICanvasInner() {
             </div>
           </div>
           
+          {/* CTA Buttons */}
           <div className="hero__cta">
             <a className="btn btn--primary" href="#start">Get Started</a>
             <a className="btn btn--ghost" href="#docs">Docs</a>
