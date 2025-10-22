@@ -273,23 +273,6 @@ export default function InfrastructureAIPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6 text-white">
-              Future-Proof Your Infrastructure
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Transform your critical systems into intelligent, self-optimizing infrastructure with AI.
-            </p>
-            <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100 px-8 py-4">
-              Start Infrastructure Assessment
-            </Button>
-          </FadeIn>
-        </div>
-      </section>
     </div>
   );
 }

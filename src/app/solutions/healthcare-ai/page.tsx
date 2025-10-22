@@ -228,23 +228,6 @@ export default function HealthcareAIPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6 text-white">
-              Transform Healthcare with AI
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Join leading healthcare organizations using AI to improve patient outcomes and operational efficiency.
-            </p>
-            <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100 px-8 py-4">
-              Schedule Healthcare Demo
-            </Button>
-          </FadeIn>
-        </div>
-      </section>
     </div>
   );
 }
