@@ -1,5 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { MapPin, Briefcase, Users, TrendingUp } from "lucide-react";
@@ -96,22 +94,12 @@ export default function CareersPage() {
       <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in">
               Shape the Future with Us
-            </motion.h1>
-            <motion.p
-              className="text-xl text-gray-400 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            </h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto animate-fade-in">
               Join AQLAAN and be part of a team revolutionizing AI and automation. We&apos;re looking for talented individuals who are passionate about solving complex problems.
-            </motion.p>
+            </p>
           </div>
         </FadeIn>
       </section>
