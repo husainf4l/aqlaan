@@ -305,34 +305,7 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-3xl font-bold mb-4 text-white">
-              Press Release Alerts
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Get notified when we publish new press releases and major announcements.
-            </p>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-md mx-auto">
-              <div className="flex flex-col gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-                <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100">
-                  Subscribe to Alerts
-                </Button>
-              </div>
-              <p className="text-blue-200 text-sm mt-4">
-                Join 2,000+ journalists and analysts
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+
     </div>
   );
 }
