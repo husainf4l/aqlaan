@@ -104,13 +104,6 @@ export default function PressPage() {
     presentations: "Investor and product presentations",
   };
 
-  const contact = {
-    name: "Jennifer Martinez",
-    title: "Head of Communications",
-    email: "press@aqlaan.com",
-    phone: "+1 (555) 123-4567",
-  };
-
   const stats = [
     { value: "500+", label: "Media Mentions" },
     { value: "50+", label: "Countries Covered" },
@@ -283,27 +276,7 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6">Media Inquiries</h2>
-            <p className="text-gray-400 mb-8 text-lg">
-              For press inquiries, interview requests, or media opportunities.
-            </p>
-            <Card className="max-w-md mx-auto">
-              <div className="text-center">
-                <div className="text-xl font-semibold mb-2">{contact.name}</div>
-                <div className="text-blue-400 mb-4">{contact.title}</div>
-                <div className="space-y-2 text-sm text-gray-400">
-                  <div>{contact.email}</div>
-                  <div>{contact.phone}</div>
-                </div>
-              </div>
-            </Card>
-          </FadeIn>
-        </div>
-      </section>
+
 
 
     </div>
