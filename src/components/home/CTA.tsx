@@ -5,7 +5,7 @@ import FadeIn from "@/components/animations/FadeIn";
 
 export default function CTA() {
   return (
-    <section className="relative py-20 text-center bg-linear-to-br from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
+    <section className="relative py-20 text-center bg-slate-950 overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,192,255,0.05)_0%,transparent_50%)]" />

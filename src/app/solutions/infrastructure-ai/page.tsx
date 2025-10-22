@@ -97,7 +97,7 @@ export default function InfrastructureAIPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-linear-to-b from-black to-gray-900">
+      <section className="py-20 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="max-w-4xl">

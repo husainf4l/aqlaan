@@ -71,7 +71,7 @@ export default function ConsultationsPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-linear-to-b from-black to-gray-900">
+      <section className="py-20 px-6 bg-black">
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">

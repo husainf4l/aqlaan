@@ -5,7 +5,7 @@ export default function Solutions() {
     { title: "Smart Infrastructure", desc: "Enable predictive analytics for safer, smarter cities." },
   ];
   return (
-    <section className="py-24 px-6 bg-linear-to-b from-black to-gray-900">
+    <section className="py-24 px-6 bg-black">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8">Solutions</h2>
         <p className="text-gray-400 mb-16">Tailored systems that bridge human expertise and AI precision.</p>

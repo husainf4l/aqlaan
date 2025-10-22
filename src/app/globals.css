@@ -107,23 +107,16 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 .btn--ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
 .btn--ghost:hover { background: rgba(255,255,255,0.08); }
 
-/* Ambient color glows (cheap & pretty) */
+/* Ambient color glows - removed for solid colors */
 .hero__ambient {
   pointer-events:none; position:absolute; inset:0; z-index:1;
-  mix-blend-mode: screen;
-  background:
-    radial-gradient(900px 450px at 75% 40%, rgba(0,192,255,0.18), transparent),
-    radial-gradient(700px 350px at 25% 70%, rgba(168,85,247,0.12), transparent);
-  opacity: .65;
+  background: transparent;
 }
 
 /* Reduced motion fallback background */
 .hero__fallback {
   position:absolute; inset:0; z-index:0;
-  background:
-    radial-gradient(1200px 600px at 70% 40%, rgba(0,192,255,0.25), transparent),
-    radial-gradient(800px 400px at 30% 70%, rgba(168,85,247,0.18), transparent),
-    #090D1A;
+  background: #090D1A;
 }
 
 /* Section after hero, just to show page continues */

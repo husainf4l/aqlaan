@@ -71,11 +71,12 @@ export default function ConsultationsPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-linear-to-b from-black to-gray-900">
+            {/* Hero Section */}
+      <section className="py-20 px-6 bg-black">
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-              Live Consultations
+              Contact Us
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
               Instant expert consultations powered by AI. Chat live with professionals
