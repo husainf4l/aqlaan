@@ -378,27 +378,7 @@ export default function DocsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6 text-white">
-              Need Help Getting Started?
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Join our developer community or contact our technical support team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100 px-8 py-4">
-                Join Developer Community
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
-                Contact Support
-              </Button>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+
     </div>
   );
 }
