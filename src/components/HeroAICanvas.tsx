@@ -155,12 +155,6 @@ function HeroAICanvasInner() {
               <div className="hero__stat-label">Support Available</div>
             </div>
           </div>
-          
-          {/* CTA Buttons */}
-          <div className="hero__cta">
-            <a className="btn btn--primary" href="#start">Get Started</a>
-            <a className="btn btn--ghost" href="#docs">Docs</a>
-          </div>
         </div>
       </div>
     </section>

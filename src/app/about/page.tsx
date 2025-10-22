@@ -26,12 +26,10 @@ export default function AboutPage() {
   ];
 
   const milestones = [
-    { year: "2020", title: "Founded AQLAAN", desc: "Started with a vision to democratize AI for enterprises" },
-    { year: "2021", title: "First 100 Clients", desc: "Rapid growth across diverse industries and sectors" },
-    { year: "2022", title: "Global Expansion", desc: "Opened offices in key markets across North America and Europe" },
-    { year: "2023", title: "AI Innovation Lab", desc: "Launched dedicated research facility for cutting-edge AI development" },
-    { year: "2024", title: "Series B Funding", desc: "Secured significant funding to accelerate product development" },
-    { year: "2025", title: "Enterprise Leader", desc: "Recognized as top AI and automation solutions provider" },
+    { year: "2023", title: "Founded", desc: "Established in Amman, Jordan, focusing on enterprise AI for MENA and EU markets" },
+    { year: "2024-Q2", title: "First Deployments", desc: "Launched production systems for distribution and financial services clients" },
+    { year: "2024-Q3", title: "Platform Evolution", desc: "Deployed multi-tenant architecture on Azure Kubernetes Service with pgvector" },
+    { year: "2025", title: "Security Posture", desc: "ISO 27001 program initiated, SOC 2 Type I readiness achieved" },
   ];
 
   return (
@@ -44,7 +42,7 @@ export default function AboutPage() {
               Transforming Business with AI
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto animate-fade-in">
-              AQLAAN is a leading provider of AI and automation solutions, empowering enterprises to unlock new possibilities and drive digital transformation.
+              Build production-grade AI systems that enterprises trust with their most critical workflows. Deployed on Azure Kubernetes with tenant isolation, audit logs, and encryption at rest.
             </p>
           </div>
         </FadeInStatic>
@@ -58,10 +56,10 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-blue-400">Our Mission</h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-4">
-                  To democratize artificial intelligence and enable every enterprise to harness the power of intelligent automation, regardless of size or technical expertise.
+                  Build production-grade AI systems that enterprises trust with their most critical workflows. No hype, no shortcuts. Ship reliable software with audit trails, tenant isolation, and measurable outcomes.
                 </p>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  We believe that AI should be accessible, ethical, and designed to augment human expertise rather than replace it.
+                  We focus on enterprise automation, language intelligence (RAG), computer vision, healthcare AI, and infrastructure AI for regulated industries in MENA and EU.
                 </p>
               </div>
             </FadeInStatic>
@@ -69,10 +67,10 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Vision</h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-4">
-                  To create a future where intelligent systems seamlessly integrate with human work, unlocking unprecedented productivity and innovation across all industries.
+                  Become the default AI infrastructure partner for regulated industries in MENA and EU. Expand language support (Arabic, Romanian, Turkish).
                 </p>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  We envision a world where AI is not a competitive advantage—it&apos;s a standard utility that empowers every organization to achieve their full potential.
+                  Achieve SOC 2 Type II and ISO 27001 certification by 2026-Q2. Maintain 99.9% uptime SLA for mission-critical enterprise workflows.
                 </p>
               </div>
             </FadeInStatic>
@@ -137,10 +135,10 @@ export default function AboutPage() {
           </FadeInStatic>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: "500+", label: "Enterprise Clients" },
-              { value: "45+", label: "Countries" },
-              { value: "250+", label: "Team Members" },
-              { value: "99.9%", label: "Uptime SLA" },
+              { value: "12+", label: "Enterprise Deployments" },
+              { value: "MENA+EU", label: "Regional Coverage" },
+              { value: "<180ms", label: "Median Query Latency" },
+              { value: "ISO 27001", label: "Security Track" },
             ].map((stat, index) => (
               <FadeInStatic key={stat.label} delay={index * 0.1}>
                 <div className="text-center">

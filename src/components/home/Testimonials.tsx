@@ -6,22 +6,22 @@ import FadeIn from "@/components/animations/FadeIn";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "CTO, TechCorp Inc.",
-    quote: "AQLAAN redefined how our AI operations run — simply exceptional. Their automation solutions cut our processing time by 70% while improving accuracy.",
-    company: "TechCorp Inc.",
+    name: "Operations Director",
+    role: "Industrial Distribution (Jordan)",
+    quote: "AQLAAN automated our invoice processing workflow. We reduced cycle time from 8-12 days to 4-6 days within 60 days. The accuracy improvements on GL code assignment eliminated most manual corrections.",
+    company: "MENA Distribution",
   },
   {
-    name: "David Rodriguez",
-    role: "Head of Data Science, InnovateLabs",
-    quote: "Their solutions helped us cut labeling costs by 60% and scale our ML operations globally. The ROI was immediate and substantial.",
-    company: "InnovateLabs",
+    name: "Head of Operations",
+    role: "Banking (GCC)",
+    quote: "Semantic search across 80k documents transformed our support operations. Resolution time dropped from 45-90 minutes to 15-30 minutes. Self-service rate increased by 35 percentage points.",
+    company: "Financial Services",
   },
   {
-    name: "Dr. Emily Chen",
-    role: "Chief Medical Officer, HealthAI",
-    quote: "The diagnostic accuracy improvements from AQLAAN's AI systems have transformed patient outcomes. We're seeing results we never thought possible.",
-    company: "HealthAI",
+    name: "Quality Manager",
+    role: "FMCG Packaging (EU)",
+    quote: "The custom defect detection model achieved 97% precision on our production lines. Rework costs dropped from €12k/month to €4k/month within six months of deployment.",
+    company: "Consumer Goods",
   },
 ];
 

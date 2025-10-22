@@ -9,14 +9,14 @@ interface Partner {
 }
 
 const partners: Partner[] = [
-  { name: "OpenAI", logo: "openai" },
-  { name: "Google", logo: "google" },
-  { name: "AWS", logo: "aws" },
-  { name: "Microsoft", logo: "microsoft" },
-  { name: "Meta", logo: "meta" },
-  { name: "Tesla", logo: "tesla" },
-  { name: "Apple", logo: "apple" },
-  { name: "Netflix", logo: "netflix" },
+  { name: "Microsoft Azure", logo: "Azure" },
+  { name: "OpenAI", logo: "OpenAI" },
+  { name: "Dynamics 365", logo: "D365" },
+  { name: "PostgreSQL", logo: "PostgreSQL" },
+  { name: "Odoo", logo: "Odoo" },
+  { name: "SAP", logo: "SAP" },
+  { name: "Next.js", logo: "Next.js" },
+  { name: "FastAPI", logo: "FastAPI" },
 ];
 
 export default function Partners() {

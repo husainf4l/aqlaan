@@ -36,27 +36,27 @@ export default function ConsultationsPage() {
   const [consultants] = useState<Consultant[]>([
     {
       id: '1',
-      name: 'Dr. Sarah Chen',
-      specialty: 'AI Strategy & Implementation',
+      name: 'Platform Engineer',
+      specialty: 'Azure Kubernetes & Multi-Tenant Architecture',
       rating: 5,
-      price: '$150/hour',
+      price: 'Enterprise',
       available: true,
     },
     {
       id: '2',
-      name: 'Michael Rodriguez',
-      specialty: 'Machine Learning Engineering',
+      name: 'ML Engineer',
+      specialty: 'RAG Pipelines & Document Intelligence',
       rating: 5,
-      price: '$180/hour',
+      price: 'Enterprise',
       available: true,
     },
     {
       id: '3',
-      name: 'Dr. Emily Watson',
-      specialty: 'Data Science & Analytics',
+      name: 'Solutions Architect',
+      specialty: 'ERP Integration & Workflow Automation',
       rating: 5,
-      price: '$140/hour',
-      available: false,
+      price: 'Enterprise',
+      available: true,
     },
   ]);
 

@@ -16,24 +16,24 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    title: "Enterprise AI Implementation",
-    client: "TechCorp Inc.",
-    description: "Reduced operational costs by 40% through automated data processing.",
-    metrics: { cost: 40, time: 60, accuracy: 95 },
+    title: "Industrial Distributor - AP Automation",
+    client: "Jordan Manufacturing",
+    description: "Reduced invoice processing cycle time by 40% through automated OCR and 3-way PO matching. Processed 2,500+ monthly invoices across 3 ERP systems.",
+    metrics: { cycle: 40, accuracy: 97, errors: 75 },
     image: "/case-studies/enterprise-ai.svg",
   },
   {
-    title: "Healthcare Intelligence Platform",
-    client: "MedTech Solutions",
-    description: "Improved diagnostic accuracy and patient outcomes with AI insights.",
-    metrics: { accuracy: 92, patients: 50000, efficiency: 75 },
+    title: "GCC Bank Operations - Knowledge Search",
+    client: "Financial Services (GCC)",
+    description: "Deployed semantic search across 80k+ documents. Reduced ticket resolution time by 60% with p95 query latency under 180ms.",
+    metrics: { speed: 60, selfsvc: 55, latency: 180 },
     image: "/case-studies/healthcare-ai.svg",
   },
   {
-    title: "Smart Infrastructure Monitoring",
-    client: "CityGrid Systems",
-    description: "Enhanced city infrastructure monitoring with predictive analytics.",
-    metrics: { uptime: 99, alerts: 85, savings: 30 },
+    title: "EU FMCG Packaging - Quality Control",
+    client: "Consumer Goods (EU)",
+    description: "Custom YOLOv8 defect detection achieved 97% precision on production lines. Reduced rework costs by 65% within 180 days.",
+    metrics: { precision: 97, cost: 65, uptime: 99 },
     image: "/case-studies/infrastructure-ai.svg",
   },
 ];

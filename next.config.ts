@@ -9,19 +9,6 @@ const nextConfig: NextConfig = {
 
   // Disable source maps in production to reduce bundle size
   productionBrowserSourceMaps: false,
-
-  // Enable optimized package imports
-  optimizePackageImports: [
-    '@react-three/fiber',
-    '@react-three/drei',
-    'lucide-react',
-  ],
-
-  // Optimize webpack
-  webpack: (config, { isServer }) => {
-    config.optimization.usedExports = true;
-    return config;
-  },
 };
 
 export default nextConfig;
