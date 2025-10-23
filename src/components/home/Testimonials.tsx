@@ -23,29 +23,70 @@ const testimonials = [
     quote: "The custom defect detection model achieved 97% precision on our production lines. Rework costs dropped from €12k/month to €4k/month within six months of deployment.",
     company: "Consumer Goods",
   },
+  {
+    name: "CTO",
+    role: "Healthcare Technology",
+    quote: "AQLAAN's AI platform reduced our diagnostic time by 60% while maintaining 98% accuracy. The integration with our existing EMR system was seamless and required minimal training.",
+    company: "MediTech Solutions",
+  },
+  {
+    name: "VP of Engineering",
+    role: "Manufacturing Automation",
+    quote: "Implementing AQLAAN Edge AI on our factory floor eliminated 85% of quality control bottlenecks. Real-time defect detection improved our overall yield by 12%.",
+    company: "Smart Manufacturing",
+  },
+  {
+    name: "Data Science Lead",
+    role: "Retail Analytics",
+    quote: "The Language AI platform transformed our customer feedback analysis. We now process 10x more data with insights that drive 25% higher customer satisfaction scores.",
+    company: "Retail Intelligence",
+  },
+  {
+    name: "Chief Information Officer",
+    role: "Logistics & Supply Chain",
+    quote: "AQLAAN Vision AI revolutionized our warehouse operations. Automated inventory counting reduced errors by 94% and cut monthly audit time from 40 hours to just 4 hours.",
+    company: "Global Logistics",
+  },
+  {
+    name: "Product Manager",
+    role: "E-commerce Platform",
+    quote: "The Language AI chatbot increased our conversion rate by 23% and reduced support tickets by 45%. Customers love the instant, intelligent responses available 24/7.",
+    company: "E-commerce Solutions",
+  },
+  {
+    name: "Director of Innovation",
+    role: "Energy & Utilities",
+    quote: "AQLAAN Edge AI enabled predictive maintenance across 200+ remote sites. We prevented 78% of potential equipment failures and reduced downtime costs by $2.3M annually.",
+    company: "Energy Corp",
+  },
 ];
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const cardsPerView = 3;
+  const totalSlides = Math.ceil(testimonials.length / cardsPerView);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % totalSlides);
+    }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [totalSlides]);
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
   };
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
+
+  const startIndex = currentIndex * cardsPerView;
+  const visibleTestimonials = testimonials.slice(startIndex, startIndex + cardsPerView);
 
   return (
     <section className="py-24 px-6 bg-gray-900">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
@@ -55,47 +96,55 @@ export default function Testimonials() {
           </div>
         </FadeIn>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="bg-gray-800 border border-gray-700 rounded-2xl p-8 md:p-12"
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.6 }}
+              className="grid md:grid-cols-3 gap-6"
             >
-              <Quote className="w-12 h-12 text-blue-400 mb-6 opacity-50" />
-              <blockquote className="text-xl md:text-2xl text-gray-300 italic mb-8 leading-relaxed">
-                &quot;{testimonials[currentIndex].quote}&quot;
-              </blockquote>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div>
-                  <p className="text-white font-semibold text-lg">{testimonials[currentIndex].name}</p>
-                  <p className="text-blue-400">{testimonials[currentIndex].role}</p>
-                  <p className="text-gray-400 text-sm">{testimonials[currentIndex].company}</p>
-                </div>
-              </div>
+              {visibleTestimonials.map((testimonial, index) => (
+                <motion.div
+                  key={`${currentIndex}-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="bg-gray-800 border border-gray-700 rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
+                >
+                  <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-50" />
+                  <blockquote className="text-gray-300 italic mb-6 leading-relaxed text-sm">
+                    &quot;{testimonial.quote}&quot;
+                  </blockquote>
+                  <div>
+                    <p className="text-white font-semibold text-base mb-1">{testimonial.name}</p>
+                    <p className="text-blue-400 text-sm mb-1">{testimonial.role}</p>
+                    <p className="text-gray-400 text-xs">{testimonial.company}</p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           </AnimatePresence>
 
           {/* Navigation buttons */}
           <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full flex items-center justify-center transition-colors"
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full flex items-center justify-center transition-colors z-10"
           >
             <ChevronLeft className="w-6 h-6 text-gray-300" />
           </button>
           <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full flex items-center justify-center transition-colors"
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full flex items-center justify-center transition-colors z-10"
           >
             <ChevronRight className="w-6 h-6 text-gray-300" />
           </button>
 
           {/* Dots indicator */}
           <div className="flex justify-center mt-8 gap-2">
-            {testimonials.map((_, index) => (
+            {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}

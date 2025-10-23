@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,7 @@ export default function ProductsPage() {
   const products = [
     {
       name: "AQLAAN Platform",
+      slug: "platform",
       description: "Unified AI platform for building, deploying, and managing enterprise AI solutions at scale.",
       icon: "PLATFORM",
       features: [
@@ -27,6 +29,7 @@ export default function ProductsPage() {
     },
     {
       name: "AQLAAN Vision AI",
+      slug: "vision",
       description: "Advanced computer vision platform for image recognition, object detection, and visual analytics.",
       icon: "VISION",
       features: [
@@ -42,6 +45,7 @@ export default function ProductsPage() {
     },
     {
       name: "AQLAAN Language AI",
+      slug: "language",
       description: "Natural language processing platform for text analysis, sentiment detection, and conversational AI.",
       icon: "LANGUAGE",
       features: [
@@ -57,6 +61,7 @@ export default function ProductsPage() {
     },
     {
       name: "AQLAAN Automation Suite",
+      slug: "automation",
       description: "Intelligent process automation platform for workflow optimization and business process management.",
       icon: "AUTOMATION",
       features: [
@@ -72,6 +77,7 @@ export default function ProductsPage() {
     },
     {
       name: "AQLAAN Healthcare AI",
+      slug: "healthcare",
       description: "Specialized AI platform for medical diagnostics, patient care, and healthcare management.",
       icon: "HEALTHCARE",
       features: [
@@ -87,6 +93,7 @@ export default function ProductsPage() {
     },
     {
       name: "AQLAAN Edge AI",
+      slug: "edge",
       description: "Edge computing platform for real-time AI inference on IoT devices and edge infrastructure.",
       icon: "EDGE",
       features: [
@@ -207,9 +214,11 @@ export default function ProductsPage() {
                   </div>
                   <div className="border-t border-gray-700 pt-4">
                     <div className="text-lg font-semibold text-blue-400 mb-3">{product.pricing}</div>
-                    <Button className="w-full" variant={product.popular ? "primary" : "outline"}>
-                      {product.popular ? "Get Started" : "Learn More"}
-                    </Button>
+                    <Link href={`/products/${product.slug}`}>
+                      <Button className="w-full" variant={product.popular ? "primary" : "outline"}>
+                        {product.popular ? "Get Started" : "Learn More"}
+                      </Button>
+                    </Link>
                   </div>
                 </Card>
               </FadeIn>

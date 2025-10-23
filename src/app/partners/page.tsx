@@ -35,7 +35,7 @@ export default function PartnersPage() {
       description: "Academic and research partners advancing AI science and applications.",
       partners: [
         { name: "MIT", logo: "EDU", type: "Research" },
-        { name: "Stanford AI Lab", logo: "🤖", type: "Research" },
+        { name: "Stanford AI Lab", logo: "AI", type: "Research" },
         { name: "Oxford AI", logo: "BOOKS", type: "Research" },
         { name: "Carnegie Mellon", logo: "CAPITOL", type: "Research" },
       ],
@@ -44,9 +44,9 @@ export default function PartnersPage() {
       category: "Startup Ecosystem",
       description: "Innovative startups building the next generation of AI applications.",
       partners: [
-        { name: "Anthropic", logo: "🧠", type: "AI Safety" },
+        { name: "Anthropic", logo: "BRAIN", type: "AI Safety" },
         { name: "Cohere", logo: "THINK", type: "NLP" },
-        { name: "Hugging Face", logo: "🤗", type: "ML Platform" },
+        { name: "Hugging Face", logo: "HUG", type: "ML Platform" },
         { name: "Weights & Biases", logo: "BALANCE", type: "MLOps" },
       ],
     },
@@ -75,7 +75,7 @@ export default function PartnersPage() {
       name: "Industry Consortium",
       description: "Cross-industry collaboration on AI standards and best practices.",
       benefits: ["Industry influence", "Standards development", "Knowledge sharing"],
-      icon: "🤝",
+      icon: "COLLAB",
     },
   ];
 
@@ -250,7 +250,7 @@ export default function PartnersPage() {
                       </div>
                     </div>
                     <div className="flex items-center justify-center">
-                      <div className="text-6xl opacity-20">🤝</div>
+                      <div className="text-6xl opacity-20">PARTNER</div>
                     </div>
                   </div>
                 </Card>

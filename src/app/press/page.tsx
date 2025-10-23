@@ -32,7 +32,7 @@ export default function PressPage() {
       summary: "Strategic partnerships announced with leading enterprises to implement large-scale AI solutions.",
       outlets: ["Forbes", "Wall Street Journal", "CNBC"],
       type: "Partnership",
-      image: "🤝",
+      image: "PARTNERSHIP",
     },
     {
       title: "AQLAAN Achieves SOC 2 Type II Compliance",

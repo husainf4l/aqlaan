@@ -41,7 +41,7 @@ export default function LanguageIntelligencePage() {
     {
       title: "Chatbot & Virtual Assistants",
       description: "Intelligent conversational AI that understands context and provides relevant responses.",
-      icon: "🤖",
+      icon: "CHAT",
       accuracy: "89%",
       applications: ["Customer service", "Internal helpdesk", "Personal assistants"],
     },

@@ -29,7 +29,7 @@ export default function DocsPage() {
       description: "Deploy your first machine learning model",
       time: "15 min",
       difficulty: "Intermediate",
-      icon: "🤖",
+      icon: "MODEL",
     },
   ];
 

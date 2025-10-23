@@ -150,7 +150,7 @@ export default function ConsultationsPage() {
             <FadeIn delay={0.2}>
               <div className="space-y-6">
                 <Card className="p-6">
-                  <h3 className="text-lg font-bold text-blue-400 mb-2">📋 What to Expect</h3>
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">WHAT TO EXPECT</h3>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>• 30-minute personalized consultation</li>
                     <li>• Live product walkthrough</li>
@@ -161,7 +161,7 @@ export default function ConsultationsPage() {
                 </Card>
                 
                 <Card className="p-6">
-                  <h3 className="text-lg font-bold text-blue-400 mb-2">🎯 Perfect For</h3>
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">PERFECT FOR</h3>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>• Enterprise decision makers</li>
                     <li>• Technical teams</li>
@@ -172,7 +172,7 @@ export default function ConsultationsPage() {
                 </Card>
 
                 <Card className="p-6">
-                  <h3 className="text-lg font-bold text-blue-400 mb-2">💬 Questions?</h3>
+                  <h3 className="text-lg font-bold text-blue-400 mb-2">QUESTIONS</h3>
                   <p className="text-gray-400 text-sm mb-4">Contact us anytime at support@aqlaan.com or call +1 (555) 123-4567</p>
                   <p className="text-gray-500 text-xs">Available Monday-Friday, 9 AM - 6 PM EST</p>
                 </Card>
@@ -307,7 +307,7 @@ export default function ConsultationsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn delay={0.1}>
               <div className="text-center">
-                <div className="text-4xl mb-4 font-bold text-blue-400">⚡</div>
+                <div className="text-4xl mb-4 font-bold text-blue-400">FAST</div>
                 <h3 className="text-xl font-semibold mb-3">Real-time Chat</h3>
                 <p className="text-gray-400">
                   Instant messaging with typing indicators and read receipts for seamless communication.
@@ -317,7 +317,7 @@ export default function ConsultationsPage() {
 
             <FadeIn delay={0.2}>
               <div className="text-center">
-                <div className="text-4xl mb-4 font-bold text-green-400">🤖</div>
+                <div className="text-4xl mb-4 font-bold text-green-400">AI</div>
                 <h3 className="text-xl font-semibold mb-3">AI Assistant</h3>
                 <p className="text-gray-400">
                   Intelligent AI assistant joins conversations to provide summaries and suggestions.
@@ -327,7 +327,7 @@ export default function ConsultationsPage() {
 
             <FadeIn delay={0.3}>
               <div className="text-center">
-                <div className="text-4xl mb-4 font-bold text-purple-400">📊</div>
+                <div className="text-4xl mb-4 font-bold text-purple-400">ANALYTICS</div>
                 <h3 className="text-xl font-semibold mb-3">Session Analytics</h3>
                 <p className="text-gray-400">
                   Detailed insights and transcripts from every consultation session.
@@ -335,23 +335,6 @@ export default function ConsultationsPage() {
               </div>
             </FadeIn>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-4xl font-bold mb-6 text-white">
-              Ready for Expert Guidance?
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Book your first consultation today and experience the power of live AI expertise.
-            </p>
-            <Button className="bg-white text-blue-600 font-bold hover:bg-gray-100 px-8 py-4">
-              Start Consulting
-            </Button>
-          </FadeIn>
         </div>
       </section>
     </div>

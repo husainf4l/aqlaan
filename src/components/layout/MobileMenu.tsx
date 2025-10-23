@@ -182,11 +182,18 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
                 <ThemeToggle />
               </div>
 
-              <Link href="/get-started" onClick={onClose}>
-                <Button className="w-full bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                  Get Started
-                </Button>
-              </Link>
+              <div className="space-y-3">
+                <Link href="/demo" onClick={onClose}>
+                  <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                    Book a Demo
+                  </Button>
+                </Link>
+                <Link href="/get-started" onClick={onClose}>
+                  <Button className="w-full bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                    Get Started
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         </>

@@ -16,25 +16,25 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    title: "Industrial Distributor - AP Automation",
-    client: "Jordan Manufacturing",
-    description: "Reduced invoice processing cycle time by 40% through automated OCR and 3-way PO matching. Processed 2,500+ monthly invoices across 3 ERP systems.",
-    metrics: { cycle: 40, accuracy: 97, errors: 75 },
-    image: "/case-studies/enterprise-ai.svg",
+    title: "Travel Website - AI-Powered Booking Optimization",
+    client: "Bedbees",
+    description: "Revolutionized travel booking with AI-driven personalization and dynamic pricing. Increased conversion rates by 45% through intelligent recommendations and automated customer support.",
+    metrics: { conversion: 45, bookings: 78, satisfaction: 92 },
+    image: "/case-studies/travel-ai.svg",
   },
   {
-    title: "GCC Bank Operations - Knowledge Search",
-    client: "Financial Services (GCC)",
-    description: "Deployed semantic search across 80k+ documents. Reduced ticket resolution time by 60% with p95 query latency under 180ms.",
-    metrics: { speed: 60, selfsvc: 55, latency: 180 },
-    image: "/case-studies/healthcare-ai.svg",
+    title: "AI Job Interviewer - Talent Assessment Platform",
+    client: "Rolovate",
+    description: "Built an AI-powered interview platform that conducts initial screenings and technical assessments. Reduced hiring time by 60% while improving candidate quality scores by 35%.",
+    metrics: { hiring: 60, quality: 35, interviews: 500 },
+    image: "/case-studies/hr-ai.svg",
   },
   {
-    title: "EU FMCG Packaging - Quality Control",
-    client: "Consumer Goods (EU)",
-    description: "Custom YOLOv8 defect detection achieved 97% precision on production lines. Reduced rework costs by 65% within 180 days.",
-    metrics: { precision: 97, cost: 65, uptime: 99 },
-    image: "/case-studies/infrastructure-ai.svg",
+    title: "Accounting Company - Automated Financial Processing",
+    client: "Ovovex",
+    description: "Implemented AI-driven accounting automation for invoice processing and financial reconciliation. Achieved 85% reduction in manual data entry while maintaining 99.5% accuracy.",
+    metrics: { automation: 85, accuracy: 99.5, savings: 200 },
+    image: "/case-studies/finance-ai.svg",
   },
 ];
 
@@ -68,36 +68,16 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
   return (
     <FadeIn delay={index * 0.2}>
       <Card className="group hover:scale-105 transition-transform duration-300 overflow-hidden">
-        <div className="aspect-video bg-gray-800 rounded-lg mb-6 overflow-hidden relative">
-          <Image
-            src={study.image}
-            alt={study.title}
-            fill
-            className="object-cover group-hover:scale-110 transition-transform duration-300"
-            onError={(e) => {
-              // Fallback gradient if image fails to load
-              const target = e.currentTarget;
-              target.style.display = "none";
-              const parent = target.parentElement;
-              if (parent) {
-                parent.className = "w-full h-full bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center";
-                const span = document.createElement("span");
-                span.className = "text-white text-4xl font-bold";
-                span.textContent = study.client[0];
-                parent.appendChild(span);
-              }
-            }}
-          />
-          {/* Fallback gradient */}
-          <div className="absolute inset-0 bg-linear-to-br from-blue-600 to-purple-600 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="text-white text-4xl font-bold">{study.client[0]}</span>
+        <div className="aspect-video bg-linear-to-br from-blue-600 to-purple-600 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+          <div className="text-white text-4xl md:text-5xl font-bold tracking-wider opacity-90 group-hover:scale-110 transition-transform duration-300 z-10">
+            {study.client}
           </div>
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
         </div>
 
         <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
           {study.title}
         </h3>
-        <p className="text-blue-400 font-medium mb-3">{study.client}</p>
         <p className="text-gray-400 mb-6">{study.description}</p>
 
         <div ref={ref} className="grid grid-cols-3 gap-4">
@@ -105,7 +85,8 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
             <div key={key} className="text-center">
               <div className="text-2xl font-bold text-blue-400">
                 {isInView && <CountUp end={value as number} duration={2} />}
-                {key === "cost" || key === "time" || key === "accuracy" || key === "patients" || key === "efficiency" || key === "uptime" || key === "alerts" || key === "savings" ? "%" : ""}
+                {key === "conversion" || key === "bookings" || key === "satisfaction" || key === "hiring" || key === "quality" || key === "automation" || key === "accuracy" ? "%" : 
+                 key === "savings" ? "k" : ""}
               </div>
               <div className="text-sm text-gray-400 capitalize">{key}</div>
             </div>

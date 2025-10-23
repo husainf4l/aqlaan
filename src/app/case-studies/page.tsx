@@ -22,7 +22,7 @@ export default function CaseStudiesPage() {
     ],
     quote: "AQLAAN's AI solution transformed our quality control process. We're now catching defects that human inspectors missed while reducing inspection time by 60%.",
     author: "Jennifer Martinez, Quality Director",
-    image: "🏭",
+    image: "INDUSTRY",
   };
 
   const caseStudies = [
@@ -48,7 +48,7 @@ export default function CaseStudiesPage() {
       challenge: "Inefficient route optimization and delivery delays",
       solution: "AI-powered route optimization and predictive maintenance",
       results: ["40% fuel savings", "25% faster deliveries", "50% maintenance cost reduction"],
-      image: "🚚",
+      image: "LOGISTICS",
     },
     {
       company: "FinServe Bank",
@@ -72,16 +72,16 @@ export default function CaseStudiesPage() {
       challenge: "Traffic congestion and poor urban planning",
       solution: "AI traffic management and smart city optimization",
       results: ["30% reduced congestion", "20% energy savings", "15% improved air quality"],
-      image: "🏙️",
+      image: "CITY",
     },
   ];
 
   const industries = [
     { name: "Healthcare", count: 12, icon: "HEALTH" },
-    { name: "Manufacturing", count: 18, icon: "🏭" },
+    { name: "Manufacturing", count: 18, icon: "FACTORY" },
     { name: "Retail", count: 15, icon: "SHOP" },
     { name: "Financial Services", count: 10, icon: "BANK" },
-    { name: "Logistics", count: 8, icon: "🚚" },
+    { name: "Logistics", count: 8, icon: "TRUCK" },
     { name: "Agriculture", count: 6, icon: "FARM" },
     { name: "Government", count: 9, icon: "CAPITOL" },
     { name: "Technology", count: 14, icon: "COMPUTER" },

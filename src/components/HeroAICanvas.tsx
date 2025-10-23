@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -101,12 +101,52 @@ function NeuralPlane() {
   );
 }
 
-/** The hero section (background WebGL + overlay + content) */
+/** The hero section with SSR-friendly WebGL canvas */
 function HeroAICanvasInner() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const prefersReducedMotion =
     typeof window !== "undefined" &&
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!isClient) {
+    // SSR-safe fallback
+    return (
+      <section className="hero min-h-screen bg-linear-to-br from-gray-900 via-blue-900 to-black">
+        <div className="hero__overlayTop" />
+        <div className="hero__ambient" />
+        <div className="hero__contentWrap">
+          <div className="container hero__content">
+            <div className="hero__header">
+              <h1 className="hero__title gradient-text">Breakthrough AI from<br />Data to Deployment</h1>
+              <p className="hero__subtitle">
+                Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
+              </p>
+            </div>
+            <div className="hero__stats">
+              <div className="hero__stat">
+                <div className="hero__stat-value">12+</div>
+                <div className="hero__stat-label">Enterprise Clients</div>
+              </div>
+              <div className="hero__stat">
+                <div className="hero__stat-value">99%</div>
+                <div className="hero__stat-label">Accuracy Rate</div>
+              </div>
+              <div className="hero__stat">
+                <div className="hero__stat-value">24/7</div>
+                <div className="hero__stat-label">Support Available</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="hero">
@@ -139,7 +179,7 @@ function HeroAICanvasInner() {
               Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
             </p>
           </div>
-          
+
           {/* Stats Grid */}
           <div className="hero__stats">
             <div className="hero__stat">
@@ -161,6 +201,7 @@ function HeroAICanvasInner() {
   );
 }
 
-/** Disable SSR for the WebGL canvas to avoid hydration issues */
-const HeroAICanvas = dynamic(async () => HeroAICanvasInner, { ssr: false });
-export default HeroAICanvas;
+/** SSR-friendly component with client-side hydration */
+export default function HeroAICanvas() {
+  return <HeroAICanvasInner />;
+}
