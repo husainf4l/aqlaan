@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, Users, CheckCircle, ArrowRight, Play, Star } from "lucide-react";
+import { Calendar, Users, CheckCircle, Play, Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import FadeIn from "@/components/animations/FadeIn";

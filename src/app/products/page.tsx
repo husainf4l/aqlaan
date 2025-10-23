@@ -168,10 +168,10 @@ export default function ProductsPage() {
                 Choose from our comprehensive product suite or build custom solutions with our platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                   Start Free Trial
                 </Button>
-                <Button variant="outline">Compare Products</Button>
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Compare Products</Button>
               </div>
             </div>
           </FadeIn>
@@ -215,7 +215,7 @@ export default function ProductsPage() {
                   <div className="border-t border-gray-700 pt-4">
                     <div className="text-lg font-semibold text-blue-400 mb-3">{product.pricing}</div>
                     <Link href={`/products/${product.slug}`}>
-                      <Button className="w-full" variant={product.popular ? "primary" : "outline"}>
+                      <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                         {product.popular ? "Get Started" : "Learn More"}
                       </Button>
                     </Link>
@@ -248,7 +248,7 @@ export default function ProductsPage() {
                   </h3>
                   <p className="text-gray-400 text-sm mb-4">{addon.description}</p>
                   <div className="text-2xl font-bold text-blue-400 mb-3">{addon.price}</div>
-                  <Button variant="outline" className="w-full">Add to Cart</Button>
+                  <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Add to Cart</Button>
                 </Card>
               </FadeIn>
             ))}

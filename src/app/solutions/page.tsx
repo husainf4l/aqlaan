@@ -65,10 +65,10 @@ export default function SolutionsPage() {
 
           <FadeIn delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                 Explore Solutions
               </Button>
-              <Button variant="outline">Contact Experts</Button>
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Contact Experts</Button>
             </div>
           </FadeIn>
         </div>
@@ -109,7 +109,7 @@ export default function SolutionsPage() {
                   </div>
 
                   <Link href={solution.href}>
-                    <Button variant="outline" className="w-full group-hover:border-blue-400">
+                    <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-blue-400">
                       Learn More
                     </Button>
                   </Link>

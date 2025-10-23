@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [],
     formats: ['image/webp', 'image/avif'],
+    qualities: [100],
   },
 
   // Disable source maps in production to reduce bundle size

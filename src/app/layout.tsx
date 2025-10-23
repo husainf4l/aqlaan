@@ -2,9 +2,6 @@ import "@/app/globals.css";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { metadata } from "./metadata";
-
-export { metadata };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

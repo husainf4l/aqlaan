@@ -341,7 +341,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                         </div>
                       ))}
                     </div>
-                    <Button className="w-full" variant={tier.name === 'Professional' ? "primary" : "outline"}>
+                    <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                       Get Started
                     </Button>
                   </Card>

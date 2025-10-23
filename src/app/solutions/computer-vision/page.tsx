@@ -86,10 +86,10 @@ export default function ComputerVisionPage() {
                 into actionable insights, enabling automation, analysis, and decision-making across industries.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                   Explore Solutions
                 </Button>
-                <Button variant="outline">View Demos</Button>
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">View Demos</Button>
               </div>
             </div>
           </FadeIn>

@@ -148,10 +148,10 @@ export default function VisionPage() {
                 {vision.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                   Join Our Mission
                 </Button>
-                <Button variant="outline">Read Our Manifesto</Button>
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Read Our Manifesto</Button>
               </div>
             </div>
           </FadeIn>

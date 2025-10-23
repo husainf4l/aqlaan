@@ -100,10 +100,10 @@ export default function BlogPage() {
                 Expert analysis, research insights, and practical applications from AQLAAN&apos;s team.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                   Latest Articles
                 </Button>
-                <Button variant="outline">Subscribe to Newsletter</Button>
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Subscribe to Newsletter</Button>
               </div>
             </div>
           </FadeIn>
@@ -139,7 +139,7 @@ export default function BlogPage() {
                       <div className="font-semibold">{featuredPost.author}</div>
                       <div className="text-sm text-gray-500">{featuredPost.date}</div>
                     </div>
-                    <Button>Read Article</Button>
+                    <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Read Article</Button>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function BlogPage() {
 
           <FadeIn>
             <div className="text-center mt-12">
-              <Button variant="outline" className="px-8 py-3">
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
                 Load More Articles
               </Button>
             </div>

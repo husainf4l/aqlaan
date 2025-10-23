@@ -126,10 +126,10 @@ export default function PressPage() {
                 Access press releases, media coverage, and press kit materials.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                   Latest Press Releases
                 </Button>
-                <Button variant="outline">Download Press Kit</Button>
+                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Download Press Kit</Button>
               </div>
             </div>
           </FadeIn>
@@ -197,7 +197,7 @@ export default function PressPage() {
                       </span>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full">Read Full Release</Button>
+                  <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Read Full Release</Button>
                 </Card>
               </FadeIn>
             ))}

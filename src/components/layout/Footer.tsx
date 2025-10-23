@@ -30,17 +30,17 @@ export default function Footer() {
       links: [
         { label: "Documentation", href: "/docs" },
         { label: "Case Studies", href: "/case-studies" },
-        { label: "Community", href: "/" },
-        { label: "Status", href: "/" },
+        { label: "Community", href: "/community" },
+        { label: "Status", href: "/status" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "/" },
-        { label: "Terms of Service", href: "/" },
-        { label: "Cookie Policy", href: "/" },
-        { label: "Compliance", href: "/" },
+        { label: "Privacy Policy", href: "/privacy-policy" },
+        { label: "Terms of Service", href: "/terms-of-service" },
+        { label: "Cookie Policy", href: "/cookie-policy" },
+        { label: "Compliance", href: "/compliance" },
       ],
     },
   ];

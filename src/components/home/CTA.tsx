@@ -61,15 +61,12 @@ export default function CTA() {
             viewport={{ once: true }}
           >
             <Link href="/get-started">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm md:text-base px-8 py-2.5 shadow-lg hover:shadow-xl transition-all">
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-2.5 shadow-lg hover:shadow-xl transition-all duration-300">
                 Start Your Journey
               </Button>
             </Link>
             <Link href="/contact">
-              <Button
-                variant="outline"
-                className="border border-blue-500/40 text-gray-300 hover:bg-blue-500/10 hover:border-blue-400 text-sm md:text-base px-8 py-2.5 transition-all font-light"
-              >
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-2.5 shadow-lg hover:shadow-xl transition-all duration-300">
                 Schedule Demo
               </Button>
             </Link>

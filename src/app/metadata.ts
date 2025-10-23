@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('http://localhost:3000'),
     title: "AQLAAN - Empowering AI and Automation",
     description: "AQLAAN brings intelligence, scalability, and precision to your business through data-driven solutions.",
     keywords: ["AI", "automation", "machine learning", "data labeling", "enterprise solutions"],

@@ -134,7 +134,7 @@ export default function ChatRoomPage() {
         socket.disconnect();
       }
     };
-  }, [sessionId, currentUserId, fetchSession]);
+  }, [sessionId, currentUserId, fetchSession, socket]);
 
   const handleSendMessage = (content: string) => {
     if (!socket || !session) return;

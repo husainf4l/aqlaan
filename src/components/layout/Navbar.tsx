@@ -109,7 +109,7 @@ export default function Navbar() {
             : "bg-black/20 backdrop-blur-sm"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center px-6 py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -124,7 +124,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 ml-12">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -191,14 +191,14 @@ export default function Navbar() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 ml-auto">
             <Link href="/demo">
               <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                 Book a Demo
               </Button>
             </Link>
             <Link href="/get-started">
-              <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                 Get Started
               </Button>
             </Link>
