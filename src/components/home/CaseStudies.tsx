@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
 import { useRef } from "react";

@@ -1,29 +1,42 @@
 @import "tailwindcss";
 @import "../styles/animations.css";
 
-body {
-  font-family: 'Inter', sans-serif;
+/* ─────────────────────────────────────────
+   Scale.com Design Tokens
+───────────────────────────────────────── */
+:root {
+  --bg: #00000f;
+  --surface: rgba(255, 255, 255, 0.02);
+  --border: rgba(255, 255, 255, 0.10);
+  --text: #ffffff;
+  --muted: #a3a3a3;
+  --accent: #006CAD;
+  --accent-soft: #F4F0FF;
 }
 
-/* Reset & base */
-* {
+/* ─────────────────────────────────────────
+   Base Reset
+───────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html,
-body,
-#__next {
+html, body, #__next {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: #090D1A;
-  color: #fff;
+  background: #00000f;
+  color: #ffffff;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Layout helpers */
+/* ─────────────────────────────────────────
+   Layout
+───────────────────────────────────────── */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -31,26 +44,98 @@ body {
   padding: 0 24px;
 }
 
-/* Hero */
+/* ─────────────────────────────────────────
+   Glass Button (Scale signature)
+   Usage: wrap button in .glass-btn-wrap
+───────────────────────────────────────── */
+.glass-btn-wrap {
+  padding: 1px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #9a9a9a, #1a1a1a 50%, #6a6a6a);
+  display: inline-block;
+}
+
+.glass-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 500ms ease-out, filter 500ms ease-out;
+}
+
+.glass-btn:hover {
+  transform: scale(1.02);
+  filter: brightness(1.15);
+}
+
+.glass-btn:active {
+  transform: scale(0.97);
+}
+
+/* Secondary text button */
+.text-btn {
+  color: #a3a3a3;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: none;
+  transition: color 300ms ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.text-btn:hover {
+  color: #ffffff;
+}
+
+/* ─────────────────────────────────────────
+   Scale Card
+───────────────────────────────────────── */
+.scale-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+.scale-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+/* ─────────────────────────────────────────
+   Hero
+───────────────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
-  height: 92vh;
-  min-height: 560px;
+  min-height: 100vh;
   overflow: hidden;
-  background: #090D1A;
+  background: #00000f;
   contain: layout style paint;
-  will-change: auto;
 }
 
 .hero__overlayTop {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0) 100%);
   z-index: 2;
-  will-change: auto;
-  contain: paint;
 }
 
 .hero__contentWrap {
@@ -59,78 +144,43 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100vh;
   text-align: center;
   padding: 0 24px;
-  will-change: transform;
-  contain: layout;
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
-  max-width: 900px;
+  gap: 40px;
+  max-width: 820px;
 }
 
-.hero__header {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.hero__overline {
+  font-size: 11px;
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a3a3a3;
 }
 
 .hero__title {
-  font-size: clamp(32px, 7vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  margin: 0;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   font-weight: 700;
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  margin: 0;
 }
 
 .hero__subtitle {
-  margin: 0;
-  font-size: clamp(16px, 2.4vw, 20px);
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 760px;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #a3a3a3;
   line-height: 1.6;
   font-weight: 400;
-}
-
-.hero__stats {
-  display: flex;
-  gap: 48px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.hero__stat {
-  text-align: center;
-  min-width: 120px;
-}
-
-.hero__stat-value {
-  font-size: clamp(24px, 4vw, 40px);
-  font-weight: 600;
-  background: linear-gradient(135deg, #00c0ff 0%, #00d4ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-
-.hero__stat-label {
-  font-size: clamp(13px, 1.2vw, 16px);
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
-  text-transform: capitalize;
+  max-width: 640px;
+  margin: 0;
 }
 
 .hero__cta {
@@ -139,40 +189,45 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.hero__stats {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
 }
 
-.btn {
-  appearance: none;
-  border: 0;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 999px;
-  padding: 12px 20px;
-  transition: filter .18s ease, transform .18s ease, background-color .18s ease, color .18s ease;
+.hero__stat {
+  text-align: center;
 }
 
-.btn--primary {
-  background: #fff;
-  color: #000;
+.hero__stat-value {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-.btn--primary:hover {
-  filter: brightness(0.9);
-  transform: translateY(-1px);
+.hero__stat-label {
+  font-size: 13px;
+  color: #a3a3a3;
+  margin-top: 4px;
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.5px;
 }
 
-.btn--ghost {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.hero__fallback {
+  position: absolute;
+  inset: 0;
+  background: #00000f;
 }
 
-.btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* Ambient color glows - removed for solid colors */
 .hero__ambient {
   pointer-events: none;
   position: absolute;
@@ -181,27 +236,10 @@ body {
   background: transparent;
 }
 
-/* Reduced motion fallback background */
-.hero__fallback {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: #090D1A;
-}
-
-/* Section after hero, just to show page continues */
+/* ─────────────────────────────────────────
+   Section baseline
+───────────────────────────────────────── */
 .section {
   padding: 80px 0;
-  background: #0C1122;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.section h2 {
-  margin: 0 0 12px;
-  font-size: 28px;
-}
-
-.section p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
 }

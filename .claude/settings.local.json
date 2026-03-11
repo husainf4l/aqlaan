@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:scale.com)",
+      "WebSearch",
+      "WebFetch(domain:v0.app)",
+      "WebFetch(domain:motiontactic.com)",
+      "WebFetch(domain:brandfetch.com)",
+      "WebFetch(domain:web3inspiration.com)",
+      "WebFetch(domain:www.carilu.com)",
+      "WebFetch(domain:www.oneclub.org)"
+    ]
+  }
+}

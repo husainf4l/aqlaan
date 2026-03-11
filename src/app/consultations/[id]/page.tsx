@@ -1,7 +1,6 @@
 "use client";
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import { io, Socket } from 'socket.io-client';
 import FadeIn from '@/components/animations/FadeIn';
 import ChatRoom from '@/components/consultations/ChatRoom';
 import SessionTimer from '@/components/consultations/SessionTimer';
@@ -36,124 +35,57 @@ interface Session {
   messages: Message[];
 }
 
+const CURRENT_USER_ID = 'user-123';
+const CONSULTANT_ID = 'consultant-1';
+
 export default function ChatRoomPage() {
   const params = useParams();
   const sessionId = params.id as string;
-  
-  const [socket, setSocket] = useState<Socket | null>(null);
+
   const [session, setSession] = useState<Session | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [typingUsers, setTypingUsers] = useState<Set<string>>(new Set());
-  const [currentUserId] = useState('user-123'); // Mock user ID
-
-  const fetchSession = useCallback(async () => {
-    try {
-      // In production, fetch from your API
-      // const response = await fetch(`http://localhost:3001/sessions/${sessionId}`);
-      // const data = await response.json();
-      
-      // Mock session data for now
-      const mockSession: Session = {
-        id: sessionId,
-        startTime: new Date().toISOString(),
-        endTime: null,
-        status: 'active',
-        consultant: {
-          id: 'consultant-1',
-          name: 'Dr. Sarah Chen',
-          role: 'consultant',
-        },
-        client: {
-          id: currentUserId,
-          name: 'John Doe',
-          role: 'client',
-        },
-        messages: [],
-      };
-
-      setSession(mockSession);
-      setMessages(mockSession.messages);
-    } catch (error) {
-      console.error('Error fetching session:', error);
-    }
-  }, [sessionId, currentUserId]);
+  const [typingUsers] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    // Initialize socket connection
-    const newSocket = io('http://localhost:3001', {
-      transports: ['websocket'],
-    });
-
-    newSocket.on('connect', () => {
-      console.log('Connected to WebSocket server');
-      
-      // Join the room
-      newSocket.emit('joinRoom', {
-        sessionId,
-        userId: currentUserId,
-      });
-    });
-
-    newSocket.on('joinedRoom', (data) => {
-      console.log('Joined room:', data);
-    });
-
-    newSocket.on('newMessage', (message: Message) => {
-      console.log('New message received:', message);
-      setMessages((prev) => [...prev, message]);
-    });
-
-    newSocket.on('userTyping', ({ userId, isTyping }) => {
-      setTypingUsers((prev) => {
-        const newSet = new Set(prev);
-        if (isTyping) {
-          newSet.add(userId);
-        } else {
-          newSet.delete(userId);
-        }
-        return newSet;
-      });
-    });
-
-    newSocket.on('userJoined', ({ userId }) => {
-      console.log('User joined:', userId);
-    });
-
-    newSocket.on('userLeft', ({ userId }) => {
-      console.log('User left:', userId);
-    });
-
-    setSocket(newSocket);
-
-    // Fetch session data
-    fetchSession();
-
-    return () => {
-      if (socket) {
-        socket.emit('leaveRoom', { sessionId, userId: currentUserId });
-        socket.disconnect();
-      }
+    const mockSession: Session = {
+      id: sessionId,
+      startTime: new Date().toISOString(),
+      endTime: null,
+      status: 'active',
+      consultant: {
+        id: CONSULTANT_ID,
+        name: 'Dr. Sarah Chen',
+        role: 'consultant',
+      },
+      client: {
+        id: CURRENT_USER_ID,
+        name: 'John Doe',
+        role: 'client',
+      },
+      messages: [],
     };
-  }, [sessionId, currentUserId, fetchSession, socket]);
+    setSession(mockSession);
+    setMessages(mockSession.messages);
+  }, [sessionId]);
 
   const handleSendMessage = (content: string) => {
-    if (!socket || !session) return;
-
-    socket.emit('sendMessage', {
-      sessionId,
+    if (!session) return;
+    const newMessage: Message = {
+      id: `msg-${Date.now()}`,
       content,
-      senderId: currentUserId,
-    });
+      senderId: CURRENT_USER_ID,
+      createdAt: new Date().toISOString(),
+      sender: {
+        id: CURRENT_USER_ID,
+        name: 'John Doe',
+        role: 'client',
+      },
+    };
+    setMessages((prev) => [...prev, newMessage]);
   };
 
-  const handleTyping = (isTyping: boolean) => {
-    if (!socket) return;
-
-    socket.emit('typing', {
-      sessionId,
-      userId: currentUserId,
-      isTyping,
-    });
+  const handleTyping = (_: boolean) => {
+    // No-op without backend
   };
 
   if (!session) {
@@ -198,7 +130,7 @@ export default function ChatRoomPage() {
           <div className="bg-gray-900 rounded-b-2xl">
             <ChatRoom
               messages={messages}
-              currentUserId={currentUserId}
+              currentUserId={CURRENT_USER_ID}
               onSendMessage={handleSendMessage}
               onTyping={handleTyping}
               typingUsers={typingUsers}

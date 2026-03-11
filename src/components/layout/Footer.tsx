@@ -1,89 +1,92 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram, Mail } from "lucide-react";
+import { Twitter, Linkedin, Facebook, Instagram, Mail } from "lucide-react";
+
+const footerSections = [
+  {
+    title: "Product",
+    links: [
+      { label: "Platform", href: "/platform" },
+      { label: "Products", href: "/products" },
+      { label: "Pricing", href: "/products" },
+      { label: "Solutions", href: "/solutions/enterprise-automation" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/careers" },
+      { label: "Blog", href: "/blog" },
+      { label: "Press", href: "/press" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Documentation", href: "/docs" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "Community", href: "/community" },
+      { label: "Status", href: "/status" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Cookie Policy", href: "/cookie-policy" },
+      { label: "Compliance", href: "/compliance" },
+    ],
+  },
+];
+
+const socialLinks = [
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Mail, href: "mailto:contact@aqlaan.com", label: "Email" },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const footerSections = [
-    {
-      title: "Product",
-      links: [
-        { label: "Platform", href: "/platform" },
-        { label: "Products", href: "/products" },
-        { label: "Pricing", href: "/products" },
-        { label: "Solutions", href: "/solutions/enterprise-automation" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "About Us", href: "/about" },
-        { label: "Careers", href: "/careers" },
-        { label: "Blog", href: "/blog" },
-        { label: "Press", href: "/press" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "Documentation", href: "/docs" },
-        { label: "Case Studies", href: "/case-studies" },
-        { label: "Community", href: "/community" },
-        { label: "Status", href: "/status" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/privacy-policy" },
-        { label: "Terms of Service", href: "/terms-of-service" },
-        { label: "Cookie Policy", href: "/cookie-policy" },
-        { label: "Compliance", href: "/compliance" },
-      ],
-    },
-  ];
-
-  const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-  ];
-
   return (
-    <footer className="bg-black border-t border-gray-800">
+    <footer className="bg-[#00000f] border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Top Section */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Brand Column */}
+        {/* Top grid */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center mb-4">
+            <Link href="/" className="inline-block mb-5">
               <Image
                 src="/logo/aqlaa-new-logo.png"
                 alt="AQLAAN Logo"
                 width={120}
                 height={120}
                 quality={100}
-                className="h-8 w-auto hover:opacity-80 transition-opacity"
+                className="h-8 w-auto hover:opacity-70 transition-opacity duration-300"
               />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-[#a3a3a3] text-sm leading-relaxed">
               Breakthrough AI solutions transforming businesses from data to deployment.
             </p>
           </div>
 
-          {/* Footer Links */}
+          {/* Link columns */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white font-semibold mb-4 text-sm">{section.title}</h4>
-              <ul className="space-y-2">
-                {section.links.map((link, index) => (
-                  <li key={`${section.title}-${index}`}>
+              <h4 className="text-white text-xs font-mono tracking-[1px] uppercase mb-4">
+                {section.title}
+              </h4>
+              <ul className="space-y-2.5">
+                {section.links.map((link, i) => (
+                  <li key={`${section.title}-${i}`}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 text-sm hover:text-blue-400 transition-colors"
+                      className="text-[#a3a3a3] text-sm hover:text-white transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -95,33 +98,25 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 my-8" />
+        <div className="border-t border-white/[0.06] mb-8" />
 
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+        {/* Bottom row */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[#a3a3a3] text-xs font-mono">
             © {currentYear} AQLAAN. All rights reserved.
           </p>
 
-          {/* Social Links */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-1">
             {socialLinks.map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className="text-gray-400 hover:text-blue-400 transition-colors p-2 hover:bg-gray-900 rounded-full"
+                className="text-[#a3a3a3] hover:text-white transition-colors duration-300 p-2 rounded-lg hover:bg-white/[0.04]"
               >
-                <Icon size={18} />
+                <Icon size={16} />
               </a>
             ))}
-            <a
-              href="mailto:contact@aqlaan.com"
-              className="text-gray-400 hover:text-blue-400 transition-colors p-2 hover:bg-gray-900 rounded-full"
-              aria-label="Email"
-            >
-              <Mail size={18} />
-            </a>
           </div>
         </div>
       </div>

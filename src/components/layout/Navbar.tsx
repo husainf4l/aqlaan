@@ -2,10 +2,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
-import { Button } from "@/components/ui/Button";
 
 interface NavItem {
   label: string;
@@ -17,10 +16,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  {
-    label: "Platform",
-    href: "/platform",
-  },
+  { label: "Platform", href: "/platform" },
   {
     label: "Solutions",
     dropdown: {
@@ -34,10 +30,7 @@ const navItems: NavItem[] = [
       ],
     },
   },
-  {
-    label: "Products",
-    href: "/products",
-  },
+  { label: "Products", href: "/products" },
   {
     label: "Resources",
     dropdown: {
@@ -62,51 +55,27 @@ const navItems: NavItem[] = [
       ],
     },
   },
-  {
-    label: "Consultations",
-    href: "/consultations",
-  },
+  { label: "Consultations", href: "/consultations" },
 ];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrolled = currentScrollY > 80;
-
-      setIsScrolled(scrolled);
-      setIsVisible(true); // Keep navbar always visible
-      setLastScrollY(currentScrollY);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  const handleDropdownEnter = (label: string) => {
-    setActiveDropdown(label);
-  };
-
-  const handleDropdownLeave = () => {
-    setActiveDropdown(null);
-  };
+  }, []);
 
   return (
     <>
-      <motion.nav
-        initial={{ y: 0 }}
-        animate={{ y: isVisible ? 0 : -100 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+      <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-black/90 backdrop-blur-md border-b border-gray-800 shadow-lg"
-            : "bg-black/20 backdrop-blur-sm"
+            ? "bg-[#00000f]/90 backdrop-blur-md border-b border-white/[0.08]"
+            : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center px-6 py-4">
@@ -119,68 +88,67 @@ export default function Navbar() {
               height={120}
               quality={100}
               priority
-              className="h-8 w-auto hover:opacity-80 transition-opacity"
+              className="h-8 w-auto hover:opacity-70 transition-opacity duration-300"
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-8 ml-12">
             {navItems.map((item) => (
               <div
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => item.dropdown && handleDropdownEnter(item.label)}
-                onMouseLeave={handleDropdownLeave}
+                onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors relative group"
+                    className="text-[#a3a3a3] hover:text-white transition-colors duration-300 text-sm"
                   >
                     {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full" />
                   </Link>
                 ) : (
-                  <button className="text-gray-300 hover:text-white transition-colors flex items-center space-x-1 relative group">
+                  <button className="text-[#a3a3a3] hover:text-white transition-colors duration-300 flex items-center gap-1 text-sm">
                     <span>{item.label}</span>
-                    <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full" />
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        activeDropdown === item.label ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
                 )}
 
-                {/* Dropdown Menu */}
+                {/* Dropdown */}
                 <AnimatePresence>
                   {activeDropdown === item.label && item.dropdown && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-gray-800 rounded-lg shadow-xl p-6"
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 mt-3 w-72 bg-[#0a0a0f] border border-white/10 rounded-xl shadow-xl p-4"
                     >
-                      <h3 className="text-white font-semibold mb-4">{item.dropdown.title}</h3>
-                      <div className="space-y-3">
-                        {item.dropdown.items.map((dropdownItem, index) => (
-                          <motion.div
+                      <p className="text-[10px] font-mono tracking-[1.5px] uppercase text-[#a3a3a3] mb-3 px-2">
+                        {item.dropdown.title}
+                      </p>
+                      <div className="space-y-0.5">
+                        {item.dropdown.items.map((dropdownItem) => (
+                          <Link
                             key={dropdownItem.href}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.05 }}
+                            href={dropdownItem.href}
+                            className="block px-2 py-2.5 rounded-lg hover:bg-white/[0.04] transition-colors duration-200 group"
+                            onClick={() => setActiveDropdown(null)}
                           >
-                            <Link
-                              href={dropdownItem.href}
-                              className="block p-3 rounded-lg hover:bg-gray-800 transition-colors group"
-                            >
-                              <div className="text-white font-medium group-hover:text-blue-400 transition-colors">
-                                {dropdownItem.label}
+                            <div className="text-white text-sm font-medium group-hover:text-white">
+                              {dropdownItem.label}
+                            </div>
+                            {dropdownItem.description && (
+                              <div className="text-[#a3a3a3] text-xs mt-0.5 leading-relaxed">
+                                {dropdownItem.description}
                               </div>
-                              {dropdownItem.description && (
-                                <div className="text-gray-400 text-sm mt-1">
-                                  {dropdownItem.description}
-                                </div>
-                              )}
-                            </Link>
-                          </motion.div>
+                            )}
+                          </Link>
                         ))}
                       </div>
                     </motion.div>
@@ -190,32 +158,31 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4 ml-auto">
-            <Link href="/demo">
-              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
-                Book a Demo
-              </Button>
+          {/* Right CTAs */}
+          <div className="hidden lg:flex items-center gap-3 ml-auto">
+            <Link href="/demo" className="text-[#a3a3a3] hover:text-white transition-colors duration-300 text-sm">
+              Book a Demo
             </Link>
             <Link href="/get-started">
-              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
-                Get Started
-              </Button>
+              <div className="p-[1px] rounded-full bg-gradient-to-br from-[#9a9a9a] via-[#1a1a1a] to-[#6a6a6a]">
+                <span className="glass-btn text-sm">
+                  Get Started
+                </span>
+              </div>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="lg:hidden text-white hover:text-gray-300 transition-colors p-2"
-            aria-label="Open mobile menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden text-[#a3a3a3] hover:text-white transition-colors duration-300 p-2 ml-auto"
+            aria-label="Toggle menu"
           >
-            <Menu size={24} />
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
-      {/* Mobile Menu */}
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
@@ -229,7 +196,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+            className="fixed inset-0 z-40"
             onClick={() => setActiveDropdown(null)}
           />
         )}

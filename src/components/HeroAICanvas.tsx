@@ -1,11 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
+import Link from "next/link";
 
-/** Hook: keep u_resolution synced with canvas size */
+/** Sync canvas resolution */
 function useResolution(uniforms: { u_resolution?: { value: THREE.Vector2 } }) {
   const { size } = useThree();
   useEffect(() => {
@@ -14,7 +14,7 @@ function useResolution(uniforms: { u_resolution?: { value: THREE.Vector2 } }) {
   }, [size, uniforms]);
 }
 
-/** Fullscreen plane with animated "neural flow" shader */
+/** Scale-style dark nebula shader — near-black with subtle depth */
 function NeuralPlane() {
   const uniforms = useMemo(
     () => ({
@@ -26,7 +26,7 @@ function NeuralPlane() {
   );
 
   useResolution(uniforms);
-  useFrame((_, d) => (uniforms.u_time.value += d));
+  useFrame((_, d) => (uniforms.u_time.value += d * 0.4));
 
   const fragment = /* glsl */ `
     precision highp float;
@@ -59,25 +59,24 @@ function NeuralPlane() {
       vec2 uv = gl_FragCoord.xy / u_resolution.xy;
       vec2 p  = (uv - 0.5) * vec2(u_resolution.x/u_resolution.y, 1.0);
 
-      float t = u_time * 0.25;
+      float t = u_time * 0.18;
       float n = 0.0;
-      n += 0.55 * noise(p*1.6 + vec2( t, -t*0.7));
-      n += 0.30 * noise(p*3.3 + vec2(-t*0.6,  t*0.8));
-      n += 0.15 * noise(p*6.0 + vec2( t*0.3,  t*0.2));
+      n += 0.55 * noise(p*1.8 + vec2( t, -t*0.6));
+      n += 0.30 * noise(p*3.6 + vec2(-t*0.5,  t*0.7));
+      n += 0.15 * noise(p*7.0 + vec2( t*0.2,  t*0.15));
 
-      // Dark → indigo → electric cyan with a whisper of magenta
-      vec3 base   = vec3(0.03, 0.05, 0.10);  // #090D1A-ish
-      vec3 indigo = vec3(0.10, 0.18, 0.40);  // #1A2E66-ish
-      vec3 cyan   = vec3(0.02, 0.78, 0.88);  // electric cyan
-      vec3 mag    = vec3(0.84, 0.36, 0.98);  // subtle accent
+      // Scale palette: #00000f base with very subtle depth
+      vec3 base  = vec3(0.0, 0.0, 0.059);   // #00000f
+      vec3 deep  = vec3(0.02, 0.02, 0.09);  // barely-blue dark
+      vec3 glow  = vec3(0.04, 0.05, 0.12);  // subtle depth highlight
 
-      vec3 col = mix(base, indigo, smoothstep(-0.35, 0.65, n));
-      col = mix(col, cyan,   smoothstep(0.45, 0.90, n));
-      col = mix(col, mag,    smoothstep(0.80, 0.95, n) * 0.12);
+      vec3 col = mix(base, deep, smoothstep(-0.3, 0.5, n));
+      col = mix(col, glow, smoothstep(0.4, 0.85, n) * 0.6);
 
-      // Vignette + slight breathing
-      float v = smoothstep(0.95, 0.2, length(p));
-      col *= v * (0.88 + 0.12 * sin(t*0.9)) * u_intensity;
+      // Vignette — pulls edges to #00000f
+      float v = smoothstep(1.0, 0.15, length(p * 0.9));
+      col = mix(base, col, v);
+      col *= (0.92 + 0.08 * sin(t * 0.7)) * u_intensity;
 
       gl_FragColor = vec4(col, 1.0);
     }
@@ -101,8 +100,52 @@ function NeuralPlane() {
   );
 }
 
-/** The hero section with SSR-friendly WebGL canvas */
-function HeroAICanvasInner() {
+function HeroContent() {
+  return (
+    <div className="hero__contentWrap">
+      <div className="container hero__content">
+        <p className="hero__overline">Enterprise AI Platform</p>
+
+        <h1 className="hero__title">
+          Breakthrough AI from<br />Data to Deployment
+        </h1>
+
+        <p className="hero__subtitle">
+          Transform your business with precision AI solutions that deliver measurable results.
+          From intelligent automation to predictive analytics — enterprise-grade, at scale.
+        </p>
+
+        <div className="hero__cta">
+          <Link href="/get-started">
+            <div className="glass-btn-wrap">
+              <span className="glass-btn">Get Started →</span>
+            </div>
+          </Link>
+          <Link href="/demo" className="text-btn">
+            Book a Demo →
+          </Link>
+        </div>
+
+        <div className="hero__stats">
+          <div className="hero__stat">
+            <div className="hero__stat-value">12+</div>
+            <div className="hero__stat-label">Enterprise Clients</div>
+          </div>
+          <div className="hero__stat">
+            <div className="hero__stat-value">99%</div>
+            <div className="hero__stat-label">Accuracy Rate</div>
+          </div>
+          <div className="hero__stat">
+            <div className="hero__stat-value">24/7</div>
+            <div className="hero__stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function HeroAICanvas() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -111,97 +154,33 @@ function HeroAICanvasInner() {
 
   const prefersReducedMotion =
     typeof window !== "undefined" &&
-    window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
   if (!isClient) {
-    // SSR-safe fallback
     return (
-      <section className="hero min-h-screen bg-linear-to-br from-gray-900 via-blue-900 to-black">
+      <section className="hero">
+        <div className="hero__fallback" />
         <div className="hero__overlayTop" />
-        <div className="hero__ambient" />
-        <div className="hero__contentWrap">
-          <div className="container hero__content">
-            <div className="hero__header">
-              <h1 className="hero__title gradient-text">Breakthrough AI from<br />Data to Deployment</h1>
-              <p className="hero__subtitle">
-                Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
-              </p>
-            </div>
-            <div className="hero__stats">
-              <div className="hero__stat">
-                <div className="hero__stat-value">12+</div>
-                <div className="hero__stat-label">Enterprise Clients</div>
-              </div>
-              <div className="hero__stat">
-                <div className="hero__stat-value">99%</div>
-                <div className="hero__stat-label">Accuracy Rate</div>
-              </div>
-              <div className="hero__stat">
-                <div className="hero__stat-value">24/7</div>
-                <div className="hero__stat-label">Support Available</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroContent />
       </section>
     );
   }
 
   return (
     <section className="hero">
-      {/* Animated background OR reduced-motion fallback */}
       {prefersReducedMotion ? (
         <div className="hero__fallback" />
       ) : (
         <Canvas
-          className="hero__canvas"
           style={{ position: "absolute", inset: 0 }}
           camera={{ position: [0, 0, 1], fov: 50 }}
         >
           <NeuralPlane />
         </Canvas>
       )}
-
-      {/* Soft top overlay for contrast */}
       <div className="hero__overlayTop" />
-
-      {/* Ambient color glows */}
       <div className="hero__ambient" />
-
-      {/* Content */}
-      <div className="hero__contentWrap">
-        <div className="container hero__content">
-          {/* Headline */}
-          <div className="hero__header">
-            <h1 className="hero__title gradient-text">Breakthrough AI from<br />Data to Deployment</h1>
-            <p className="hero__subtitle">
-              Transform your business with cutting-edge AI solutions that deliver real results. From intelligent automation to predictive analytics, we power the future of enterprise.
-            </p>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="hero__stats">
-            <div className="hero__stat">
-              <div className="hero__stat-value">12+</div>
-              <div className="hero__stat-label">Enterprise Clients</div>
-            </div>
-            <div className="hero__stat">
-              <div className="hero__stat-value">99%</div>
-              <div className="hero__stat-label">Accuracy Rate</div>
-            </div>
-            <div className="hero__stat">
-              <div className="hero__stat-value">24/7</div>
-              <div className="hero__stat-label">Support Available</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroContent />
     </section>
   );
-}
-
-/** SSR-friendly component with client-side hydration */
-export default function HeroAICanvas() {
-  return <HeroAICanvasInner />;
 }
