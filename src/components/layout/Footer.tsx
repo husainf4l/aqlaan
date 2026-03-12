@@ -32,6 +32,7 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const version = process.env.NEXT_PUBLIC_APP_VERSION || 'dev';
 
   return (
     <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
@@ -82,9 +83,14 @@ export default function Footer() {
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[var(--muted)] text-xs font-mono">
-            © {currentYear} AQLAAN. All rights reserved.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-[var(--muted)] text-xs font-mono">
+              © {currentYear} AQLAAN. All rights reserved.
+            </p>
+            <p className="text-[var(--muted)] text-xs font-mono mt-1">
+              v{version}
+            </p>
+          </div>
 
           <div className="flex items-center gap-1">
             {socialLinks.map(({ icon: Icon, href, label }) => (

@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+// Read version from VERSION file
+const getVersion = () => {
+  try {
+    return readFileSync(join(process.cwd(), 'VERSION'), 'utf-8').trim();
+  } catch {
+    return 'dev';
+  }
+};
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_APP_VERSION: getVersion(),
+  },
   // Enable standalone output for Docker
   output: 'standalone',
 
