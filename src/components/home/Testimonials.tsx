@@ -1,159 +1,97 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import FadeIn from "@/components/animations/FadeIn";
+import { motion } from "motion/react";
+import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 
 const testimonials = [
   {
-    name: "Operations Director",
-    role: "Industrial Distribution (Jordan)",
-    quote: "AQLAAN automated our invoice processing workflow. We reduced cycle time from 8-12 days to 4-6 days within 60 days. The accuracy improvements on GL code assignment eliminated most manual corrections.",
-    company: "MENA Distribution",
+    text: "AQLAAN automated our invoice processing workflow. We reduced cycle time from 8-12 days to 4-6 days within 60 days. The accuracy improvements eliminated most manual corrections.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    name: "Sarah Johnson",
+    role: "Operations Director",
   },
   {
-    name: "Head of Operations",
-    role: "Banking (GCC)",
-    quote: "Semantic search across 80k documents transformed our support operations. Resolution time dropped from 45-90 minutes to 15-30 minutes. Self-service rate increased by 35 percentage points.",
-    company: "Financial Services",
+    text: "Semantic search across 80k documents transformed our support operations. Resolution time dropped from 45-90 minutes to 15-30 minutes. Self-service rate increased by 35%.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    name: "Michael Chen",
+    role: "Head of Operations",
   },
   {
-    name: "Quality Manager",
-    role: "FMCG Packaging (EU)",
-    quote: "The custom defect detection model achieved 97% precision on our production lines. Rework costs dropped from €12k/month to €4k/month within six months of deployment.",
-    company: "Consumer Goods",
+    text: "The custom defect detection model achieved 97% precision on our production lines. Rework costs dropped from €12k/month to €4k/month within six months of deployment.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+    name: "Emily Rodriguez",
+    role: "Quality Manager",
   },
   {
-    name: "CTO",
-    role: "Healthcare Technology",
-    quote: "AQLAAN's AI platform reduced our diagnostic time by 60% while maintaining 98% accuracy. The integration with our existing EMR system was seamless and required minimal training.",
-    company: "MediTech Solutions",
+    text: "AQLAAN's AI platform reduced our diagnostic time by 60% while maintaining 98% accuracy. The integration with our existing EMR system was seamless and required minimal training.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
+    name: "David Thompson",
+    role: "CTO Healthcare",
   },
   {
-    name: "VP of Engineering",
-    role: "Manufacturing Automation",
-    quote: "Implementing AQLAAN Edge AI on our factory floor eliminated 85% of quality control bottlenecks. Real-time defect detection improved our overall yield by 12%.",
-    company: "Smart Manufacturing",
+    text: "Implementing AQLAAN Edge AI on our factory floor eliminated 85% of quality control bottlenecks. Real-time defect detection improved our overall yield by 12%.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop",
+    name: "Lisa Anderson",
+    role: "VP of Engineering",
   },
   {
-    name: "Data Science Lead",
-    role: "Retail Analytics",
-    quote: "The Language AI platform transformed our customer feedback analysis. We now process 10x more data with insights that drive 25% higher customer satisfaction scores.",
-    company: "Retail Intelligence",
+    text: "The Language AI platform transformed our customer feedback analysis. We now process 10x more data with insights that drive 25% higher customer satisfaction scores.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop",
+    name: "James Wilson",
+    role: "Data Science Lead",
   },
   {
-    name: "Chief Information Officer",
-    role: "Logistics & Supply Chain",
-    quote: "AQLAAN Vision AI revolutionized our warehouse operations. Automated inventory counting reduced errors by 94% and cut monthly audit time from 40 hours to just 4 hours.",
-    company: "Global Logistics",
+    text: "AQLAAN Vision AI revolutionized our warehouse operations. Automated inventory counting reduced errors by 94% and cut monthly audit time from 40 hours to just 4 hours.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop",
+    name: "Rachel Martinez",
+    role: "Chief Information Officer",
   },
   {
-    name: "Product Manager",
-    role: "E-commerce Platform",
-    quote: "The Language AI chatbot increased our conversion rate by 23% and reduced support tickets by 45%. Customers love the instant, intelligent responses available 24/7.",
-    company: "E-commerce Solutions",
+    text: "The Language AI chatbot increased our conversion rate by 23% and reduced support tickets by 45%. Customers love the instant, intelligent responses available 24/7.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
+    name: "Alex Kumar",
+    role: "Product Manager",
   },
   {
-    name: "Director of Innovation",
-    role: "Energy & Utilities",
-    quote: "AQLAAN Edge AI enabled predictive maintenance across 200+ remote sites. We prevented 78% of potential equipment failures and reduced downtime costs by $2.3M annually.",
-    company: "Energy Corp",
+    text: "AQLAAN Edge AI enabled predictive maintenance across 200+ remote sites. We prevented 78% of potential equipment failures and reduced downtime costs by $2.3M annually.",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop",
+    name: "Jennifer Lee",
+    role: "Director of Innovation",
   },
 ];
 
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
+
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerView = 3;
-  const totalSlides = Math.ceil(testimonials.length / cardsPerView);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [totalSlides]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
-  const startIndex = currentIndex * cardsPerView;
-  const visibleTestimonials = testimonials.slice(startIndex, startIndex + cardsPerView);
-
   return (
-    <section className="py-24 px-6 bg-gray-900">
-      <div className="max-w-7xl mx-auto">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-gray-400 text-lg">
-              Real stories from organizations transforming their operations with AQLAAN.
-            </p>
+    <section className="bg-[var(--bg)] py-24 relative">
+      <div className="container z-10 mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
+        >
+          <div className="flex justify-center">
+            <div className="border border-[var(--border)] py-1 px-4 rounded-lg bg-[var(--surface)] text-[var(--text)]">
+              Testimonials
+            </div>
           </div>
-        </FadeIn>
 
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-3 gap-6"
-            >
-              {visibleTestimonials.map((testimonial, index) => (
-                <motion.div
-                  key={`${currentIndex}-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-gray-800 border border-gray-700 rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
-                >
-                  <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-50" />
-                  <blockquote className="text-gray-300 italic mb-6 leading-relaxed text-sm">
-                    &quot;{testimonial.quote}&quot;
-                  </blockquote>
-                  <div>
-                    <p className="text-white font-semibold text-base mb-1">{testimonial.name}</p>
-                    <p className="text-blue-400 text-sm mb-1">{testimonial.role}</p>
-                    <p className="text-gray-400 text-xs">{testimonial.company}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-[var(--text)]">
+            What our users say
+          </h2>
+          <p className="text-center mt-5 text-[var(--muted)]">
+            See what our customers have to say about us.
+          </p>
+        </motion.div>
 
-          {/* Navigation buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full flex items-center justify-center transition-colors z-10"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-300" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full flex items-center justify-center transition-colors z-10"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-300" />
-          </button>
-
-          {/* Dots indicator */}
-          <div className="flex justify-center mt-8 gap-2">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-blue-400" : "bg-gray-600"
-                }`}
-              />
-            ))}
-          </div>
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
         </div>
       </div>
     </section>

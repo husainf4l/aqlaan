@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavItem {
   label: string;
@@ -16,7 +17,6 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Platform", href: "/platform" },
   {
     label: "Solutions",
     dropdown: {
@@ -32,26 +32,12 @@ const navItems: NavItem[] = [
   },
   { label: "Products", href: "/products" },
   {
-    label: "Resources",
-    dropdown: {
-      title: "Learn & Explore",
-      items: [
-        { label: "Blog", href: "/blog", description: "Latest insights and updates" },
-        { label: "Case Studies", href: "/case-studies", description: "Success stories from our clients" },
-        { label: "Documentation", href: "/docs", description: "Technical documentation" },
-        { label: "Press & Media", href: "/press", description: "Media resources and coverage" },
-      ],
-    },
-  },
-  {
     label: "Company",
     dropdown: {
       title: "About AQLAAN",
       items: [
         { label: "About Us", href: "/about", description: "Our mission and vision" },
-        { label: "Careers", href: "/careers", description: "Join our team" },
-        { label: "Vision", href: "/vision", description: "Our future roadmap" },
-        { label: "Partners", href: "/partners", description: "Strategic partnerships" },
+        { label: "Contact", href: "/contact", description: "Get in touch" },
       ],
     },
   },
@@ -74,9 +60,13 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#00000f]/90 backdrop-blur-md border-b border-white/[0.08]"
-            : "bg-transparent"
+            ? "border-b border-gray-200 dark:border-white/10 shadow-sm"
+            : ""
         }`}
+        style={{ 
+          ['--tw-bg-opacity' as string]: '1',
+          backgroundColor: 'var(--nav-bg)'
+        }}
       >
         <div className="max-w-7xl mx-auto flex items-center px-6 py-4">
           {/* Logo */}
@@ -89,6 +79,9 @@ export default function Navbar() {
               quality={100}
               priority
               className="h-8 w-auto hover:opacity-70 transition-opacity duration-300"
+              style={{
+                filter: 'var(--logo-filter)'
+              }}
             />
           </Link>
 
@@ -104,12 +97,12 @@ export default function Navbar() {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="text-[#a3a3a3] hover:text-white transition-colors duration-300 text-sm"
+                    className="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-sm font-medium"
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <button className="text-[#a3a3a3] hover:text-white transition-colors duration-300 flex items-center gap-1 text-sm">
+                  <button className="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors duration-300 flex items-center gap-1 text-sm font-medium">
                     <span>{item.label}</span>
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
@@ -127,9 +120,10 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-3 w-72 bg-[#0a0a0f] border border-white/10 rounded-xl shadow-xl p-4"
+                      className="absolute top-full left-0 mt-3 w-72 border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl p-4"
+                      style={{ backgroundColor: 'var(--dropdown-bg)' }}
                     >
-                      <p className="text-[10px] font-mono tracking-[1.5px] uppercase text-[#a3a3a3] mb-3 px-2">
+                      <p className="text-[10px] font-mono tracking-[1.5px] uppercase text-gray-500 dark:text-white/70 mb-3 px-2">
                         {item.dropdown.title}
                       </p>
                       <div className="space-y-0.5">
@@ -137,14 +131,14 @@ export default function Navbar() {
                           <Link
                             key={dropdownItem.href}
                             href={dropdownItem.href}
-                            className="block px-2 py-2.5 rounded-lg hover:bg-white/[0.04] transition-colors duration-200 group"
+                            className="block px-2 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-200 group"
                             onClick={() => setActiveDropdown(null)}
                           >
-                            <div className="text-white text-sm font-medium group-hover:text-white">
+                            <div className="text-gray-900 dark:text-white text-sm font-medium">
                               {dropdownItem.label}
                             </div>
                             {dropdownItem.description && (
-                              <div className="text-[#a3a3a3] text-xs mt-0.5 leading-relaxed">
+                              <div className="text-gray-600 dark:text-white/80 text-xs mt-0.5 leading-relaxed">
                                 {dropdownItem.description}
                               </div>
                             )}
@@ -160,26 +154,30 @@ export default function Navbar() {
 
           {/* Right CTAs */}
           <div className="hidden lg:flex items-center gap-3 ml-auto">
-            <Link href="/demo" className="text-[#a3a3a3] hover:text-white transition-colors duration-300 text-sm">
+            <ThemeToggle />
+            <Link href="/demo" className="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-sm font-medium">
               Book a Demo
             </Link>
             <Link href="/get-started">
-              <div className="p-[1px] rounded-full bg-gradient-to-br from-[#9a9a9a] via-[#1a1a1a] to-[#6a6a6a]">
-                <span className="glass-btn text-sm">
+              <div className="p-[1px] rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 dark:from-[#9a9a9a] dark:via-[#1a1a1a] dark:to-[#6a6a6a]">
+                <span className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-white dark:bg-white/[0.04] backdrop-blur-sm text-gray-900 dark:text-white text-sm font-medium cursor-pointer border-none whitespace-nowrap transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
                   Get Started
                 </span>
               </div>
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Theme + Menu Toggle */}
+          <div className="lg:hidden flex items-center gap-2 ml-auto">
+            <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-[#a3a3a3] hover:text-white transition-colors duration-300 p-2 ml-auto"
+            className="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors duration-300 p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
+          </div>
         </div>
       </nav>
 

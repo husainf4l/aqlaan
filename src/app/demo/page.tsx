@@ -1,456 +1,373 @@
 "use client";
-import { useState } from "react";
+import { useState } from 'react';
 import { motion } from "framer-motion";
-import { Calendar, Users, CheckCircle, Play, Star } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import FadeIn from "@/components/animations/FadeIn";
-import SlideUp from "@/components/animations/SlideUp";
+import { Card } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
+import { AnimatedHeroBlob } from '@/components/animations/AnimatedHeroBlob';
+import BackgroundMotion from '@/components/visuals/BackgroundMotion';
+import { 
+  Calendar, 
+  Clock, 
+  Video, 
+  CheckCircle, 
+  ArrowRight,
+  Users,
+  Sparkles,
+  Zap,
+  Shield,
+  BarChart3
+} from "lucide-react";
 
 export default function DemoPage() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    jobTitle: "",
-    companySize: "",
-    useCase: "",
-    timeline: "",
-    phone: "",
-    message: ""
+    fullName: '',
+    email: '',
+    company: '',
+    role: '',
+    industry: '',
+    teamSize: '',
+    interest: '',
+    message: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Demo request:', formData);
+    setIsSubmitted(true);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Demo request submitted:", formData);
-    // You can integrate with your backend API here
-  };
-
-  const benefits = [
-    {
-      icon: <Play className="w-6 h-6" />,
-      title: "Live Product Demo",
-      description: "See AQLAAN in action with a personalized walkthrough of our AI platform"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Expert Consultation",
-      description: "Connect with our AI specialists to discuss your specific use cases and requirements"
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6" />,
-      title: "Custom Solution Planning",
-      description: "Get a tailored roadmap for implementing AI solutions in your organization"
-    },
-    {
-      icon: <Calendar className="w-6 h-6" />,
-      title: "Flexible Scheduling",
-      description: "Book a demo at your convenience with our team of AI experts"
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "CTO",
-      company: "TechFlow Solutions",
-      content: "The demo was incredibly insightful. We could see exactly how AQLAAN&apos;s AI would transform our operations.",
-      rating: 5
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Head of Innovation",
-      company: "Global Dynamics",
-      content: "Outstanding presentation. The team&apos;s expertise and the platform&apos;s capabilities exceeded our expectations.",
-      rating: 5
-    },
-    {
-      name: "Dr. Emily Watson",
-      role: "Director of AI",
-      company: "MedTech Innovations",
-      content: "The demo clearly showed how AQLAAN can accelerate our healthcare AI initiatives. Highly recommended.",
-      rating: 5
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-900 via-blue-900 to-cyan-900">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-linear-to-r from-blue-600/10 to-cyan-600/10" />
+      <section className="relative py-20 px-6 bg-[var(--bg)] overflow-hidden">
+        <AnimatedHeroBlob />
+        <BackgroundMotion />
+        
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-500/10 dark:bg-slate-700/30 border border-slate-500/20 dark:border-slate-600/30 mb-6"
+          >
+            <Video className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+            <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Book a Demo</span>
+          </motion.div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-5xl md:text-7xl font-bold text-white mb-6"
-              >
-                Book Your
-                <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  {" "}AI Demo
-                </span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-gray-300 max-w-3xl mx-auto mb-8"
-              >
-                Experience the power of AQLAAN&apos;s AI platform firsthand. Schedule a personalized demo
-                and discover how our enterprise-grade AI solutions can transform your business operations.
-              </motion.p>
-            </div>
-          </FadeIn>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-6xl font-bold mb-6 text-[var(--text)] dark:text-white"
+          >
+            See AQLAAN in Action
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-[var(--muted)] max-w-2xl mx-auto mb-12"
+          >
+            Schedule a personalized demo with our experts and discover how AQLAAN can transform your business with AI
+          </motion.p>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-black/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <SlideUp>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                What You&apos;ll Get from Your Demo
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our comprehensive demo experience is designed to showcase the full potential
-                of AQLAAN&apos;s AI platform and how it can drive transformation in your organization.
-              </p>
-            </div>
-          </SlideUp>
+      {/* Main Content */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left Column - Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="p-8">
+                {!isSubmitted ? (
+                  <>
+                    <h2 className="text-2xl font-bold text-[var(--text)] mb-6">Request a Demo</h2>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                            Full Name *
+                          </label>
+                          <input
+                            type="text"
+                            name="fullName"
+                            required
+                            value={formData.fullName}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="John Doe"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                            Work Email *
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="john@company.com"
+                          />
+                        </div>
+                      </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <SlideUp key={index} delay={index * 0.1}>
-                <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 h-full">
-                  <div className="p-6">
-                    <div className="w-12 h-12 bg-linear-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center mb-4 text-white">
-                      {benefit.icon}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                            Company *
+                          </label>
+                          <input
+                            type="text"
+                            name="company"
+                            required
+                            value={formData.company}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Company Name"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                            Your Role *
+                          </label>
+                          <select
+                            name="role"
+                            required
+                            value={formData.role}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          >
+                            <option value="">Select Role</option>
+                            <option value="executive">C-Level Executive</option>
+                            <option value="director">Director</option>
+                            <option value="manager">Manager</option>
+                            <option value="engineer">Engineer/Developer</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                            Industry
+                          </label>
+                          <select
+                            name="industry"
+                            value={formData.industry}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          >
+                            <option value="">Select Industry</option>
+                            <option value="technology">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="finance">Finance</option>
+                            <option value="retail">Retail</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                            Team Size
+                          </label>
+                          <select
+                            name="teamSize"
+                            value={formData.teamSize}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          >
+                            <option value="">Select Size</option>
+                            <option value="1-10">1-10</option>
+                            <option value="11-50">11-50</option>
+                            <option value="51-200">51-200</option>
+                            <option value="201-1000">201-1000</option>
+                            <option value="1000+">1000+</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                          Area of Interest *
+                        </label>
+                        <select
+                          name="interest"
+                          required
+                          value={formData.interest}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                          <option value="">Select Solution</option>
+                          <option value="enterprise-automation">Enterprise Automation</option>
+                          <option value="computer-vision">Computer Vision</option>
+                          <option value="language-intelligence">Language Intelligence</option>
+                          <option value="healthcare-ai">Healthcare AI</option>
+                          <option value="infrastructure-ai">Infrastructure AI</option>
+                          <option value="custom">Custom Solution</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                          Tell us about your needs
+                        </label>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          rows={4}
+                          className="w-full px-4 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                          placeholder="What are you looking to achieve with AI?"
+                        />
+                      </div>
+
+                      <Button
+                        type="submit"
+                        className="w-full bg-slate-700 dark:bg-slate-800 hover:bg-slate-600 dark:hover:bg-slate-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+                      >
+                        Schedule Demo
+                        <ArrowRight className="w-5 h-5" />
+                      </Button>
+                    </form>
+                  </>
+                ) : (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 bg-slate-500/20 dark:bg-slate-700/40 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-8 h-8 text-slate-600 dark:text-slate-400" />
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-gray-300">
-                      {benefit.description}
+                    <h3 className="text-2xl font-bold text-[var(--text)] mb-4">Thank You!</h3>
+                    <p className="text-[var(--muted)] mb-8">
+                      We&apos;ve received your demo request. Our team will reach out within 24 hours to schedule your personalized demo.
                     </p>
-                  </div>
-                </Card>
-              </SlideUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Form Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <SlideUp>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Schedule Your Personalized Demo
-              </h2>
-              <p className="text-xl text-gray-300">
-                Fill out the form below and our team will contact you within 24 hours
-                to schedule your demo session.
-              </p>
-            </div>
-          </SlideUp>
-
-          <SlideUp delay={0.2}>
-            <Card className="bg-gray-900/50 border-gray-800">
-              <div className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Enter your first name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Enter your last name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="your.email@company.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="+1 (555) 123-4567"
-                    />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Company *
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Job Title *
-                      </label>
-                      <input
-                        type="text"
-                        name="jobTitle"
-                        value={formData.jobTitle}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Your job title"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Company Size
-                      </label>
-                      <select
-                        name="companySize"
-                        value={formData.companySize}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      >
-                        <option value="">Select company size</option>
-                        <option value="1-10">1-10 employees</option>
-                        <option value="11-50">11-50 employees</option>
-                        <option value="51-200">51-200 employees</option>
-                        <option value="201-1000">201-1000 employees</option>
-                        <option value="1000+">1000+ employees</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Implementation Timeline
-                      </label>
-                      <select
-                        name="timeline"
-                        value={formData.timeline}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      >
-                        <option value="">Select timeline</option>
-                        <option value="immediately">Immediately</option>
-                        <option value="1-3-months">1-3 months</option>
-                        <option value="3-6-months">3-6 months</option>
-                        <option value="6-12-months">6-12 months</option>
-                        <option value="exploring">Just exploring</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Primary Use Case
-                    </label>
-                    <select
-                      name="useCase"
-                      value={formData.useCase}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    >
-                      <option value="">Select your primary use case</option>
-                      <option value="automation">Process Automation</option>
-                      <option value="analytics">Data Analytics & Insights</option>
-                      <option value="computer-vision">Computer Vision</option>
-                      <option value="nlp">Natural Language Processing</option>
-                      <option value="healthcare">Healthcare AI</option>
-                      <option value="infrastructure">Infrastructure Monitoring</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Additional Information
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                      placeholder="Tell us about your specific needs, challenges, or questions..."
-                    />
-                  </div>
-
-                  <div className="text-center">
                     <Button
-                      type="submit"
-                      className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                      onClick={() => setIsSubmitted(false)}
+                      className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] px-6 py-3 rounded-xl"
                     >
-                      Schedule My Demo
+                      Submit Another Request
                     </Button>
-                    <p className="text-gray-400 text-sm mt-4">
-                      By submitting this form, you agree to our Privacy Policy and Terms of Service.
-                      We&apos;ll contact you within 24 hours to schedule your demo.
-                    </p>
                   </div>
-                </form>
-              </div>
-            </Card>
-          </SlideUp>
-        </div>
-      </section>
+                )}
+              </Card>
+            </motion.div>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-black/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <SlideUp>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                What Our Demo Attendees Say
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Hear from industry leaders who have experienced our AI platform through personalized demos.
-              </p>
-            </div>
-          </SlideUp>
+            {/* Right Column - Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              {/* What to Expect */}
+              <Card className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-slate-500/20 dark:bg-slate-700/40 flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[var(--text)] mb-2">What to Expect</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-2 text-[var(--muted)]">
+                        <CheckCircle className="w-5 h-5 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5" />
+                        <span>30-minute personalized demo session</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-[var(--muted)]">
+                        <CheckCircle className="w-5 h-5 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5" />
+                        <span>Live Q&A with our AI experts</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-[var(--muted)]">
+                        <CheckCircle className="w-5 h-5 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5" />
+                        <span>Customized use case discussion</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-[var(--muted)]">
+                        <CheckCircle className="w-5 h-5 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5" />
+                        <span>Architecture and integration overview</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <SlideUp key={index} delay={index * 0.1}>
-                <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300">
-                  <div className="p-6">
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
+              {/* Demo Features */}
+              <Card className="p-6">
+                <h3 className="text-xl font-bold text-[var(--text)] mb-4">Demo Highlights</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-slate-500/20 dark:bg-slate-700/40 flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-4 h-4 text-slate-600 dark:text-slate-400" />
                     </div>
-                    <p className="text-gray-300 mb-6 italic">
-                      {testimonial.content}
-                    </p>
                     <div>
-                      <div className="font-semibold text-white">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-gray-400 text-sm">
-                        {testimonial.role}, {testimonial.company}
-                      </div>
+                      <h4 className="font-semibold text-[var(--text)] mb-1">Real-time AI Processing</h4>
+                      <p className="text-sm text-[var(--muted)]">See our models in action with live data</p>
                     </div>
                   </div>
-                </Card>
-              </SlideUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <SlideUp>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Demo FAQ
-              </h2>
-              <p className="text-xl text-gray-300">
-                Common questions about our demo process and what to expect.
-              </p>
-            </div>
-          </SlideUp>
-
-          <SlideUp delay={0.2}>
-            <div className="space-y-6">
-              {[
-                {
-                  question: "How long does a demo session last?",
-                  answer: "Our standard demo sessions are 45-60 minutes long, including time for Q&A and discussion of your specific use cases."
-                },
-                {
-                  question: "Do I need technical expertise to attend?",
-                  answer: "Not at all! Our demos are designed for both technical and non-technical audiences. We&apos;ll explain concepts clearly and focus on business value."
-                },
-                {
-                  question: "What should I prepare before the demo?",
-                  answer: "Think about your current challenges, goals, and any specific use cases you&apos;d like to explore. We&apos;ll customize the demo based on your needs."
-                },
-                {
-                  question: "Is the demo recorded?",
-                  answer: "With your permission, we can record the session for your reference. All recordings are securely stored and shared only with attendees."
-                },
-                {
-                  question: "What happens after the demo?",
-                  answer: "We&apos;ll follow up with additional resources, a detailed proposal if requested, and answer any remaining questions you might have."
-                }
-              ].map((faq, index) => (
-                <Card key={index} className="bg-gray-900/50 border-gray-800">
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="text-gray-300">
-                      {faq.answer}
-                    </p>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-slate-500/20 dark:bg-slate-700/40 flex items-center justify-center flex-shrink-0">
+                      <BarChart3 className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-[var(--text)] mb-1">Analytics Dashboard</h4>
+                      <p className="text-sm text-[var(--muted)]">Explore our intuitive analytics interface</p>
+                    </div>
                   </div>
-                </Card>
-              ))}
-            </div>
-          </SlideUp>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-slate-500/20 dark:bg-slate-700/40 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-[var(--text)] mb-1">Enterprise Security</h4>
+                      <p className="text-sm text-[var(--muted)]">Learn about our security measures</p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Stats */}
+              <Card className="p-6 bg-slate-500/5 dark:bg-slate-800/20 border-slate-500/20 dark:border-slate-700/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <Sparkles className="w-6 h-6 text-slate-600 dark:text-slate-400" />
+                  <h3 className="text-xl font-bold text-[var(--text)]">Why AQLAAN?</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="text-3xl font-bold text-slate-700 dark:text-slate-300 mb-1">99.9%</div>
+                    <div className="text-sm text-[var(--muted)]">Uptime SLA</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-slate-700 dark:text-slate-300 mb-1">24/7</div>
+                    <div className="text-sm text-[var(--muted)]">Support</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-slate-700 dark:text-slate-300 mb-1">50+</div>
+                    <div className="text-sm text-[var(--muted)]">Enterprise Clients</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-slate-700 dark:text-slate-300 mb-1">SOC 2</div>
+                    <div className="text-sm text-[var(--muted)]">Certified</div>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>

@@ -150,19 +150,19 @@ export default function GetStartedPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-black">
+      <section className="py-20 px-6 bg-[var(--bg)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="max-w-4xl">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
                 Get Started with AQLAAN
               </h1>
-              <p className="text-xl text-gray-400 mb-8">
+              <p className="text-xl text-[var(--muted)] mb-8">
                 Begin your AI journey today. Choose your plan, follow our quick start guide,
                 and unlock the power of enterprise-grade AI in minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
                   Start Free Trial
                 </Button>
                 <Button variant="outline">Watch Demo</Button>
@@ -178,7 +178,7 @@ export default function GetStartedPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Start free and scale as you grow. All plans include access to our core AI platform.
               </p>
             </div>
@@ -197,16 +197,16 @@ export default function GetStartedPage() {
                   <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
                     {path.title}
                   </h3>
-                  <p className="text-gray-400 mb-4">{path.description}</p>
+                  <p className="text-[var(--muted)] mb-4">{path.description}</p>
                   <div className="space-y-2 mb-6">
                     {path.features.map((feature) => (
-                      <div key={feature} className="text-sm text-gray-500 flex items-center">
+                      <div key={feature} className="text-sm text-[var(--muted)] opacity-80 flex items-center">
                         <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
                         {feature}
                       </div>
                     ))}
                   </div>
-                  <Button className={`w-full ${path.popular ? 'bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600' : ''}`}>
+                  <Button className={`w-full ${path.popular ? 'bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600' : ''}`}>
                     {path.cta}
                   </Button>
                 </Card>
@@ -217,12 +217,12 @@ export default function GetStartedPage() {
       </section>
 
       {/* Getting Started Steps */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-[var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Getting Started in 4 Steps</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 From signup to deployment in under 10 minutes.
               </p>
             </div>
@@ -237,8 +237,8 @@ export default function GetStartedPage() {
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-3">{step.description}</p>
-                  <div className="text-sm text-gray-500">{step.time}</div>
+                  <p className="text-[var(--muted)] text-sm mb-3">{step.description}</p>
+                  <div className="text-sm text-[var(--muted)] opacity-80">{step.time}</div>
                 </Card>
               </FadeIn>
             ))}
@@ -252,7 +252,7 @@ export default function GetStartedPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Learning Resources</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Everything you need to succeed with AQLAAN AI.
               </p>
             </div>
@@ -266,12 +266,12 @@ export default function GetStartedPage() {
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-3">{resource.description}</p>
+                  <p className="text-[var(--muted)] text-sm mb-3">{resource.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded">
+                    <span className="text-xs bg-gray-700 text-[var(--muted)] px-2 py-1 rounded">
                       {resource.type}
                     </span>
-                    <span className="text-sm text-gray-500">{resource.time}</span>
+                    <span className="text-sm text-[var(--muted)] opacity-80">{resource.time}</span>
                   </div>
                 </Card>
               </FadeIn>
@@ -281,12 +281,12 @@ export default function GetStartedPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-[var(--bg-secondary)]">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Common questions about getting started with AQLAAN.
               </p>
             </div>
@@ -299,7 +299,7 @@ export default function GetStartedPage() {
                   <h3 className="text-lg font-semibold mb-3 group-hover:text-blue-400 transition-colors">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-400">{faq.answer}</p>
+                  <p className="text-[var(--muted)]">{faq.answer}</p>
                 </Card>
               </FadeIn>
             ))}

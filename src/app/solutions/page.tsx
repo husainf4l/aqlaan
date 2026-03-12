@@ -51,13 +51,13 @@ export default function SolutionsPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-black">
+      <section className="py-20 px-6 bg-[var(--bg)]">
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
               AI Solutions
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-[var(--muted)] max-w-3xl mx-auto mb-12">
               Comprehensive AI-powered solutions designed to solve real-world problems across industries.
               From automation to specialized applications, we deliver results that matter.
             </p>
@@ -65,10 +65,10 @@ export default function SolutionsPage() {
 
           <FadeIn delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                 Explore Solutions
               </Button>
-              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Contact Experts</Button>
+              <Button className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Contact Experts</Button>
             </div>
           </FadeIn>
         </div>
@@ -80,7 +80,7 @@ export default function SolutionsPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Our Solution Portfolio</h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              <p className="text-[var(--muted)] text-lg max-w-2xl mx-auto">
                 Tailored AI solutions for every industry and use case.
               </p>
             </div>
@@ -90,17 +90,17 @@ export default function SolutionsPage() {
             {solutions.map((solution, index) => (
               <FadeIn key={solution.title} delay={index * 0.1}>
                 <Card className="group hover:scale-105 transition-all duration-300 h-full">
-                  <div className="text-lg font-bold mb-4 text-blue-400 bg-gray-800 px-3 py-1 rounded-lg inline-block">{solution.icon}</div>
+                  <div className="text-lg font-bold mb-4 text-blue-400 bg-[var(--surface)] px-3 py-1 rounded-lg inline-block">{solution.icon}</div>
                   <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
                     {solution.title}
                   </h3>
-                  <p className="text-gray-400 mb-4">{solution.description}</p>
+                  <p className="text-[var(--muted)] mb-4">{solution.description}</p>
 
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
+                    <h4 className="text-sm font-semibold text-[var(--muted)] mb-2">Key Features:</h4>
                     <ul className="space-y-1">
                       {solution.features.map((feature) => (
-                        <li key={feature} className="text-sm text-gray-500 flex items-center">
+                        <li key={feature} className="text-sm text-[var(--muted)] opacity-80 flex items-center">
                           <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
                           {feature}
                         </li>
@@ -109,7 +109,7 @@ export default function SolutionsPage() {
                   </div>
 
                   <Link href={solution.href}>
-                    <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-blue-400">
+                    <Button className="w-full bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-blue-400">
                       Learn More
                     </Button>
                   </Link>
@@ -121,12 +121,12 @@ export default function SolutionsPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-[var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Why Choose AQLAAN Solutions?</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 We don&apos;t just implement AI – we ensure it delivers measurable business value.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function SolutionsPage() {
               <div className="text-center">
                 <div className="text-3xl mb-4 font-bold text-green-400">TARGET</div>
                 <h3 className="text-xl font-semibold mb-3">Proven Results</h3>
-                <p className="text-gray-400">
+                <p className="text-[var(--muted)]">
                   Average 300% ROI within 12 months. Our solutions deliver measurable outcomes.
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
               <div className="text-center">
                 <div className="text-3xl mb-4 font-bold text-yellow-400">FAST</div>
                 <h3 className="text-xl font-semibold mb-3">Rapid Deployment</h3>
-                <p className="text-gray-400">
+                <p className="text-[var(--muted)]">
                   From concept to production in weeks, not months. Fast-track your AI initiatives.
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default function SolutionsPage() {
               <div className="text-center">
                 <div className="text-3xl mb-4 font-bold text-blue-400">SUPPORT</div>
                 <h3 className="text-xl font-semibold mb-3">Full Support</h3>
-                <p className="text-gray-400">
+                <p className="text-[var(--muted)]">
                   24/7 technical support and ongoing optimization to ensure continued success.
                 </p>
               </div>

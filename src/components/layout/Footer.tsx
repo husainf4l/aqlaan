@@ -7,37 +7,17 @@ const footerSections = [
   {
     title: "Product",
     links: [
-      { label: "Platform", href: "/platform" },
       { label: "Products", href: "/products" },
-      { label: "Pricing", href: "/products" },
       { label: "Solutions", href: "/solutions/enterprise-automation" },
+      { label: "Consultations", href: "/consultations" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Blog", href: "/blog" },
-      { label: "Press", href: "/press" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Documentation", href: "/docs" },
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Community", href: "/community" },
-      { label: "Status", href: "/status" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Service", href: "/terms-of-service" },
-      { label: "Cookie Policy", href: "/cookie-policy" },
-      { label: "Compliance", href: "/compliance" },
+      { label: "Contact", href: "/contact" },
+      { label: "Get Started", href: "/get-started" },
     ],
   },
 ];
@@ -54,7 +34,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#00000f] border-t border-white/[0.06]">
+    <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Top grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
@@ -70,7 +50,7 @@ export default function Footer() {
                 className="h-8 w-auto hover:opacity-70 transition-opacity duration-300"
               />
             </Link>
-            <p className="text-[#a3a3a3] text-sm leading-relaxed">
+            <p className="text-[var(--muted)] text-sm leading-relaxed">
               Breakthrough AI solutions transforming businesses from data to deployment.
             </p>
           </div>
@@ -78,7 +58,7 @@ export default function Footer() {
           {/* Link columns */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white text-xs font-mono tracking-[1px] uppercase mb-4">
+              <h4 className="text-[var(--text)] text-xs font-mono tracking-[1px] uppercase mb-4">
                 {section.title}
               </h4>
               <ul className="space-y-2.5">
@@ -86,7 +66,7 @@ export default function Footer() {
                   <li key={`${section.title}-${i}`}>
                     <Link
                       href={link.href}
-                      className="text-[#a3a3a3] text-sm hover:text-white transition-colors duration-300"
+                      className="text-[var(--muted)] text-sm hover:text-[var(--text)] transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -98,11 +78,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/[0.06] mb-8" />
+        <div className="border-t border-[var(--border-subtle)] mb-8" />
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#a3a3a3] text-xs font-mono">
+          <p className="text-[var(--muted)] text-xs font-mono">
             © {currentYear} AQLAAN. All rights reserved.
           </p>
 
@@ -112,7 +92,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="text-[#a3a3a3] hover:text-white transition-colors duration-300 p-2 rounded-lg hover:bg-white/[0.04]"
+                className="text-[var(--muted)] hover:text-[var(--text)] transition-colors duration-300 p-2 rounded-lg hover:bg-[var(--dropdown-item-hover)]"
               >
                 <Icon size={16} />
               </a>

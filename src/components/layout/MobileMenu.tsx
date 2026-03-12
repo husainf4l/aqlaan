@@ -82,7 +82,8 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed top-0 right-0 h-full w-full max-w-sm bg-gray-900 border-l border-gray-800 z-50 p-6 overflow-y-auto"
+            className="fixed top-0 right-0 h-full w-full max-w-sm border-l border-gray-200 dark:border-white/10 z-50 p-6 overflow-y-auto"
+            style={{ backgroundColor: 'var(--nav-bg)' }}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
@@ -94,11 +95,12 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
                   height={96}
                   quality={100}
                   className="h-6 w-auto"
+                  style={{ filter: 'var(--logo-filter)' }}
                 />
               </Link>
               <button
                 onClick={onClose}
-                className="text-white hover:text-gray-300 transition-colors p-2"
+                className="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white/70 transition-colors p-2"
                 aria-label="Close mobile menu"
               >
                 <X size={24} />
@@ -113,7 +115,7 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className="block text-xl text-white hover:text-blue-400 transition-colors py-3 border-b border-gray-800"
+                      className="block text-xl text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors py-3 border-b border-gray-200 dark:border-white/10"
                     >
                       {item.label}
                     </Link>
@@ -121,7 +123,7 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
                     <div>
                       <button
                         onClick={() => toggleDropdown(item.label)}
-                        className="flex items-center justify-between w-full text-xl text-white hover:text-blue-400 transition-colors py-3 border-b border-gray-800"
+                        className="flex items-center justify-between w-full text-xl text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors py-3 border-b border-gray-200 dark:border-white/10"
                       >
                         {item.label}
                         {expandedDropdown === item.label ? (
@@ -140,7 +142,7 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="py-4 space-y-3 pl-4 border-l-2 border-blue-400 ml-4">
+                            <div className="py-4 space-y-3 pl-4 border-l-2 border-blue-500 ml-4">
                               {item.dropdown.items.map((dropdownItem, dropdownIndex) => (
                                 <motion.div
                                   key={dropdownItem.href}
@@ -151,11 +153,11 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
                                   <Link
                                     href={dropdownItem.href}
                                     onClick={onClose}
-                                    className="block text-gray-300 hover:text-white transition-colors py-2"
+                                    className="block text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors py-2"
                                   >
                                     <div className="font-medium">{dropdownItem.label}</div>
                                     {dropdownItem.description && (
-                                      <div className="text-sm text-gray-500 mt-1">
+                                      <div className="text-sm text-gray-500 dark:text-white/70 mt-1 opacity-70">
                                         {dropdownItem.description}
                                       </div>
                                     )}
@@ -175,21 +177,21 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
             {/* Actions */}
             <motion.div
               variants={itemVariants}
-              className="mt-8 pt-8 border-t border-gray-800 space-y-4"
+              className="mt-8 pt-8 border-t border-gray-200 dark:border-white/10 space-y-4"
             >
               <div className="flex items-center justify-between">
-                <span className="text-gray-400">Theme</span>
+                <span className="text-gray-700 dark:text-white">Theme</span>
                 <ThemeToggle />
               </div>
 
               <div className="space-y-3">
                 <Link href="/demo" onClick={onClose}>
-                  <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-200 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/10 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
                     Book a Demo
                   </Button>
                 </Link>
                 <Link href="/get-started" onClick={onClose}>
-                  <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 hover:opacity-90 dark:from-[#9a9a9a] dark:via-[#1a1a1a] dark:to-[#6a6a6a] text-gray-900 dark:text-white border-0 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
                     Get Started
                   </Button>
                 </Link>

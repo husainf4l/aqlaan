@@ -69,7 +69,7 @@ export default function ChatInput({ onSendMessage, onTyping }: ChatInputProps) {
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-gray-200 transition-colors"
+        className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--surface)] hover:bg-gray-700 flex items-center justify-center text-[var(--muted)] hover:text-gray-200 transition-colors"
         title="Message options"
       >
         ⚙
@@ -84,14 +84,14 @@ export default function ChatInput({ onSendMessage, onTyping }: ChatInputProps) {
           onKeyDown={handleKeyDown}
           placeholder="Type your message..."
           rows={1}
-          className="w-full bg-gray-800 text-white rounded-2xl px-4 py-3 pr-12 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 max-h-32 overflow-y-auto"
+          className="w-full bg-[var(--surface)] text-white rounded-2xl px-4 py-3 pr-12 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 max-h-32 overflow-y-auto"
         />
         
         {/* Attach Button */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute right-3 bottom-3 text-gray-400 hover:text-gray-200 transition-colors"
+          className="absolute right-3 bottom-3 text-[var(--muted)] hover:text-gray-200 transition-colors"
           title="Attach file"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,8 +108,8 @@ export default function ChatInput({ onSendMessage, onTyping }: ChatInputProps) {
         disabled={!message.trim()}
         className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
           message.trim()
-            ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70'
-            : 'bg-gray-800 text-gray-600 cursor-not-allowed'
+            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70'
+            : 'bg-[var(--surface)] text-gray-600 cursor-not-allowed'
         }`}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

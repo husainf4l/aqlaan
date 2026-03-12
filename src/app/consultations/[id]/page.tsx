@@ -93,28 +93,28 @@ export default function ChatRoomPage() {
       <div className="min-h-screen pt-20 flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-red-400 mb-4">Session not found</h2>
-          <p className="text-gray-400">This consultation session does not exist.</p>
+          <p className="text-[var(--muted)]">This consultation session does not exist.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-black">
+    <div className="min-h-screen pt-20 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <FadeIn>
           {/* Header */}
-          <div className="bg-gray-900 rounded-t-2xl border-b border-gray-800 p-6">
+          <div className="bg-[var(--bg-secondary)] rounded-t-2xl border-b border-[var(--border)] p-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
                   {session.consultant.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-white">{session.consultant.name}</h2>
+                  <h2 className="text-xl font-bold text-[var(--text)]">{session.consultant.name}</h2>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-gray-400">Online</span>
+                    <span className="text-sm text-[var(--muted)]">Online</span>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function ChatRoomPage() {
           </div>
 
           {/* Chat Room */}
-          <div className="bg-gray-900 rounded-b-2xl">
+          <div className="bg-[var(--bg-secondary)] rounded-b-2xl">
             <ChatRoom
               messages={messages}
               currentUserId={CURRENT_USER_ID}
@@ -138,31 +138,31 @@ export default function ChatRoomPage() {
           </div>
 
           {/* Session Info Panel */}
-          <div className="mt-6 bg-gray-900 rounded-2xl p-6">
+          <div className="mt-6 bg-[var(--bg-secondary)] rounded-2xl p-6">
             <h3 className="text-lg font-semibold mb-4">Session Information</h3>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <span className="text-gray-400">Status:</span>
+                <span className="text-[var(--muted)]">Status:</span>
                 <span className={`ml-2 px-2 py-1 rounded text-xs ${
                   session.status === 'active' 
                     ? 'bg-green-500/20 text-green-400' 
-                    : 'bg-gray-500/20 text-gray-400'
+                    : 'bg-gray-500/20 text-[var(--muted)]'
                 }`}>
                   {session.status}
                 </span>
               </div>
               <div>
-                <span className="text-gray-400">Messages:</span>
+                <span className="text-[var(--muted)]">Messages:</span>
                 <span className="ml-2 text-white">{messages.length}</span>
               </div>
               <div>
-                <span className="text-gray-400">Started:</span>
+                <span className="text-[var(--muted)]">Started:</span>
                 <span className="ml-2 text-white">
                   {new Date(session.startTime).toLocaleTimeString()}
                 </span>
               </div>
               <div>
-                <span className="text-gray-400">Participants:</span>
+                <span className="text-[var(--muted)]">Participants:</span>
                 <span className="ml-2 text-white">2</span>
               </div>
             </div>

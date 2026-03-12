@@ -51,7 +51,7 @@ export default function MessageBubble({ message, isOwn, showAvatar }: MessageBub
       {/* Message Content */}
       <div className={`flex flex-col ${isOwn ? 'items-end' : 'items-start'} max-w-[70%]`}>
         {showAvatar && (
-          <span className="text-xs text-gray-500 mb-1 px-2">
+          <span className="text-xs text-[var(--muted)] opacity-80 mb-1 px-2">
             {message.sender.name}
           </span>
         )}
@@ -60,13 +60,13 @@ export default function MessageBubble({ message, isOwn, showAvatar }: MessageBub
           whileHover={{ scale: 1.02 }}
           className={`rounded-2xl px-4 py-2 ${
             isOwn
-              ? 'bg-linear-to-r from-blue-600 to-blue-700 text-white'
-              : 'bg-gray-800 text-gray-100'
+              ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white'
+              : 'bg-[var(--surface)] text-gray-100'
           } shadow-lg`}
         >
           <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
           <span className={`text-xs mt-1 block ${
-            isOwn ? 'text-blue-200' : 'text-gray-500'
+            isOwn ? 'text-blue-200' : 'text-[var(--muted)] opacity-80'
           }`}>
             {formatTime(message.createdAt)}
           </span>

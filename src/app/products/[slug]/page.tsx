@@ -199,8 +199,9 @@ function getProduct(slug: string): Product | undefined {
   return products.find(product => product.slug === slug);
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const product = getProduct(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProduct(slug);
   if (!product) {
     return {
       title: "Product Not Found | AQLAAN",
@@ -212,8 +213,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = getProduct(params.slug);
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProduct(slug);
 
   if (!product) {
     notFound();
@@ -222,24 +224,24 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-linear-to-b from-black to-gray-900">
+      <section className="py-20 px-6 bg-[var(--bg)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="max-w-4xl">
-              <div className="text-lg font-bold mb-4 text-blue-400 bg-gray-800 px-3 py-1 rounded-lg inline-block">
+              <div className="text-lg font-bold mb-4 text-blue-400 bg-[var(--surface)] px-3 py-1 rounded-lg inline-block">
                 {product.icon}
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
                 {product.name}
               </h1>
-              <p className="text-xl text-gray-400 mb-6">
+              <p className="text-xl text-[var(--muted)] mb-6">
                 {product.description}
               </p>
-              <p className="text-lg text-gray-300 mb-8">
+              <p className="text-lg text-[var(--muted)] mb-8">
                 {product.detailedDescription}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-linear-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+                <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
                   Start Free Trial
                 </Button>
                 <Button variant="outline">Contact Sales</Button>
@@ -255,7 +257,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Key Features</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Everything you need to succeed with {product.name}.
               </p>
             </div>
@@ -279,12 +281,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-[var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Use Cases</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Real-world applications of {product.name}.
               </p>
             </div>
@@ -297,7 +299,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
                     {useCase}
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-[var(--muted)] text-sm">
                     Transform your operations with AI-powered {useCase.toLowerCase()}.
                   </p>
                 </Card>
@@ -314,7 +316,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <FadeIn>
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold mb-4">Pricing Plans</h2>
-                <p className="text-gray-400 text-lg">
+                <p className="text-[var(--muted)] text-lg">
                   Choose the plan that fits your needs.
                 </p>
               </div>
@@ -335,13 +337,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                     <div className="text-3xl font-bold text-blue-400 mb-4">{tier.price}</div>
                     <div className="space-y-2 mb-6">
                       {tier.features.map((feature) => (
-                        <div key={feature} className="text-sm text-gray-500 flex items-center">
+                        <div key={feature} className="text-sm text-[var(--muted)] opacity-80 flex items-center">
                           <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
                           {feature}
                         </div>
                       ))}
                     </div>
-                    <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Button className="w-full bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                       Get Started
                     </Button>
                   </Card>
@@ -353,7 +355,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       )}
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-linear-to-r from-blue-600 via-purple-600 to-blue-800">
+      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-4xl font-bold mb-6 text-white">
@@ -367,7 +369,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 Start Free Trial
               </Button>
               <Link href="/contact">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
+                <Button variant="outline" className="border-[var(--border)] text-[var(--text)] hover:bg-[var(--text)] hover:text-[var(--bg)] px-8 py-4">
                   Contact Sales
                 </Button>
               </Link>

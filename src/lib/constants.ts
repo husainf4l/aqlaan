@@ -4,7 +4,7 @@ export const SITE_DESCRIPTION = "Empowering the future of AI and automation.";
 export const NAV_LINKS = [
     { href: "/about", label: "About" },
     { href: "/solutions", label: "Solutions" },
-    { href: "/careers", label: "Careers" },
+    { href: "/products", label: "Products" },
     { href: "/contact", label: "Contact" },
 ];
 

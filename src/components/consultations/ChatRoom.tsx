@@ -64,7 +64,7 @@ export default function ChatRoom({
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center text-gray-500 mt-20"
+              className="text-center text-[var(--muted)] opacity-80 mt-20"
             >
               <div className="text-4xl mb-4">💬</div>
               <p>No messages yet. Start the conversation!</p>
@@ -90,7 +90,7 @@ export default function ChatRoom({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="flex items-center space-x-2 text-gray-400 text-sm ml-4"
+            className="flex items-center space-x-2 text-[var(--muted)] text-sm ml-4"
           >
             <div className="flex space-x-1">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
@@ -120,7 +120,7 @@ export default function ChatRoom({
       )}
 
       {/* Input Area */}
-      <div className="border-t border-gray-800 p-4">
+      <div className="border-t border-[var(--border)] p-4">
         <ChatInput 
           onSendMessage={onSendMessage}
           onTyping={onTyping}

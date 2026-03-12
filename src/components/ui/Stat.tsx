@@ -27,7 +27,7 @@ export function Stat({ value, label, suffix = "", prefix = "" }: StatProps) {
         {isInView && <CountUp end={value} duration={2.5} />}
         {suffix}
       </motion.div>
-      <p className="text-gray-400 text-sm md:text-base">{label}</p>
+      <p className="text-[var(--muted)] text-sm md:text-base">{label}</p>
     </div>
   );
 }

@@ -46,7 +46,7 @@ export default function SessionTimer({ startTime, endTime }: SessionTimerProps) 
         className="flex items-center space-x-2"
       >
         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-        <span className="text-sm text-gray-400">Session Time:</span>
+        <span className="text-sm text-[var(--muted)]">Session Time:</span>
         <span className="text-lg font-mono font-bold text-white">
           {formatTime(elapsed)}
         </span>

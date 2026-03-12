@@ -101,23 +101,23 @@ export default function HealthcareAIPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-black">
+      <section className="py-20 px-6 bg-[var(--bg)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="max-w-4xl">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
                 Healthcare AI
               </h1>
-              <p className="text-xl text-gray-400 mb-8">
+              <p className="text-xl text-[var(--muted)] mb-8">
                 Revolutionizing healthcare with artificial intelligence. From diagnostic assistance to
                 personalized treatment plans, our AI solutions are improving patient outcomes and
                 transforming healthcare delivery.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
                   Healthcare Solutions
                 </Button>
-                <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Clinical Trials</Button>
+                <Button className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Clinical Trials</Button>
               </div>
             </div>
           </FadeIn>
@@ -130,7 +130,7 @@ export default function HealthcareAIPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">AI Healthcare Solutions</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Comprehensive AI solutions designed specifically for healthcare challenges.
               </p>
             </div>
@@ -144,13 +144,13 @@ export default function HealthcareAIPage() {
                   <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
                     {solution.title}
                   </h3>
-                  <p className="text-gray-400 mb-4">{solution.description}</p>
+                  <p className="text-[var(--muted)] mb-4">{solution.description}</p>
                   <div className="bg-blue-900/20 rounded-lg p-3 mb-4">
                     <p className="text-blue-300 text-sm font-semibold">{solution.impact}</p>
                   </div>
                   <div className="space-y-2">
                     {solution.features.map((feature) => (
-                      <div key={feature} className="text-sm text-gray-500 flex items-center">
+                      <div key={feature} className="text-sm text-[var(--muted)] opacity-80 flex items-center">
                         <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
                         {feature}
                       </div>
@@ -164,12 +164,12 @@ export default function HealthcareAIPage() {
       </section>
 
       {/* Compliance & Security */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-[var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Regulatory Compliance</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Enterprise-grade security and compliance for healthcare data and operations.
               </p>
             </div>
@@ -183,7 +183,7 @@ export default function HealthcareAIPage() {
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-green-400 transition-colors">
                     {item.standard}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-2">{item.description}</p>
+                  <p className="text-[var(--muted)] text-sm mb-2">{item.description}</p>
                   <div className="text-green-400 text-sm font-semibold">{item.status}</div>
                 </Card>
               </FadeIn>
@@ -198,7 +198,7 @@ export default function HealthcareAIPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Clinical Success Stories</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-[var(--muted)] text-lg">
                 Real healthcare implementations delivering measurable improvements in patient care.
               </p>
             </div>
@@ -212,12 +212,12 @@ export default function HealthcareAIPage() {
                   <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
                     Challenge
                   </h3>
-                  <p className="text-gray-400 mb-4">{study.challenge}</p>
+                  <p className="text-[var(--muted)] mb-4">{study.challenge}</p>
                   <h4 className="text-lg font-semibold mb-2">Solution & Results</h4>
-                  <p className="text-gray-300 mb-4">{study.solution}</p>
+                  <p className="text-[var(--muted)] mb-4">{study.solution}</p>
                   <div className="grid grid-cols-3 gap-4">
                     {study.results.map((result) => (
-                      <div key={result} className="text-center p-3 bg-gray-800/50 rounded-lg">
+                      <div key={result} className="text-center p-3 bg-[var(--surface)] rounded-lg">
                         <div className="text-green-400 font-semibold">{result}</div>
                       </div>
                     ))}
