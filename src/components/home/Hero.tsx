@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import { SunsetHero } from "@/components/ui/aurora-hero-bg-1";
 
 export default function Hero() {
@@ -9,31 +8,22 @@ export default function Hero() {
       <div className="min-h-screen flex flex-col items-center justify-center px-8 lg:px-16 py-20 max-w-7xl mx-auto">
         {/* Hero Content - Centered */}
         <div className="text-center space-y-16 w-full">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <h1
             className="text-5xl md:text-6xl lg:text-7xl font-extralight leading-tight bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent tracking-tight"
           >
             Breakthrough AI from<br />Data to Deployment
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+          <p
             className="text-lg md:text-xl text-[var(--muted)] font-light max-w-3xl mx-auto"
           >
             Transform your business with cutting-edge AI solutions that deliver real results. 
             From intelligent automation to predictive analytics, we power the future of enterprise.
-          </motion.p>
+          </p>
 
           {/* Stats Section */}
-          <motion.div
+          <div
             className="grid grid-cols-3 md:grid-cols-3 gap-8 lg:gap-12 pt-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="space-y-2">
               <div className="text-5xl lg:text-6xl font-extralight text-[var(--text)]">12+</div>
@@ -49,7 +39,7 @@ export default function Hero() {
               <div className="text-5xl lg:text-6xl font-extralight text-[var(--text)]">24/7</div>
               <div className="text-sm text-[var(--muted)] font-light">Support Available</div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </SunsetHero>

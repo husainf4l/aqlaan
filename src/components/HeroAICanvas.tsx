@@ -5,7 +5,6 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
 import { IconCloud } from "@/components/ui/interactive-icon-cloud";
 
 /** Sync canvas resolution */
