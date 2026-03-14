@@ -152,16 +152,16 @@ export default function ConsultationsPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Schedule Your{' '}
               <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                Demo
+                Consultation
               </span>
             </h2>
             <p className="text-[var(--muted)] text-lg max-w-2xl mx-auto">
-              Get a personalized demonstration of AQLAAN&apos;s AI and automation solutions. Our experts will show you how we can transform your business.
+              Get a personalized consultation with AQLAAN&apos;s AI and automation experts. Our team will help you discover how we can transform your business.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16">
-            {/* Demo Form */}
+            {/* Consultation Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -172,7 +172,7 @@ export default function ConsultationsPage() {
                 <div className="mb-6 p-3 bg-blue-500/10 rounded-xl inline-block">
                   <Calendar className="w-6 h-6 text-blue-400" />
                 </div>
-                <h3 className="text-2xl font-bold mb-6">Request a Demo</h3>
+                <h3 className="text-2xl font-bold mb-6">Request a Consultation</h3>
                 <form className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-[var(--muted)] mb-2">Full Name</label>
@@ -203,14 +203,14 @@ export default function ConsultationsPage() {
                     <input type="datetime-local" className="w-full px-4 py-3 bg-[var(--surface)] border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-colors" />
                   </div>
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl">
-                    Schedule Demo
+                    Schedule Consultation
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
               </Card>
             </motion.div>
 
-            {/* Demo Details */}
+            {/* Consultation Details */}
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, x: 30 }}

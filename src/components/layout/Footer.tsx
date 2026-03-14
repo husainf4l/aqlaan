@@ -12,7 +12,6 @@ const footerSections = [
       { label: "Solutions", href: "/solutions" },
       { label: "Platform", href: "/platform" },
       { label: "Consultations", href: "/consultations" },
-      { label: "Demo", href: "/demo" },
     ],
   },
   {

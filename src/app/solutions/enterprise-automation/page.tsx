@@ -562,7 +562,7 @@ export default function EnterpriseAutomationPage() {
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Schedule a Demo
+                  Get Started
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.button>

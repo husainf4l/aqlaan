@@ -516,11 +516,6 @@ export default function InfrastructureAIPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/demo">
-                  <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                    Request Demo
-                  </Button>
-                </Link>
               </div>
             </div>
           </motion.div>

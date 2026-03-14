@@ -206,9 +206,7 @@ export default function ConsultationsPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                  Watch Demo
-                </Button>
+
               </motion.div>
 
               {/* Stats */}

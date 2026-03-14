@@ -226,7 +226,7 @@ export default function GetStartedPage() {
     },
     {
       question: "Do you offer enterprise solutions?",
-      answer: "Yes! Our Enterprise plan includes unlimited API calls, custom AI models trained on your data, on-premise deployment options, dedicated support teams, SLA guarantees, and custom integration services. Contact our sales team for a personalized demo.",
+      answer: "Yes! Our Enterprise plan includes unlimited API calls, custom AI models trained on your data, on-premise deployment options, dedicated support teams, SLA guarantees, and custom integration services. Contact our sales team for a personalized consultation.",
     },
   ];
 
@@ -271,16 +271,16 @@ print(response.text)`;
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <Link href="/demo">
+                <Link href="/contact">
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-6 text-lg group">
                     Start Free Trial
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/demo">
+                <Link href="/solutions">
                   <Button variant="outline" className="px-8 py-6 text-lg group">
                     <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                    Watch Demo
+                    View Solutions
                   </Button>
                 </Link>
               </div>
@@ -605,7 +605,7 @@ print(response.text)`;
               Start your free trial today — no credit card required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo">
+              <Link href="/contact">
                 <Button className="bg-white text-blue-600 hover:bg-slate-50 px-8 py-6 text-lg font-semibold shadow-xl group">
                   Get Started Free
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

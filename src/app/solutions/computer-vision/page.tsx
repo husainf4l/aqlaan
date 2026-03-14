@@ -175,11 +175,7 @@ export default function ComputerVisionPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/demo">
-                  <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                    View Demos
-                  </Button>
-                </Link>
+
               </motion.div>
 
               {/* Stats */}
@@ -419,7 +415,7 @@ export default function ComputerVisionPage() {
             </h2>
             <p className="text-[var(--muted)] text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
               Discover how our computer vision solutions can revolutionize your business operations.
-              Get started today with a personalized demo.
+              Get started today with our comprehensive solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/get-started">

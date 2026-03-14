@@ -173,9 +173,6 @@ function HeroContent() {
                   <span className="glass-btn">Get Started →</span>
                 </div>
               </Link>
-              <Link href="/demo" className="text-btn">
-                Book a Demo →
-              </Link>
             </div>
 
             <div className="hero__stats">

@@ -185,11 +185,6 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
               </div>
 
               <div className="space-y-3">
-                <Link href="/demo" onClick={onClose}>
-                  <Button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-200 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/10 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                    Book a Demo
-                  </Button>
-                </Link>
                 <Link href="/get-started" onClick={onClose}>
                   <Button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 hover:opacity-90 dark:from-[#9a9a9a] dark:via-[#1a1a1a] dark:to-[#6a6a6a] text-gray-900 dark:text-white border-0 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
                     Get Started

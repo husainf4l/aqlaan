@@ -182,11 +182,7 @@ export default function LanguageIntelligencePage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/demo">
-                  <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                    Try Demo
-                  </Button>
-                </Link>
+
               </motion.div>
 
               {/* Stats */}
@@ -444,11 +440,6 @@ export default function LanguageIntelligencePage() {
                   <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-base rounded-xl shadow-lg shadow-purple-500/25">
                     Schedule Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="/demo">
-                  <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                    Try Live Demo
                   </Button>
                 </Link>
               </div>
