@@ -2,35 +2,9 @@
 @import "../styles/animations.css";
 
 /* ─────────────────────────────────────────
-   Design Tokens — Light (default)
+   Design Tokens — Dark (only mode)
 ───────────────────────────────────────── */
-:root {
-  --bg: #f8f8fc;
-  --bg-secondary: #efeff5;
-  --surface: rgba(0, 0, 0, 0.03);
-  --border: rgba(0, 0, 0, 0.10);
-  --border-subtle: rgba(0, 0, 0, 0.06);
-  --text: #0a0a0f;
-  --muted: #525252;
-  --accent: #006CAD;
-  --accent-soft: #EBF4FB;
-  --card-bg: rgba(0, 0, 0, 0.03);
-  --card-border: rgba(0, 0, 0, 0.10);
-  --card-hover-border: rgba(0, 0, 0, 0.20);
-  --card-hover-shadow: rgba(0, 0, 0, 0.06);
-  --nav-bg: #ffffff;
-  --nav-scrolled: #ffffff;
-  --nav-border: rgba(0, 0, 0, 0.08);
-  --dropdown-bg: #ffffff;
-  --dropdown-item-hover: rgba(0, 0, 0, 0.04);
-  --gradient-color: #8350e8;
-  --sparkles-color: #8350e8;
-  --logo-filter: brightness(0);
-}
-
-/* ─────────────────────────────────────────
-   Design Tokens — Dark
-───────────────────────────────────────── */
+:root,
 .dark {
   --bg: #00000f;
   --bg-secondary: #0a0a14;

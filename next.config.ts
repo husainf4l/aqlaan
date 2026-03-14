@@ -52,6 +52,9 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // Required for Turbopack (Next.js 16+ default) to coexist with webpack config
+  turbopack: {},
+
   // Enable webpack bundle analyzer with ANALYZE=true
   webpack: (config, { isServer }) => {
     if (process.env.ANALYZE === 'true') {

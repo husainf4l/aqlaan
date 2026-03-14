@@ -1,20 +1,9 @@
-/* Custom theme styles */
+/* Custom theme styles — dark only */
 .gradient-bg {
-    background: linear-gradient(135deg, #f0f0f5 0%, #e0e0ef 100%);
-}
-
-.dark .gradient-bg {
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, #0062a3 0%, #6a3fcb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.dark .text-gradient {
     background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

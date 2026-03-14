@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Menu, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
-import ThemeToggle from "./ThemeToggle";
 
 interface NavItem {
   label: string;
@@ -97,12 +96,12 @@ export default function Navbar() {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="text-gray-700 dark:text-slate-300 hover:text-gray-900 transition-colors duration-300 text-sm font-medium [&:hover]:dark:text-white"
+                    className="text-gray-900 dark:text-white hover:text-black dark:hover:text-gray-200 transition-colors duration-300 text-sm font-medium"
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <button className="text-gray-700 dark:text-slate-300 hover:text-gray-900 transition-colors duration-300 flex items-center gap-1 text-sm font-medium [&:hover]:dark:text-white">
+                  <button className="text-gray-900 dark:text-white hover:text-black dark:hover:text-gray-200 transition-colors duration-300 flex items-center gap-1 text-sm font-medium">
                     <span>{item.label}</span>
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
@@ -134,11 +133,11 @@ export default function Navbar() {
                             className="block px-2 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-200 group"
                             onClick={() => setActiveDropdown(null)}
                           >
-                            <div className="text-gray-900 dark:text-slate-300 group-hover:text-gray-900 text-sm font-medium transition-colors duration-200 [.group:hover_&]:dark:text-white">
+                            <div className="text-gray-900 dark:text-white text-sm font-medium transition-colors duration-200">
                               {dropdownItem.label}
                             </div>
                             {dropdownItem.description && (
-                              <div className="text-gray-600 dark:text-white/80 group-hover:text-gray-700 dark:group-hover:text-slate-200 text-xs mt-0.5 leading-relaxed transition-colors duration-200">
+                              <div className="text-gray-500 dark:text-gray-300 text-xs mt-0.5 leading-relaxed transition-colors duration-200">
                                 {dropdownItem.description}
                               </div>
                             )}
@@ -154,13 +153,12 @@ export default function Navbar() {
 
           {/* Right CTAs */}
           <div className="hidden lg:flex items-center gap-3 ml-auto">
-            <ThemeToggle />
-            <Link href="/demo" className="text-gray-700 dark:text-slate-300 hover:text-gray-900 transition-colors duration-300 text-sm font-medium [&:hover]:dark:text-white">
+            <Link href="/demo" className="text-gray-900 dark:text-white hover:text-black dark:hover:text-gray-200 transition-colors duration-300 text-sm font-medium">
               Book a Demo
             </Link>
             <Link href="/get-started">
               <div className="p-[1px] rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 dark:from-[#9a9a9a] dark:via-[#1a1a1a] dark:to-[#6a6a6a]">
-                <span className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-white dark:bg-white/[0.04] backdrop-blur-sm text-gray-900 dark:text-slate-300 text-sm font-medium cursor-pointer border-none whitespace-nowrap transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] [&:hover]:dark:text-white">
+                <span className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-white dark:bg-white/[0.04] backdrop-blur-sm text-gray-900 dark:text-white text-sm font-medium cursor-pointer border-none whitespace-nowrap transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
                   Get Started
                 </span>
               </div>
@@ -169,10 +167,9 @@ export default function Navbar() {
 
           {/* Mobile Theme + Menu Toggle */}
           <div className="lg:hidden flex items-center gap-2 ml-auto">
-            <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-700 dark:text-slate-300 hover:text-gray-900 transition-colors duration-300 p-2 [&:hover]:dark:text-white"
+            className="text-gray-900 dark:text-white hover:text-black dark:hover:text-gray-200 transition-colors duration-300 p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
