@@ -61,14 +61,6 @@ const solutions = [
     iconColor: "text-blue-500",
   },
   {
-    icon: HeartPulse,
-    title: "Healthcare Intelligence",
-    desc: "Improve diagnosis and outcomes through contextual AI insights. Built for clinical precision.",
-    href: "/solutions/healthcare-ai",
-    gradient: "from-red-500/20 to-pink-500/20",
-    iconColor: "text-red-500",
-  },
-  {
     icon: Building,
     title: "Smart Infrastructure",
     desc: "Enable predictive analytics for safer, smarter cities. Monitor, adapt, and respond in real time.",
@@ -83,14 +75,6 @@ const solutions = [
     href: "/solutions/computer-vision",
     gradient: "from-purple-500/20 to-fuchsia-500/20",
     iconColor: "text-purple-500",
-  },
-  {
-    icon: MessageSquare,
-    title: "Language Intelligence",
-    desc: "Natural language processing that understands context and intent. Power conversations at scale.",
-    href: "/solutions/language-intelligence",
-    gradient: "from-orange-500/20 to-amber-500/20",
-    iconColor: "text-orange-500",
   },
   {
     icon: Cpu,

@@ -9,13 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/consultations',
     '/contact',
     '/get-started',
-    '/products',
     '/solutions',
     '/solutions/computer-vision',
     '/solutions/enterprise-automation',
-    '/solutions/healthcare-ai',
     '/solutions/infrastructure-ai',
-    '/solutions/language-intelligence',
   ]
 
   return routes.map((route) => ({

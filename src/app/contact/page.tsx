@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/Button';
 import { AnimatedHeroBlob } from '@/components/animations/AnimatedHeroBlob';
 import BackgroundMotion from '@/components/visuals/BackgroundMotion';
 import { 
-  Mail, 
-  Phone, 
   MapPin, 
   Clock, 
   Send, 
@@ -274,26 +272,6 @@ export default function ConsultationsPage() {
                     <span>Digital transformation teams</span>
                   </li>
                 </ul>
-              </Card>
-
-              <Card className="p-6 border-white/5 hover:border-cyan-500/30 transition-colors">
-                <div className="mb-3 p-2 bg-cyan-500/10 rounded-lg inline-block">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                </div>
-                <h3 className="text-lg font-bold text-cyan-400 mb-3">QUESTIONS</h3>
-                <div className="space-y-3 text-[var(--muted)] text-sm">
-                  <div className="flex items-start gap-2">
-                    <Mail className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
-                    <span>support@aqlaan.com</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Phone className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                  <p className="text-[var(--muted)] opacity-80 text-xs pt-2 border-t border-white/10">
-                    Available Monday-Friday, 9 AM - 6 PM EST
-                  </p>
-                </div>
               </Card>
             </motion.div>
           </div>

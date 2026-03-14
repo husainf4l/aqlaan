@@ -224,7 +224,7 @@ export default function CookiePolicyPage() {
                 <ul className="space-y-3 ml-6">
                   <li className="flex gap-3">
                     <span className="text-blue-400 mt-1">•</span>
-                    <span><strong>Browser Settings:</strong> Most browsers allow you to refuse or accept cookies. Check your browser's help section for instructions.</span>
+                    <span><strong>Browser Settings:</strong> Most browsers allow you to refuse or accept cookies. Check your browser&apos;s help section for instructions.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-400 mt-1">•</span>

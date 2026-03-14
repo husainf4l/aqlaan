@@ -23,13 +23,10 @@ const navItems: NavItem[] = [
       items: [
         { label: "Enterprise Automation", href: "/solutions/enterprise-automation", description: "Scale operations with intelligent automation" },
         { label: "Computer Vision", href: "/solutions/computer-vision", description: "Advanced visual intelligence" },
-        { label: "Language Intelligence", href: "/solutions/language-intelligence", description: "Natural language processing at scale" },
-        { label: "Healthcare AI", href: "/solutions/healthcare-ai", description: "Medical intelligence solutions" },
         { label: "Infrastructure AI", href: "/solutions/infrastructure-ai", description: "Smart infrastructure monitoring" },
       ],
     },
   },
-  { label: "Products", href: "/products" },
   {
     label: "Company",
     dropdown: {

@@ -4,113 +4,25 @@ import FadeIn from "@/components/animations/FadeIn";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { 
-  Zap, 
   Code2, 
-  Rocket, 
-  CheckCircle2, 
+  Rocket,
   ArrowRight, 
   Play,
   Sparkles,
   Users,
-  Shield,
   Clock,
-  Star,
   Book,
   Video,
   Package,
   Monitor,
   MessageCircle,
-  Award,
   TrendingUp,
-  Database,
   Lock,
   Globe
 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function GetStartedPage() {
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
-
-  const stats = [
-    { value: "10k+", label: "Active Developers", icon: Users },
-    { value: "99.9%", label: "Uptime SLA", icon: Shield },
-    { value: "<100ms", label: "AVG Response", icon: Zap },
-    { value: "24/7", label: "Support", icon: Clock },
-  ];
-
-  const paths = [
-    {
-      title: "Starter",
-      description: "Perfect for individual developers and small projects.",
-      price: { monthly: 0, annual: 0 },
-      features: [
-        { text: "100 API calls/month", included: true },
-        { text: "Basic AI models", included: true },
-        { text: "Community support", included: true },
-        { text: "Documentation access", included: true },
-        { text: "SDK access", included: false },
-        { text: "Analytics dashboard", included: false },
-      ],
-      cta: "Start Free",
-      popular: false,
-      icon: Sparkles,
-      color: "from-slate-500 to-slate-600",
-    },
-    {
-      title: "Developer",
-      description: "For developers building AI-powered applications.",
-      price: { monthly: 49, annual: 490 },
-      features: [
-        { text: "10,000 API calls/month", included: true },
-        { text: "Advanced AI models", included: true },
-        { text: "Email support", included: true },
-        { text: "Full SDK access", included: true },
-        { text: "Basic analytics", included: true },
-        { text: "Custom integrations", included: false },
-      ],
-      cta: "Start Developer",
-      popular: false,
-      icon: Code2,
-      color: "from-blue-500 to-blue-600",
-    },
-    {
-      title: "Business",
-      description: "Ideal for businesses deploying AI at scale.",
-      price: { monthly: 199, annual: 1990 },
-      features: [
-        { text: "100,000 API calls/month", included: true },
-        { text: "All AI models", included: true },
-        { text: "Priority support", included: true },
-        { text: "Custom integrations", included: true },
-        { text: "Advanced analytics", included: true },
-        { text: "Dedicated account manager", included: true },
-      ],
-      cta: "Start Business",
-      popular: true,
-      icon: TrendingUp,
-      color: "from-cyan-500 to-blue-600",
-    },
-    {
-      title: "Enterprise",
-      description: "Full-scale enterprise deployment with custom solutions.",
-      price: { monthly: null, annual: null },
-      features: [
-        { text: "Unlimited API calls", included: true },
-        { text: "Custom AI models", included: true },
-        { text: "Dedicated support team", included: true },
-        { text: "On-premise deployment", included: true },
-        { text: "SLA guarantee", included: true },
-        { text: "Custom training", included: true },
-      ],
-      cta: "Contact Sales",
-      popular: false,
-      icon: Award,
-      color: "from-purple-500 to-pink-600",
-    },
-  ];
-
   const steps = [
     {
       step: 1,
@@ -212,22 +124,6 @@ export default function GetStartedPage() {
       question: "What programming languages do you support?",
       answer: "We provide official SDKs for Python, JavaScript/TypeScript, Java, C#, Go, and Ruby. You can also use our REST APIs directly from any programming language that supports HTTP requests.",
     },
-    {
-      question: "Is there a free tier available?",
-      answer: "Yes! Our Starter plan is completely free and includes 100 API calls per month, access to basic AI models, community support, and full documentation. It's perfect for trying out AQLAAN and building proof-of-concepts.",
-    },
-    {
-      question: "Can I upgrade or downgrade my plan?",
-      answer: "Absolutely! You can upgrade or downgrade your plan at any time from your account dashboard. Changes take effect immediately, and billing is prorated based on your usage.",
-    },
-    {
-      question: "What kind of support do you provide?",
-      answer: "Support varies by plan: Starter includes community forums, Developer adds email support, Business includes priority support with faster response times, and Enterprise gets a dedicated support team available 24/7.",
-    },
-    {
-      question: "Do you offer enterprise solutions?",
-      answer: "Yes! Our Enterprise plan includes unlimited API calls, custom AI models trained on your data, on-premise deployment options, dedicated support teams, SLA guarantees, and custom integration services. Contact our sales team for a personalized consultation.",
-    },
   ];
 
   const codeExample = `# Install the AQLAAN Python SDK
@@ -284,129 +180,8 @@ print(response.text)`;
                   </Button>
                 </Link>
               </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {stats.map((stat, index) => (
-                  <FadeIn key={stat.label} delay={index * 0.1}>
-                    <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/10 mb-3">
-                        <stat.icon className="w-6 h-6 text-blue-400" />
-                      </div>
-                      <div className="text-3xl font-bold text-[var(--text)] mb-1">{stat.value}</div>
-                      <div className="text-sm text-[var(--muted)]">{stat.label}</div>
-                    </div>
-                  </FadeIn>
-                ))}
-              </div>
             </div>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* Pricing Plans */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Choose Your Plan</h2>
-              <p className="text-[var(--muted)] text-lg md:text-xl max-w-2xl mx-auto mb-8">
-                Start free and scale as you grow. All plans include our core AI platform.
-              </p>
-              
-              {/* Billing Toggle */}
-              <div className="inline-flex items-center gap-4 p-1 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
-                <button
-                  onClick={() => setBillingCycle("monthly")}
-                  className={`px-6 py-2 rounded-full transition-all duration-200 ${
-                    billingCycle === "monthly"
-                      ? "bg-blue-500 text-white"
-                      : "text-[var(--muted)] hover:text-[var(--text)]"
-                  }`}
-                >
-                  Monthly
-                </button>
-                <button
-                  onClick={() => setBillingCycle("annual")}
-                  className={`px-6 py-2 rounded-full transition-all duration-200 ${
-                    billingCycle === "annual"
-                      ? "bg-blue-500 text-white"
-                      : "text-[var(--muted)] hover:text-[var(--text)]"
-                  }`}
-                >
-                  Annual <span className="ml-1 text-xs">(Save 17%)</span>
-                </button>
-              </div>
-            </div>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {paths.map((plan, index) => {
-              const Icon = plan.icon;
-              const price = plan.price[billingCycle];
-              
-              return (
-                <FadeIn key={plan.title} delay={index * 0.1}>
-                  <Card 
-                    className={`group hover:scale-105 transition-all duration-300 h-full relative ${
-                      plan.popular ? 'ring-2 ring-blue-500 shadow-xl shadow-blue-500/20' : ''
-                    } ${selectedPlan === plan.title ? 'ring-2 ring-cyan-500' : ''}`}
-                    onClick={() => setSelectedPlan(plan.title)}
-                  >
-                    {plan.popular && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                        <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                          MOST POPULAR
-                        </div>
-                      </div>
-                    )}
-                    
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${plan.color} flex items-center justify-center mb-4`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
-                      {plan.title}
-                    </h3>
-                    
-                    <div className="mb-4">
-                      {price !== null ? (
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-4xl font-bold text-[var(--text)]">${price}</span>
-                          <span className="text-[var(--muted)]">/{billingCycle === "monthly" ? "mo" : "yr"}</span>
-                        </div>
-                      ) : (
-                        <div className="text-2xl font-bold text-[var(--text)]">Custom</div>
-                      )}
-                    </div>
-                    
-                    <p className="text-[var(--muted)] mb-6 text-sm">{plan.description}</p>
-                    
-                    <div className="space-y-3 mb-6">
-                      {plan.features.map((feature) => (
-                        <div key={feature.text} className="flex items-start gap-3">
-                          <CheckCircle2 className={`w-5 h-5 flex-shrink-0 ${feature.included ? 'text-green-500' : 'text-slate-600'}`} />
-                          <span className={`text-sm ${feature.included ? 'text-[var(--text)]' : 'text-[var(--muted)] line-through'}`}>
-                            {feature.text}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <Button 
-                      className={`w-full mt-auto ${
-                        plan.popular 
-                          ? 'bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white' 
-                          : ''
-                      }`}
-                    >
-                      {plan.cta}
-                    </Button>
-                  </Card>
-                </FadeIn>
-              );
-            })}
-          </div>
         </div>
       </section>
 
@@ -469,7 +244,7 @@ print(response.text)`;
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Start Coding in Seconds</h2>
               <p className="text-[var(--muted)] text-lg md:text-xl">
-                Copy, paste, and run. It's that simple.
+                Copy, paste, and run. It&apos;s that simple.
               </p>
             </div>
           </FadeIn>

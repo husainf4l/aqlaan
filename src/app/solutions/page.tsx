@@ -26,20 +26,6 @@ export default function SolutionsPage() {
       features: ["Object Detection", "Quality Inspection", "Security Monitoring"],
     },
     {
-      title: "Language Intelligence",
-      description: "Natural language processing and understanding for customer service, content analysis, and insights.",
-      href: "/solutions/language-intelligence",
-      icon: "LANG",
-      features: ["Text Analysis", "Sentiment Analysis", "Chatbots"],
-    },
-    {
-      title: "Healthcare AI",
-      description: "Specialized AI solutions for medical imaging, diagnostics, and patient care optimization.",
-      href: "/solutions/healthcare-ai",
-      icon: "HEALTH",
-      features: ["Medical Imaging", "Diagnostic Support", "Patient Monitoring"],
-    },
-    {
       title: "Infrastructure AI",
       description: "Smart infrastructure monitoring and predictive maintenance for cities and industrial facilities.",
       href: "/solutions/infrastructure-ai",

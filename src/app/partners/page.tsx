@@ -351,7 +351,7 @@ export default function PartnersPage() {
                         </div>
                         
                         <blockquote className="text-lg text-[var(--text)] mb-6 leading-relaxed italic">
-                          "{story.quote}"
+                          &quot;{story.quote}&quot;
                         </blockquote>
                         
                         <div className="flex items-center gap-3">
@@ -418,7 +418,7 @@ export default function PartnersPage() {
           <FadeIn>
             <Heart className="w-16 h-16 mx-auto mb-6 text-white/90" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Let's Build the Future Together
+              Let&apos;s Build the Future Together
             </h2>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Apply to join our partner program and start delivering AI excellence to your customers.

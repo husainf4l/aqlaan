@@ -734,13 +734,6 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-purple-400 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-[var(--text)] mb-1">Technical Support</p>
-                      <p className="text-[var(--muted)] text-sm">support@aqlaan.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
                     <Users className="w-5 h-5 text-purple-400 mt-0.5" />
                     <div>
                       <p className="font-bold text-[var(--text)] mb-1">Partnerships</p>

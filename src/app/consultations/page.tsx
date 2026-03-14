@@ -53,51 +53,6 @@ interface Session {
 }
 
 export default function ConsultationsPage() {
-  const [consultants] = useState<Consultant[]>([
-    {
-      id: '1',
-      name: 'Dr. Sarah Chen',
-      role: 'Senior AI Solutions Architect',
-      specialty: 'Azure Kubernetes & Multi-Tenant Architecture',
-      experience: '12+ years',
-      rating: 5,
-      sessionsCompleted: 847,
-      price: 'Enterprise',
-      available: true,
-      credentials: ['PhD Computer Science', 'Azure Solutions Architect Expert', 'Certified Kubernetes Administrator'],
-      expertise: ['Kubernetes', 'Azure', 'Multi-tenant Systems', 'Microservices'],
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
-    },
-    {
-      id: '2',
-      name: 'Marcus Rodriguez',
-      role: 'Lead Machine Learning Engineer',
-      specialty: 'RAG Pipelines & Document Intelligence',
-      experience: '10+ years',
-      rating: 5,
-      sessionsCompleted: 1243,
-      price: 'Enterprise',
-      available: true,
-      credentials: ['MS AI & Machine Learning', 'Google Cloud Professional ML Engineer', 'AWS ML Specialty'],
-      expertise: ['RAG Systems', 'LLMs', 'Vector Databases', 'NLP'],
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
-    },
-    {
-      id: '3',
-      name: 'Emily Nakamura',
-      role: 'Enterprise Solutions Architect',
-      specialty: 'ERP Integration & Workflow Automation',
-      experience: '15+ years',
-      rating: 5,
-      sessionsCompleted: 1567,
-      price: 'Enterprise',
-      available: true,
-      credentials: ['TOGAF Certified', 'SAP S/4HANA Architect', 'Enterprise Architect Professional'],
-      expertise: ['ERP Systems', 'SAP', 'Oracle', 'Integration Patterns'],
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
-    },
-  ]);
-
   const [sessions, setSessions] = useState<Session[]>([]);
 
   useEffect(() => {
@@ -207,27 +162,6 @@ export default function ConsultationsPage() {
                   </Button>
                 </Link>
 
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div
-                className="flex items-center justify-center gap-8 mt-12 pt-8 border-t border-white/10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                <div>
-                  <div className="text-3xl font-bold text-[var(--text)]">2,500+</div>
-                  <div className="text-sm text-[var(--muted)]">Consultations</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[var(--text)]">98%</div>
-                  <div className="text-sm text-[var(--muted)]">Satisfaction</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[var(--text)]">&lt;60s</div>
-                  <div className="text-sm text-[var(--muted)]">To start</div>
-                </div>
               </motion.div>
             </motion.div>
 

@@ -360,8 +360,8 @@ export default function VisionPage() {
                   The Journey Ahead
                 </h2>
                 <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
-                  We're just getting started. Our vision extends far beyond today's capabilities. 
-                  We're building the infrastructure for the next generation of AI applications—systems 
+                  We&apos;re just getting started. Our vision extends far beyond today&apos;s capabilities. 
+                  We&apos;re building the infrastructure for the next generation of AI applications—systems 
                   that are more intelligent, more ethical, and more accessible than ever before.
                 </p>
                 <p className="text-lg text-white/80 mb-8 max-w-3xl mx-auto">
@@ -396,7 +396,7 @@ export default function VisionPage() {
               Be Part of the Vision
             </h2>
             <p className="text-xl text-[var(--muted)] mb-8 leading-relaxed">
-              Whether you're a developer, enterprise, or partner—there's a place for you in our journey.
+              Whether you&apos;re a developer, enterprise, or partner—there&apos;s a place for you in our journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/get-started">
