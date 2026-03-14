@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "../styles/animations.css";
 
+/* Force Tailwind v4 dark: variant to use .dark class, not OS media query */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─────────────────────────────────────────
    Design Tokens — Dark (only mode)
 ───────────────────────────────────────── */
