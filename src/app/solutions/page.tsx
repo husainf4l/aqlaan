@@ -1,8 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "AI Solutions | AQLAAN",
@@ -87,11 +85,7 @@ export default function SolutionsPage() {
                     </ul>
                   </div>
 
-                  <Link href={solution.href}>
-                    <Button className="w-full bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-blue-400">
-                      Learn More
-                    </Button>
-                  </Link>
+
                 </Card>
               </FadeIn>
             ))}

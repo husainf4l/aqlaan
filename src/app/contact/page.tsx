@@ -391,19 +391,7 @@ export default function ConsultationsPage() {
             <p className="text-[var(--muted)] text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
               Schedule your consultation today and discover how Aqlaan can transform your business with cutting-edge AI solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-started">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base rounded-xl shadow-lg shadow-blue-500/25">
-                  Book Consultation
-                  <Calendar className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                  Learn More
-                </Button>
-              </Link>
-            </div>
+
           </motion.div>
         </div>
       </section>

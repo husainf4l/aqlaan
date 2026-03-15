@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/Button";
 import { 
   Code2, 
   Rocket,
-  ArrowRight,
   Sparkles,
   Users,
   Clock,
@@ -305,10 +304,7 @@ print(response.text)`;
                         </span>
                       </div>
                       
-                      <div className="mt-4 flex items-center text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                        Learn more
-                        <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
+
                     </Card>
                   </Link>
                 </FadeIn>
