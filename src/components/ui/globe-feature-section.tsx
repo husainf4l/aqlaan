@@ -1,7 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
+
 import createGlobe, { COBEOptions } from "cobe"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
@@ -15,9 +14,7 @@ export default function GlobeFeatureSection() {
             Ready to get started?{" "}
             <span className="text-[var(--muted)] font-normal">Join thousands of professionals getting expert AI guidance. Transform your organization with personalized consultations from industry leaders.</span>
           </h1>
-          <Button className="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 px-6 py-3 text-sm font-semibold text-white transition shadow-lg shadow-blue-500/25">
-            Browse Experts <ArrowRight className="h-4 w-4" />
-          </Button>
+
         </div>
         <div className="relative h-[180px] w-full max-w-xl">
           <Globe className="absolute -bottom-20 -right-40 scale-150" />

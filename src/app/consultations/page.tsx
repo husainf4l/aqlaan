@@ -3,17 +3,12 @@ import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Sparkles, MessageCircle, Clock, Award, Zap, Shield, ArrowRight } from 'lucide-react';
+import { Sparkles, MessageCircle, Clock, Award, Zap, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { AnimatedHeroBlob } from '@/components/animations/AnimatedHeroBlob';
 import BackgroundMotion from '@/components/visuals/BackgroundMotion';
 
 // Lazy load heavy components (saves ~600KB on initial load)
-const AnimatedTestimonials = dynamic(
-  () => import('@/components/ui/animated-testimonials').then(mod => ({ default: mod.AnimatedTestimonials })),
-  { ssr: false, loading: () => <div className="h-96 animate-pulse bg-gray-800/20 rounded-3xl" /> }
-);
-
 const GlobeFeatureSection = dynamic(
   () => import('@/components/ui/globe-feature-section'),
   { ssr: false, loading: () => <div className="h-screen animate-pulse bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-3xl" /> }
@@ -148,21 +143,7 @@ export default function ConsultationsPage() {
                 Connect with world-class specialists in real-time. Get instant insights powered by AI technology.
               </motion.p>
 
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              >
-                <Link href="#experts">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base rounded-xl shadow-lg shadow-blue-500/25">
-                    Browse Experts
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
 
-              </motion.div>
             </motion.div>
 
 
@@ -170,63 +151,7 @@ export default function ConsultationsPage() {
         </div>
       </section>
 
-      {/* Client Testimonials */}
-      <section className="relative py-24 md:py-32 px-6 bg-[var(--bg-secondary)]">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            className="mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text)] mb-4 tracking-tight">
-              Trusted by industry leaders
-            </h2>
-            <p className="text-base md:text-lg text-[var(--muted)] max-w-2xl mx-auto font-light leading-relaxed">
-              Hear from professionals who transformed their organizations with AI consultations
-            </p>
-          </motion.div>
 
-          <AnimatedTestimonials 
-            testimonials={[
-              {
-                quote: "The AI consultation transformed how we approach cloud infrastructure. The expert's guidance on multi-tenant architecture saved us months of development time and countless architectural mistakes.",
-                name: "Sarah Chen",
-                designation: "CTO at TechFlow Systems",
-                src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=500&fit=crop",
-              },
-              {
-                quote: "Working with the ML engineer on our RAG pipeline was a game-changer. Their deep expertise in document intelligence helped us build a production-ready system in weeks, not months.",
-                name: "Michael Rodriguez",
-                designation: "VP Engineering at DataCore",
-                src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=500&fit=crop",
-              },
-              {
-                quote: "The ERP integration consultation exceeded all expectations. Our workflow automation now handles 10x the volume with zero manual intervention. Absolutely transformative for our operations.",
-                name: "Emily Watson",
-                designation: "COO at Enterprise Solutions Inc",
-                src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=500&fit=crop",
-              },
-              {
-                quote: "Outstanding expertise in Azure Kubernetes deployment. The consultant's real-world experience and AI-powered insights helped us scale from 100 to 10,000 concurrent users seamlessly.",
-                name: "James Kim",
-                designation: "Lead DevOps Engineer at CloudScale",
-                src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
-              },
-              {
-                quote: "The combination of human expertise and AI assistance is incredibly powerful. Our team now has a robust document intelligence system that processes thousands of files daily with 99% accuracy.",
-                name: "Lisa Thompson",
-                designation: "Director of AI at FinTech Innovators",
-                src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=500&fit=crop",
-              },
-            ]}
-            autoplay={true}
-            className="mx-auto"
-          />
-        </div>
-      </section>
 
       {/* How It Works */}
       <section className="relative py-24 md:py-32 px-6 bg-[var(--bg)]">

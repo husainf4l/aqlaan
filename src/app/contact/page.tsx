@@ -13,24 +13,11 @@ import {
   MessageSquare, 
   Calendar, 
   CheckCircle, 
-  Star, 
   Zap, 
   Brain, 
   BarChart3,
-  Building2,
-  Globe,
-  ArrowRight,
   Users
 } from "lucide-react";
-
-interface Consultant {
-  id: string;
-  name: string;
-  specialty: string;
-  rating: number;
-  price: string;
-  available: boolean;
-}
 
 interface Session {
   id: string;
@@ -51,33 +38,6 @@ interface Session {
 }
 
 export default function ConsultationsPage() {
-  const [consultants] = useState<Consultant[]>([
-    {
-      id: '1',
-      name: 'Platform Engineer',
-      specialty: 'Azure Kubernetes & Multi-Tenant Architecture',
-      rating: 5,
-      price: 'Enterprise',
-      available: true,
-    },
-    {
-      id: '2',
-      name: 'ML Engineer',
-      specialty: 'RAG Pipelines & Document Intelligence',
-      rating: 5,
-      price: 'Enterprise',
-      available: true,
-    },
-    {
-      id: '3',
-      name: 'Solutions Architect',
-      specialty: 'ERP Integration & Workflow Automation',
-      rating: 5,
-      price: 'Enterprise',
-      available: true,
-    },
-  ]);
-
   const [sessions, setSessions] = useState<Session[]>([]);
 
   useEffect(() => {
@@ -122,18 +82,7 @@ export default function ConsultationsPage() {
             </p>
           </motion.div>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
-              Browse Consultants
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline">View My Sessions</Button>
-          </motion.div>
+
         </div>
       </section>
 
@@ -278,79 +227,7 @@ export default function ConsultationsPage() {
         </div>
       </section>
 
-      {/* Available Consultants */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Expert{' '}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Consultants
-              </span>
-            </h2>
-            <p className="text-[var(--muted)] text-lg max-w-2xl mx-auto">
-              Connect with industry-leading AI and technology experts.
-            </p>
-          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {consultants.map((consultant, index) => (
-              <motion.div
-                key={consultant.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="group hover:scale-105 transition-all duration-300 h-full border-white/5 hover:border-blue-500/30">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
-                      {consultant.name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div className={`px-3 py-1 rounded-full text-sm ${
-                      consultant.available
-                        ? 'bg-green-500/20 text-green-400'
-                        : 'bg-red-500/20 text-red-400'
-                    }`}>
-                      {consultant.available ? 'Available' : 'Busy'}
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
-                    {consultant.name}
-                  </h3>
-                  <p className="text-[var(--muted)] mb-3 text-sm leading-relaxed">{consultant.specialty}</p>
-
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400 mr-2">
-                      {Array.from({ length: consultant.rating }).map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
-                    <span className="text-sm text-[var(--muted)] opacity-80">({consultant.rating}.0)</span>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                    <span className="text-lg font-bold text-blue-400">{consultant.price}</span>
-                    <Button
-                      className="bg-gradient-to-r from-blue-600 to-purple-500 hover:from-blue-700 hover:to-purple-600"
-                      disabled={!consultant.available}
-                    >
-                      {consultant.available ? 'Book Session' : 'Unavailable'}
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* My Sessions */}
       {sessions.length > 0 && (

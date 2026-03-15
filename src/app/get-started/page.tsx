@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { 
   Code2, 
   Rocket,
-  ArrowRight, 
-  Play,
+  ArrowRight,
   Sparkles,
   Users,
   Clock,
@@ -166,20 +165,7 @@ print(response.text)`;
                 Deploy enterprise-grade AI in minutes. No credit card required to start.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <Link href="/contact">
-                  <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-6 text-lg group">
-                    Start Free Trial
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link href="/solutions">
-                  <Button variant="outline" className="px-8 py-6 text-lg group">
-                    <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                    View Solutions
-                  </Button>
-                </Link>
-              </div>
+
             </div>
           </FadeIn>
         </div>
