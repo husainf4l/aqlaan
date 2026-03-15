@@ -173,11 +173,7 @@ export default function PartnersPage() {
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="outline" className="px-8 py-6 text-lg">
-                    Schedule Consultation
-                  </Button>
-                </Link>
+
               </div>
             </div>
           </FadeIn>

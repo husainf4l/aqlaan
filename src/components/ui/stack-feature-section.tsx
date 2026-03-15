@@ -1,7 +1,4 @@
 "use client";
-
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import {
   Code,
   Cloud,
@@ -53,18 +50,7 @@ export default function StackFeatureSection() {
         <p className="text-[var(--muted)] mb-4 md:mb-6 max-w-lg text-base md:text-lg leading-relaxed">
           Join thousands of professionals getting expert AI guidance. Transform your organization with personalized consultations from industry leaders.
         </p>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <Link href="/get-started">
-            <Button variant="primary" className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-shadow w-full sm:w-auto text-sm md:text-base">
-              Start Building Today
-            </Button>
-          </Link>
-          <Link href="/contact">
-            <Button variant="outline" className="hover:border-purple-400 transition-colors w-full sm:w-auto text-sm md:text-base">
-              Explore Solutions
-            </Button>
-          </Link>
-        </div>
+
       </div>
 
       {/* Right side: Orbit animation cropped to 1/4 */}

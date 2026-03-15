@@ -49,14 +49,7 @@ export default function SolutionsPage() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">
-                Explore Solutions
-              </Button>
-              <Button className="bg-[var(--surface)] hover:bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border)] font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300">Contact Experts</Button>
-            </div>
-          </FadeIn>
+
         </div>
       </section>
 

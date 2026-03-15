@@ -1,8 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { AnimatedHeroBlob } from "@/components/animations/AnimatedHeroBlob";
 import BackgroundMotion from "@/components/visuals/BackgroundMotion";
 import { 
@@ -15,7 +13,6 @@ import {
   Network, 
   Wind, 
   CheckCircle,
-  ArrowRight,
   TrendingUp,
   Shield,
   Clock
@@ -185,25 +182,7 @@ export default function InfrastructureAIPage() {
                 and predictive capabilities. Transform critical systems into intelligent, self-managing networks.
               </motion.p>
 
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              >
-                <Link href="#capabilities">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base rounded-xl shadow-lg shadow-blue-500/25">
-                    Explore Solutions
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                    View Case Studies
-                  </Button>
-                </Link>
-              </motion.div>
+
 
               {/* Stats */}
               <motion.div
@@ -490,37 +469,7 @@ export default function InfrastructureAIPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-[var(--bg)]">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            className="relative overflow-hidden bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 rounded-3xl p-12 border border-white/10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent" />
-            
-            <div className="relative z-10 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Transform Your Infrastructure?
-              </h2>
-              <p className="text-[var(--muted)] text-lg mb-8 max-w-2xl mx-auto">
-                Connect with our infrastructure AI experts to discover how we can optimize your critical systems.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base rounded-xl shadow-lg shadow-blue-500/25">
-                    Schedule Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
     </div>
   );
 }

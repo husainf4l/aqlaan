@@ -555,26 +555,7 @@ export default function EnterpriseAutomationPage() {
               Join hundreds of enterprises already transforming their operations with intelligent automation.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold overflow-hidden shadow-lg"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </motion.button>
-              
-              <motion.button
-                className="px-8 py-4 rounded-xl bg-[var(--card-bg)] backdrop-blur-sm border-2 border-[var(--border)] text-[var(--text)] font-semibold hover:bg-[var(--surface)] hover:border-[var(--card-hover-border)] transition-all duration-300"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Contact Sales
-              </motion.button>
-            </div>
+
           </motion.div>
         </div>
       </section>

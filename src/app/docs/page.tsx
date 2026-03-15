@@ -454,19 +454,7 @@ const response = await client.generate({
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Get your API key and make your first call in under 5 minutes.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-started">
-                <Button className="bg-white text-blue-600 hover:bg-slate-50 px-8 py-6 text-lg font-semibold shadow-xl group">
-                  Get Started
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold">
-                  Contact Support
-                </Button>
-              </Link>
-            </div>
+
           </FadeIn>
         </div>
       </section>

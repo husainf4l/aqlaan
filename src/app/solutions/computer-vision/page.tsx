@@ -1,8 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { AnimatedHeroBlob } from "@/components/animations/AnimatedHeroBlob";
 import BackgroundMotion from "@/components/visuals/BackgroundMotion";
 import { 
@@ -16,7 +14,6 @@ import {
   Camera,
   ScanLine,
   CheckCircle,
-  ArrowRight,
   TrendingUp,
   Zap
 } from "lucide-react";
@@ -162,21 +159,7 @@ export default function ComputerVisionPage() {
                 into actionable insights, enabling automation, analysis, and decision-making across industries.
               </motion.p>
 
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              >
-                <Link href="#applications">
-                  <Button className="bg-slate-700 dark:bg-slate-800 hover:bg-slate-600 dark:hover:bg-slate-700 text-white px-8 py-6 text-base rounded-xl shadow-lg">
-                    Explore Solutions
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
 
-              </motion.div>
 
               {/* Stats */}
               <motion.div
@@ -417,19 +400,7 @@ export default function ComputerVisionPage() {
               Discover how our computer vision solutions can revolutionize your business operations.
               Get started today with our comprehensive solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-started">
-                <Button className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-6 text-base rounded-xl shadow-lg shadow-cyan-500/25">
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-white/10 hover:bg-white/5">
-                  Contact Sales
-                </Button>
-              </Link>
-            </div>
+
           </motion.div>
         </div>
       </section>

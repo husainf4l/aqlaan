@@ -398,19 +398,7 @@ export default function VisionPage() {
             <p className="text-xl text-[var(--muted)] mb-8 leading-relaxed">
               Whether you&apos;re a developer, enterprise, or partner—there&apos;s a place for you in our journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-started">
-                <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-6 text-lg group">
-                  Get Started
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link href="/partners">
-                <Button variant="outline" className="px-8 py-6 text-lg">
-                  Become a Partner
-                </Button>
-              </Link>
-            </div>
+
           </FadeIn>
         </div>
       </section>
