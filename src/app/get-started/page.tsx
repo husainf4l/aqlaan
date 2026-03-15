@@ -2,7 +2,6 @@
 import { Metadata } from "next";
 import FadeIn from "@/components/animations/FadeIn";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { 
   Code2, 
   Rocket,
@@ -15,8 +14,7 @@ import {
   Monitor,
   MessageCircle,
   TrendingUp,
-  Lock,
-  Globe
+  Lock
 } from "lucide-react";
 import Link from "next/link";
 
@@ -348,22 +346,7 @@ print(response.text)`;
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:75px_75px]" />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <Globe className="w-16 h-16 mx-auto mb-6 text-white/90" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Build the Future?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Join thousands of developers already building with AQLAAN AI.
-              Start your free trial today — no credit card required.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+
     </div>
   );
 }
