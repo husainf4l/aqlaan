@@ -41,11 +41,12 @@ echo ""
 
 # Step 2: Build Docker image for linux/amd64
 echo -e "${BLUE}🏗️  Step 2/4: Building Docker image for linux/amd64...${NC}"
-docker build \
+docker buildx build \
     --platform linux/amd64 \
     -f docker/Dockerfile \
     -t ${IMAGE_VERSIONED} \
     -t ${IMAGE_LATEST} \
+    --load \
     .
 
 if [ $? -eq 0 ]; then
