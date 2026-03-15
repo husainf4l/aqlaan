@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic';
 import Partners from "@/components/home/Partners";
 import CapabilitiesAndSolutions from "@/components/home/CapabilitiesAndSolutions";
-import Testimonials from "@/components/home/Testimonials";
 import CTA from "@/components/home/CTA";
 
 // Lazy load heavy 3D canvas component (saves ~800KB on initial load)
@@ -19,7 +18,6 @@ export default function HomeClient() {
       <HeroAICanvas />
       <Partners />
       <CapabilitiesAndSolutions />
-      <Testimonials />
       <CTA />
     </>
   );

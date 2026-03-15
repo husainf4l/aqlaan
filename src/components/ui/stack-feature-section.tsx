@@ -44,27 +44,23 @@ export default function StackFeatureSection() {
   const iconsPerOrbit = Math.ceil(iconConfigs.length / orbitCount);
 
   return (
-    <section className="relative max-w-6xl mx-auto my-32 px-6 flex items-center justify-between h-[30rem] border border-[var(--border)] bg-[var(--bg)] overflow-hidden rounded-3xl">
+    <section className="relative max-w-6xl mx-auto my-16 md:my-32 px-4 md:px-6 flex flex-col md:flex-row md:items-center md:justify-between h-auto md:h-[30rem] border border-[var(--border)] bg-[var(--bg)] overflow-hidden rounded-3xl">
       {/* Left side: Heading and Text */}
-      <div className="w-1/2 z-10 pl-10">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-[var(--text)] leading-tight">
-          Transform Your Vision Into{" "}
-          <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Reality
-          </span>
+      <div className="w-full md:w-1/2 z-10 pl-4 md:pl-6 lg:pl-10 pb-6 md:pb-8 lg:pb-0 pr-4 md:pr-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-[var(--text)] leading-tight">
+          Ready to get started?
         </h1>
-        <p className="text-[var(--muted)] mb-6 max-w-lg text-lg leading-relaxed">
-          Harness the power of AI and intelligent automation to accelerate innovation, 
-          optimize operations, and unlock unprecedented growth opportunities for your enterprise.
+        <p className="text-[var(--muted)] mb-4 md:mb-6 max-w-lg text-base md:text-lg leading-relaxed">
+          Join thousands of professionals getting expert AI guidance. Transform your organization with personalized consultations from industry leaders.
         </p>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <Link href="/get-started">
-            <Button variant="primary" className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-shadow">
+            <Button variant="primary" className="shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 transition-shadow w-full sm:w-auto text-sm md:text-base">
               Start Building Today
             </Button>
           </Link>
           <Link href="/contact">
-            <Button variant="outline" className="hover:border-purple-400 transition-colors">
+            <Button variant="outline" className="hover:border-purple-400 transition-colors w-full sm:w-auto text-sm md:text-base">
               Explore Solutions
             </Button>
           </Link>
@@ -72,11 +68,11 @@ export default function StackFeatureSection() {
       </div>
 
       {/* Right side: Orbit animation cropped to 1/4 */}
-      <div className="relative w-1/2 h-full flex items-center justify-start overflow-hidden">
-        <div className="relative w-[50rem] h-[50rem] translate-x-[50%] flex items-center justify-center">
+      <div className="relative w-full md:w-1/2 h-[16rem] sm:h-[18rem] md:h-[20rem] lg:h-full flex items-center justify-center md:justify-start overflow-hidden mt-4 md:mt-0">
+        <div className="relative w-[24rem] sm:w-[28rem] md:w-[30rem] lg:w-[50rem] h-[24rem] sm:h-[28rem] md:h-[30rem] lg:h-[50rem] flex items-center justify-center">
           {/* Center Circle */}
-          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg flex items-center justify-center">
-            <Zap className="w-12 h-12 text-white" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg flex items-center justify-center">
+            <Zap className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-12 lg:h-12 text-white" />
           </div>
 
           {/* Generate Orbits */}
@@ -104,14 +100,14 @@ export default function StackFeatureSection() {
                     return (
                       <div
                         key={iconIdx}
-                        className="absolute bg-[var(--card-bg)] backdrop-blur-sm rounded-full p-2 shadow-md border border-[var(--border)]"
+                        className="absolute bg-[var(--card-bg)] backdrop-blur-sm rounded-full p-1.5 sm:p-2 shadow-md border border-[var(--border)]"
                         style={{
                           left: `${x}%`,
                           top: `${y}%`,
                           transform: "translate(-50%, -50%)",
                         }}
                       >
-                        <cfg.Icon className="w-8 h-8" style={{ color: cfg.color }} />
+                        <cfg.Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" style={{ color: cfg.color }} />
                       </div>
                     );
                   })}

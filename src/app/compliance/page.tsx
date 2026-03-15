@@ -16,7 +16,7 @@ export default function CompliancePage() {
       status: "Certified",
       date: "2025",
       description: "Annual audit of security, availability, and confidentiality controls by independent third-party auditors.",
-      color: "from-blue-500 to-blue-600",
+      color: "from-blue-500 to-purple-600",
     },
     {
       icon: Award,
@@ -24,7 +24,7 @@ export default function CompliancePage() {
       status: "In Progress",
       date: "Expected Q3 2026",
       description: "International standard for information security management systems (ISMS) certification program initiated.",
-      color: "from-cyan-500 to-cyan-600",
+      color: "from-blue-500 to-purple-600",
     },
     {
       icon: Globe,
@@ -32,7 +32,7 @@ export default function CompliancePage() {
       status: "Compliant",
       date: "2023",
       description: "Full compliance with EU General Data Protection Regulation for data privacy and protection.",
-      color: "from-teal-500 to-teal-600",
+      color: "from-blue-500 to-purple-600",
     },
     {
       icon: FileText,
@@ -40,7 +40,7 @@ export default function CompliancePage() {
       status: "Available",
       date: "2024",
       description: "Business Associate Agreement (BAA) available for healthcare customers requiring HIPAA compliance.",
-      color: "from-purple-500 to-purple-600",
+      color: "from-blue-500 to-purple-600",
     },
   ];
 
@@ -225,6 +225,8 @@ export default function CompliancePage() {
       <section className="relative py-24 px-6 bg-gradient-to-br from-[var(--bg)] via-[var(--bg-secondary)] to-[var(--bg)] overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[size:75px_75px] dark:bg-grid-slate-400/[0.05]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
         
         <div className="relative max-w-7xl mx-auto">
           <FadeIn>
@@ -234,13 +236,22 @@ export default function CompliancePage() {
                 <span className="text-sm font-medium text-blue-400">Security & Compliance</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
                 Enterprise-Grade Compliance
               </h1>
               
               <p className="text-xl md:text-2xl text-[var(--muted)] mb-12 leading-relaxed">
                 Trust and transparency are at the core of everything we build. AQLAAN meets the highest standards for security, privacy, and regulatory compliance.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3">
+                  Download Security Overview
+                </Button>
+                <Button variant="outline" className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 px-8 py-3">
+                  Contact Compliance Team
+                </Button>
+              </div>
             </div>
           </FadeIn>
         </div>

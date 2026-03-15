@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";import Image from "next/image"
+import { motion } from "motion/react";
+import Image from "next/image"
 export const TestimonialsColumn = (props: {
   className?: string;
   testimonials: Array<{
