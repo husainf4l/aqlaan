@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Linkedin, Facebook, Instagram, Mail, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { Linkedin } from "lucide-react";
 
 const footerSections = [];
 
@@ -13,14 +12,6 @@ const socialLinks = [
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const version = process.env.NEXT_PUBLIC_APP_VERSION || 'dev';
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Implement newsletter subscription
-    console.log("Subscribe:", email);
-    setEmail("");
-  };
 
   return (
     <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
@@ -46,30 +37,6 @@ export default function Footer() {
               </span>
               . Enterprise-grade technology, personalized service.
             </p>
-            
-            {/* Newsletter */}
-            <div className="space-y-3">
-              <h4 className="text-[var(--text)] text-sm font-semibold">
-                Stay Updated
-              </h4>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 text-sm bg-[var(--bg)] border border-[var(--border-subtle)] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-[var(--text)] placeholder:text-[var(--muted)]"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-[var(--text)] text-[var(--bg)] rounded-lg hover:opacity-90 transition-opacity duration-200"
-                  aria-label="Subscribe to newsletter"
-                >
-                  <ArrowRight size={18} />
-                </button>
-              </form>
-            </div>
           </div>
 
           {/* Link columns */}
