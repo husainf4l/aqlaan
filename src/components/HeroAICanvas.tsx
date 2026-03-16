@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import Link from "next/link";
 import { useTheme } from "next-themes";
 import { IconCloud } from "@/components/ui/interactive-icon-cloud";
 
@@ -166,14 +165,6 @@ function HeroContent() {
               Transform your business with precision AI solutions that deliver measurable results.
               From intelligent automation to predictive analytics — enterprise-grade, at scale.
             </p>
-
-            <div className="hero__cta">
-              <Link href="/get-started">
-                <div className="glass-btn-wrap">
-                  <span className="glass-btn">Get Started →</span>
-                </div>
-              </Link>
-            </div>
 
             <div className="hero__stats">
               <div className="hero__stat">
