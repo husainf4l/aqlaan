@@ -4,49 +4,10 @@ import Image from "next/image";
 import { Twitter, Linkedin, Facebook, Instagram, Mail, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
-const footerSections = [
-  {
-    title: "Product",
-    links: [
-      { label: "Solutions", href: "/solutions" },
-      { label: "Platform", href: "/platform" },
-      { label: "Consultations", href: "/consultations" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", href: "/about" },
-      { label: "Vision", href: "/vision" },
-      { label: "Contact", href: "/contact" },
-      { label: "Get Started", href: "/get-started" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Documentation", href: "/docs" },
-      { label: "Partners", href: "/partners" },
-      { label: "Status", href: "/status" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Service", href: "/terms-of-service" },
-      { label: "Cookie Policy", href: "/cookie-policy" },
-      { label: "Compliance", href: "/compliance" },
-    ],
-  },
-];
+const footerSections = [];
 
 const socialLinks = [
-  { icon: Twitter, href: "https://twitter.com/aqlaan", label: "Twitter" },
   { icon: Linkedin, href: "https://linkedin.com/company/aqlaan", label: "LinkedIn" },
-  { icon: Facebook, href: "https://facebook.com/aqlaan", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com/aqlaan", label: "Instagram" },
-  { icon: Mail, href: "mailto:contact@aqlaan.com", label: "Email" },
 ];
 
 export default function Footer() {

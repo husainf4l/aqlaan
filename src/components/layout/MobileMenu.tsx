@@ -5,7 +5,6 @@ import Image from "next/image";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-import { Button } from "@/components/ui/Button";
 
 interface NavItem {
   label: string;
@@ -185,11 +184,6 @@ export default function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProp
               </div>
 
               <div className="space-y-3">
-                <Link href="/get-started" onClick={onClose}>
-                  <Button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 hover:opacity-90 dark:from-[#9a9a9a] dark:via-[#1a1a1a] dark:to-[#6a6a6a] text-gray-900 dark:text-white border-0 font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                    Get Started
-                  </Button>
-                </Link>
               </div>
             </motion.div>
           </motion.div>

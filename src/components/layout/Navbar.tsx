@@ -15,30 +15,7 @@ interface NavItem {
   };
 }
 
-const navItems: NavItem[] = [
-  {
-    label: "Solutions",
-    dropdown: {
-      title: "AI Solutions",
-      items: [
-        { label: "Enterprise Automation", href: "/solutions/enterprise-automation", description: "Scale operations with intelligent automation" },
-        { label: "Computer Vision", href: "/solutions/computer-vision", description: "Advanced visual intelligence" },
-        { label: "Infrastructure AI", href: "/solutions/infrastructure-ai", description: "Smart infrastructure monitoring" },
-      ],
-    },
-  },
-  {
-    label: "Company",
-    dropdown: {
-      title: "About AQLAAN",
-      items: [
-        { label: "About Us", href: "/about", description: "Our mission and vision" },
-        { label: "Contact", href: "/contact", description: "Get in touch" },
-      ],
-    },
-  },
-  { label: "Consultations", href: "/consultations" },
-];
+const navItems: NavItem[] = [];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -150,13 +127,6 @@ export default function Navbar() {
 
           {/* Right CTAs */}
           <div className="hidden lg:flex items-center gap-3 ml-auto">
-            <Link href="/get-started">
-              <div className="p-[1px] rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 dark:from-[#9a9a9a] dark:via-[#1a1a1a] dark:to-[#6a6a6a]">
-                <span className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-white dark:bg-white/[0.04] backdrop-blur-sm text-gray-900 dark:text-white text-sm font-medium cursor-pointer border-none whitespace-nowrap transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
-                  Get Started
-                </span>
-              </div>
-            </Link>
           </div>
 
           {/* Mobile Theme + Menu Toggle */}
