@@ -47,7 +47,7 @@ export default function Footer() {
             <div>
               <p className="text-[var(--muted)] text-xs font-mono">
                 © {currentYear}{' '}
-                <span className="text-slate-900 dark:bg-gradient-to-r dark:from-blue-400 dark:via-cyan-400 dark:to-teal-400 dark:bg-clip-text dark:text-transparent font-bold">
+                <span className="text-white font-bold">
                   AQLAAN
                 </span>
                 . All rights reserved.
