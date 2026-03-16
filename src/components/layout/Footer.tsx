@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
-const footerSections = [];
-
 const socialLinks = [
   { icon: Linkedin, href: "https://linkedin.com/company/aqlaan", label: "LinkedIn" },
 ];
@@ -16,10 +14,10 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Top section with brand and newsletter */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+        {/* Top section with brand */}
+        <div className="flex justify-center mb-16">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="text-center">
             <Link href="/" className="inline-block mb-6">
               <Image
                 src="/logo/aqlaa-new-logo.png"
@@ -37,29 +35,6 @@ export default function Footer() {
               </span>
               . Enterprise-grade technology, personalized service.
             </p>
-          </div>
-
-          {/* Link columns */}
-          <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {footerSections.map((section) => (
-              <div key={section.title}>
-                <h4 className="text-[var(--text)] text-xs font-mono tracking-[1px] uppercase mb-4 font-semibold">
-                  {section.title}
-                </h4>
-                <ul className="space-y-3">
-                  {section.links.map((link, i) => (
-                    <li key={`${section.title}-${i}`}>
-                      <Link
-                        href={link.href}
-                        className="text-[var(--muted)] text-sm hover:text-[var(--text)] transition-colors duration-200 inline-block"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
         </div>
 
